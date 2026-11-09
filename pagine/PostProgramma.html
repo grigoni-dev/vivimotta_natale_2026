@@ -27,26 +27,34 @@
 <script>
 // Ogni giorno con evento ha il suo colore fisso, uguale in tutta la campagna.
 const pagine=[
- {piede:"Scorri per le altre date →",eventi:[
-  [5,"sab","--rosso","--panna","Si accendono le luci, apre la pista di pattinaggio","[ora] · [luogo]"],
+ {mese:"dicembre",piede:"Scorri per le altre date →",eventi:[
+  [5,"sab","--rosso","--panna","Push Day: si accendono le luci","[ora] · Musica, pattinaggio gratuito, Babbo Natale e presepe in piazza"],
   [6,"dom","--ocra","--verde-loggia","San Nicolò con la parrocchia","[ora] · [luogo]"],
-  [12,"sab","--verde-loggia","--panna","Concerto dell'Orchestra dei Fiati della Livenza","[ora] · [luogo]"]]},
- {piede:"#MottaANatale",eventi:[
-  [13,"dom","--azzurro","--inchiostro","Christmas Gravel Ride con Zero 5 Bike Team","[ora] · [luogo]"],
-  [20,"dom","--verde-cupola","--inchiostro","Mercatino dell'hobbistica e mercato natalizio","[ora] · [luogo]"],
-  [23,"mer","--ocra","--verde-loggia","Letture danzanti nel centro","Ore 18.00 · [luogo]"]]}
+  [8,"mar","--verde-cupola","--inchiostro","Mercatino dell'antiquariato e albero della Madonna","[ora] · Con il mercatino dei bambini, a cura della Pro Loco"]]},
+ {mese:"dicembre",piede:"Scorri per le altre date →",eventi:[
+  [12,"sab","--verde-loggia","--panna","Concerto dell'Orchestra dei Fiati della Livenza","[ora] · Sotto la Loggia, con Babbo Natale"],
+  [13,"dom","--azzurro","--inchiostro","Christmas Gravel Ride","[ora] · Con Zero 5 Bike Team"],
+  [19,"sab","--ocra","--verde-loggia","Festa dell'asilo con Babbo Natale","[ora] · Animazione e concerto di Natale del gruppo TAM"]]},
+ {mese:"dicembre",piede:"Scorri per le altre date →",eventi:[
+  [20,"dom","--verde-cupola","--inchiostro","Mercatino dell'hobbistica e mercato natalizio","[ora] · Della Pro Loco, giochi in legno, concerto di Evoluzione Musica"],
+  [23,"mer","--ocra","--verde-loggia","Letture danzanti","Ore 18.00 in piazza · Prenotazione obbligatoria"],
+  [24,"gio","--rosso","--panna","Il pomeriggio della Pro Loco","[ora] · [luogo]"]]},
+ {mese:"dicembre e gennaio",piede:"#mottanatale",eventi:[
+  [26,"sab","--verde-loggia","--panna","Smalti Panettone, la corsa podistica","[ora] · A cura di Podistica Mottense"],
+  [5,"mar","--azzurro","--inchiostro","Pan e Vin","[ora] · A cura del CAI Motta"],
+  [6,"mer","--ocra","--verde-loggia","Elfifania","[ora] · Con il rinfresco della Pro Loco"]]}
 ];
 document.getElementById("pagine").innerHTML=pagine.map(p=>`
 <div class="cornice"><div class="post pr">
   <img class="abs marchio" src="../design-system/marchio/marchio-verde.svg" alt="Motta a Natale">
   <h1 class="abs titolo-l">Il programma</h1>
-  <p class="abs frase mese">dicembre</p>
+  <p class="abs frase mese">${p.mese}</p>
   <ol class="abs eventi">${p.eventi.map(([n,g,b,c,t,i])=>`
     <li><div class="casella" style="background:var(${b});color:var(${c})"><span class="m">${g}</span><span class="n">${n}</span></div>
     <div class="testo"><h2>${t}</h2><p class="nota">${i}</p></div></li>`).join("")}
   </ol>
   <div class="abs piede nota"><span>${p.piede}</span></div>
-</div></div>`).join("")+`<p class="didascalia">Carosello del programma · solo i giorni con un'attività, tre per pagina, ognuno nel suo colore fisso. Titolo e posizioni uguali su tutte le pagine; orari e luoghi vanno presi dal programma.</p>`;
+</div></div>`).join("")+`<p class="didascalia">Carosello del programma · i 12 giorni con un'attività, tre per pagina (quattro pagine), ognuno nel suo colore fisso. Titolo e posizioni uguali su tutte le pagine; orari e luoghi vanno presi dal programma.</p>`;
 </script>
 </body>
 </html>

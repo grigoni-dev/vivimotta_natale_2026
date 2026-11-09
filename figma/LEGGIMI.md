@@ -11,9 +11,9 @@ Il plugin in `plugin/` costruisce dentro un file Figma tutto il necessario per p
   - le quattro versioni del marchio;
   - l'albero;
   - la stella.
-- **Pagina "Motta a Natale · Template":** 11 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
+- **Pagina "Motta a Natale · Template":** 13 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
   - Annuncio;
-  - Programma (2 pagine);
+  - Programma (4 pagine);
   - Evento;
   - Storia;
   - Botteghe: copertina, scheda e articolo;
@@ -31,6 +31,13 @@ I plugin "in sviluppo" funzionano solo nell'**app desktop di Figma**, non dal br
 4. Avvia il plugin: **Plugins → Development → Motta a Natale – template**.
 
 In qualche secondo compaiono le due pagine. Se manca un font, in basso compare un avviso e il plugin usa un sostituto. Bodoni Moda e Archivo sono su Google Fonts e Figma li ha già.
+
+**Bodoni Moda robusto: installa prima i font.** Il Bodoni Moda di Figma (da Google Fonts) ha solo l'asse del peso e disegna sempre la versione da titolo, con linee troppo sottili. Per questo il plugin usa **Bodoni Moda 11pt**, una versione fissata alla dimensione ottica robusta, che va installata sul computer:
+1. apri la cartella `design-system/font/`;
+2. fai doppio clic su ogni file `.ttf` e scegli **Installa**;
+3. chiudi e riapri Figma, poi avvia il plugin.
+
+Se il plugin non trova Bodoni Moda 11pt, usa il Bodoni Moda di Figma e te lo segnala con un avviso. Gli stili di testo `Motta/…` già creati si aggiornano al nuovo font, e con loro i template già fatti.
 
 Il plugin si avvia **una volta per file**: ogni avvio aggiunge due pagine nuove. Gli stili, invece, vengono aggiornati e non duplicati.
 

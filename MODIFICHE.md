@@ -157,3 +157,30 @@ Le grafiche si producono in **Figma** (piano gratuito) invece che in Canva.
 - **Istruzioni:** in `figma/LEGGIMI.md`.
 - **Aggiornamento:** il plugin incorpora i file SVG del design system; se cambiano, si rigenera con `python3 figma/sorgente/genera.py`.
 - **Riferimenti:** `PRODUCT.md`, `design-system.md`, `DESIGN.md`, le schede e i LEGGIMI ora parlano di Figma al posto di Canva.
+
+- **Bodoni Moda robusto:** in Figma Bodoni Moda usava la versione da titolo, con linee sottili troppo fini sul telefono. Ora è impostato sempre sulla **dimensione ottica 11** (asse `opsz`): negli stili di testo del plugin, nelle pagine di esempio (`pagine/campagna.css`) e nei token. Il confronto con le alternative valutate (Libre Bodoni, Gloock, Chonburi, Young Serif) è in `pagine/ProposteCarattere.html`.
+- **Bodoni Moda 11pt per Figma:** verificato col collegamento a Figma che il Bodoni Moda di Figma ha solo l'asse del peso, quindi la dimensione ottica 11 veniva ignorata. In `design-system/font/` ci sono ora cinque file **Bodoni Moda 11pt**, ricavati dal font originale fissando la dimensione ottica a 11 (licenza OFL, con il nome cambiato come richiesto). Vanno installati sul computer; il plugin li usa per tutti gli stili Bodoni.
+
+---
+
+# Sesta revisione — annuncio e locandina
+
+- **Annuncio:** era troppo scarno. Ora fa da locandina, sul modello delle reference (`reference/image.png`, `reference/stile-1.png`): dice chi lo promuove ("Vivi Motta presenta"), cosa succede, quando e dove. Due proposte in `pagine/PostAnnuncio.html`:
+  - **A**, fondo `panna` con una fascia di tessere sopra e una sotto, il marchio grande, il blocco con le caselle del 5 dicembre e del 6 gennaio, cosa succede e dove trovare il programma;
+  - **B**, fondo `verde-loggia` con l'albero nell'arco tra due colonne di tessere alternate, il marchio, la frase e le date.
+- **Locandina A3+:** nuovo formato di stampa (329×483 mm, file da 335×489 con 3 mm di abbondanza) con tutti i giorni di attività, le attività di tutto il periodo, i promotori e i contatti. Esempio in `pagine/Locandina.html`, PDF in `stampa/Locandina-A3plus.pdf`, regole in `design-system/componente-Locandina.md`.
+- **Tessere:** l'annuncio e la locandina sono le copertine della campagna e possono avere le fasce di tessere. Nuova regola: mai una tessera con lo stesso fondo del post.
+
+- **Annuncio, scelta la proposta A**, con queste modifiche:
+  - le date scritte per esteso, "Dal 5 dicembre al 6 gennaio", accanto alle caselle;
+  - "attività" aggiunta all'elenco di cosa succede;
+  - tolti "Vivi Motta presenta" e "Il programma su @vivimotta" (il post è già sulla pagina);
+  - aggiunto l'albero, appoggiato sulla fascia in basso.
+  La proposta B è stata tolta. Il template Figma dell'annuncio è aggiornato allo stesso disegno.
+- **Hashtag ufficiale:** `#mottanatale` (prima `#MottaANatale`), in tutte le pagine, le regole e i template Figma.
+- **Programma completo** (ricevuto il 10 novembre): 12 giorni, dal 5 dicembre al 6 gennaio. Ai sei giorni degli esempi si aggiungono 8, 19, 24 e 26 dicembre, 5 e 6 gennaio; il 23 ha l'orario (18.00 in piazza) e la prenotazione obbligatoria.
+  - Colori fissi dei giorni nuovi: 8 verde-cupola, 19 ocra, 24 rosso, 26 verde-loggia, 5 gennaio azzurro, 6 gennaio ocra.
+  - **Locandina:** tutti i 12 giorni in due colonne con caselle da 30 mm; marchio più piccolo; tolto "Vivi Motta presenta" come nell'annuncio; l'8 e il concerto del 19 segnati "da confermare".
+  - **Carosello del programma:** quattro pagine (tre giorni per pagina; l'ultima ha il 26 dicembre e i due giorni di gennaio, con "dicembre e gennaio" al posto del mese), nelle pagine di esempio e nel plugin Figma.
+- **Annuncio, versione definitiva:** dopo tre nuove proposte (le date in fila, il titolo grande, l'albero grande) è stata scelta quella con il **titolo grande**: il marchio largo 900px, come nella reference, e al posto dei numeri 5 e 6 l'**albero** in un arco `rosa` da 2×2 caselle accanto alle informazioni (provato anche Zenzerino, poi scartato). Nella fascia in basso `zenzerino` è sostituito da `candela`.
+- **Tessera `cupola` ridisegnata** sulla facciata vera del Santuario della Madonna dei Miracoli: una sola sagoma stilizzata con la parte centrale ad arco più alta, i due quarti di cerchio ai lati e il rosone tondo, sopra il portico a tre archi. Prima era una cupola generica attribuita alla Loggia. Il file e il nome restano `cupola.svg`; sono aggiornati il plugin Figma e il PDF della locandina.

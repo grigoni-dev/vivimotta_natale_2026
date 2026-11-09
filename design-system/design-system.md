@@ -22,7 +22,7 @@ Il sistema grafico della campagna social di Natale 2026 dell'associazione Vivi M
 
 ## Il nome e il tono
 
-- Nome della campagna: **Motta a Natale**, promossa da Vivi Motta. Frase di accompagnamento: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: `#MottaANatale` (principale), `#NataleMottense` (secondario).
+- Nome della campagna: **Motta a Natale**, promossa da Vivi Motta. Frase di accompagnamento: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: `#mottanatale` (principale), `#NataleMottense` (secondario).
 - Scrivi come si parla in paese, al "tu", con cose concrete: cosa succede, dove, quando. Il titolo dice i fatti dell'evento ("Luci accese, pista aperta"), non uno slogan sul Natale ("Si accende la magia", "Un Natale da vivere").
 - Da evitare: "magia", "atmosfera", "emozioni", "non perdere", "ti aspettiamo numerosi", punti esclamativi in serie, conteggi come "33 giorni". Se una frase andrebbe bene per qualunque paese, riscrivila con un nome di Motta: una via, la piazza, un'associazione, una bottega.
 - Niente emoji dentro le grafiche. Le emoji restano nelle didascalie del post, con misura.
@@ -42,7 +42,7 @@ Il sistema grafico della campagna social di Natale 2026 dell'associazione Vivi M
 
 Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 
-- **Bodoni Moda** è la voce della campagna: la stessa famiglia di caratteri del logo "VIVI MOTTA" (bodoniano ad alto contrasto).
+- **Bodoni Moda** è la voce della campagna: la stessa famiglia di caratteri del logo "VIVI MOTTA" (bodoniano ad alto contrasto). Si usa sempre alla **dimensione ottica 11** (asse `opsz`), la versione robusta: le linee sottili restano leggibili sul telefono. In Figma si usa il font **Bodoni Moda 11pt** (in `design-system/font/`, da installare sul computer), perché il Bodoni Moda di Figma non ha l'asse della dimensione ottica; gli stili `Motta/…` lo usano già.
   - **900** per i numeri dei giorni: `numero-xl` (dentro l'arco, 700px nel post, 780px nella storia), numero da 180px nelle caselle del programma, `numero-m` e `numero-s` per le caselle piccole.
   - **800** per i titoli: `titolo-l`, `titolo-m`, il nome dell'evento nel programma e il nome dello sponsor nell'Offerto da (58px), il nome al posto del logo nel post sponsor (34px). Sempre in tondo, in minuscolo con l'iniziale maiuscola, massimo due o tre righe.
   - **500 corsivo** per la `frase`: il payoff, il mese nel programma, "oggi è il" nella storia, "offerta da".
@@ -53,7 +53,7 @@ Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 ## La casella del giorno
 
 - Solo i **giorni con un'attività** hanno una casella. Niente calendario completo, niente giorni vuoti.
-- Ogni giorno con attività riceve un **colore fisso** tra `rosso`, `ocra`, `verde-loggia`, `azzurro`, `verde-cupola` (non `rosa`, che è il fondo del programma) e lo tiene in tutta la campagna (negli esempi: 5 rosso, 6 ocra, 12 verde-loggia, 13 azzurro, 20 verde-cupola, 23 ocra). Due giorni vicini nel programma non hanno lo stesso colore.
+- Ogni giorno con attività riceve un **colore fisso** tra `rosso`, `ocra`, `verde-loggia`, `azzurro`, `verde-cupola` (non `rosa`, che è il fondo del programma) e lo tiene in tutta la campagna (dicembre: 5 rosso, 6 ocra, 8 verde-cupola, 12 verde-loggia, 13 azzurro, 19 ocra, 20 verde-cupola, 23 ocra, 24 rosso, 26 verde-loggia; gennaio: 5 azzurro, 6 ocra). Due giorni vicini nel programma non hanno lo stesso colore.
 - Il colore del giorno non è mai uguale al fondo del post in cui compare: scegli il fondo di conseguenza (il 5 è rosso, quindi il suo post evento e la sua storia sono su `verde-loggia`).
 - Nel programma la casella è un quadrato da 270px a filo del bordo sinistro: giorno della settimana in `etichetta`, numero in Bodoni Moda 900 da 180px.
 - Nel post e nella storia dell'evento la casella si **apre** ad arco (vedi sotto).
@@ -61,15 +61,15 @@ Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 ## Le tessere: con parsimonia
 
 - 18 tessere SVG (`tessere/`) con fondo e figura fissi, già pronte come componenti nel file Figma (pagina "Componenti").
-- Le tessere di Motta sono quattro: `portici`, `cupola` (la Loggia), `campanile` (il Duomo), `onda` (la Livenza).
-- **Al massimo una tessera per post**, come timbro nell'angolo in basso a destra (135px): di norma la `stellina`, simbolo della campagna. Fanno eccezione solo la caccia a Zenzerino (griglia piena), la copertina delle botteghe (due righe in fondo) e il post sponsor (regalo, pallina e bastoncino alternati ai loghi).
-- Nei post con la foto (schede botteghe, articolo in evidenza) e nell'annuncio non serve nessuna tessera.
-- Dove le tessere si accostano: mai due uguali o con lo stesso fondo una accanto all'altra.
+- Le tessere di Motta sono quattro: `portici`, `cupola` (il Santuario della Madonna dei Miracoli), `campanile` (il Duomo), `onda` (la Livenza).
+- **Al massimo una tessera per post**, come timbro nell'angolo in basso a destra (135px): di norma la `stellina`, simbolo della campagna. Fanno eccezione solo la caccia a Zenzerino (griglia piena), la copertina delle botteghe (due righe in fondo), il post sponsor (regalo, pallina e bastoncino alternati ai loghi) e le copertine della campagna: l'annuncio e la locandina, con una fascia di 8 tessere sopra e una sotto.
+- Nei post con la foto (schede botteghe, articolo in evidenza) non serve nessuna tessera.
+- Dove le tessere si accostano: mai due uguali o con lo stesso fondo una accanto all'altra, e mai una tessera con lo stesso fondo del post (per esempio `abete`, a fondo `panna`, non va su un fondo `panna`).
 
 ## L'albero
 
 - L'unica illustrazione grande della campagna (`illustrazioni/albero.svg`): abete piatto `verde-loggia` a tre piani, stella `ocra`, sei palline `rosso`, `ocra` e `panna`.
-- Si usa nell'annuncio e negli auguri, dentro l'arco `panna`.
+- Si usa nell'annuncio (in un arco `rosa` da 2×2 caselle) e negli auguri, dentro l'arco.
 
 ## L'arco
 
@@ -96,7 +96,8 @@ Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 
 ## Tipi di contenuto
 
-- **Annuncio** (`PostAnnuncio`): l'albero nell'arco, il nome, la frase, le date. Nient'altro.
+- **Annuncio** (`PostAnnuncio`): il primo post, come una locandina: fasce di tessere sopra e sotto, il marchio a tutta larghezza, la frase, l'albero in un arco `rosa` da 2×2 caselle accanto alle date scritte per esteso, a cosa succede e dove e all'hashtag.
+- **Locandina** (`Locandina`): stampa A3+ (329×483 mm) con tutte le informazioni: tutti i giorni con un'attività, le attività di tutto il periodo, i promotori e i contatti.
 - **Programma** (`PostProgramma`): carosello, tre giorni con attività per pagina, in ordine di data. Si scorre per le date successive.
 - **Evento** (`PostEvento`): un post per evento con il giorno aperto ad arco, il titolo, la descrizione, giorno e luogo.
 - **Storia del giorno** (`Storia`): il promemoria pubblicato la mattina dell'evento ("oggi è il 5"); resta 24 ore e ha lo spazio per lo sticker con il link o la posizione.

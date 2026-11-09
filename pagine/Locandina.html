@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locandina</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+/* Locandina A3+ (329×483 mm) con 3 mm di abbondanza per lato: il foglio è 335×489 mm.
+   Tutte le misure sono in mm sul foglio con abbondanza; il margine di sicurezza è 20 mm dal taglio. */
+@page{size:335mm 489mm;margin:0}
+.lo{--t:41.875mm; /* casella: 8 per la larghezza del foglio */
+  --sx:23mm; --lg:289mm; /* 20 mm dal taglio a sinistra, larghezza utile */
+  width:335mm;height:489mm;position:relative;overflow:hidden;background:var(--panna);color:var(--verde-loggia);zoom:.5;flex:none;
+  box-shadow:0 1px 2px rgba(43,32,25,.12),0 8px 24px rgba(43,32,25,.10)}
+@media print{
+  html,body{background:none;padding:0}
+  .lo{zoom:1;box-shadow:none}
+  .didascalia{display:none}
+}
+.lo .fascia{left:0;width:335mm;display:grid;grid-template-columns:repeat(8,var(--t));grid-auto-rows:var(--t)}
+.lo .fascia.su{top:0}
+.lo .fascia.giu{bottom:0}
+
+.lo .titolo{left:50%;top:54mm;transform:translateX(-50%);width:140mm;display:block}
+.lo .frase{left:var(--sx);width:var(--lg);top:141mm;text-align:center;font-size:8mm;color:var(--inchiostro)}
+.lo .quando{left:var(--sx);width:var(--lg);top:154mm;text-align:center;font-size:5mm;color:var(--rosso)}
+
+.lo .intesta{left:var(--sx);width:var(--lg);top:170mm;display:flex;align-items:baseline;gap:4mm;border-bottom:.8mm solid var(--verde-loggia);padding-bottom:2.5mm}
+.lo .intesta h2{font-family:var(--font-numeri);font-weight:800;font-size:12mm;line-height:1;letter-spacing:-.01em}
+.lo .intesta .frase{position:static;font-size:8mm;color:var(--inchiostro);text-align:left;width:auto}
+
+/* Il programma: due colonne in ordine di data, caselle da 30 mm accostate come nel carosello. */
+.lo .eventi{left:var(--sx);width:var(--lg);top:192mm;display:grid;grid-template-columns:1fr 1fr;column-gap:9mm;align-items:start}
+.lo .eventi ol{list-style:none}
+.lo .eventi li{display:grid;grid-template-columns:30mm 1fr;height:30mm}
+.lo .eventi .casella{width:30mm;height:30mm;flex-direction:column}
+.lo .eventi .casella .m{position:static;font-size:3.4mm;margin-bottom:1.2mm}
+.lo .eventi .casella .n{font-size:17mm;line-height:.8;letter-spacing:-.03em}
+.lo .eventi .testo{padding-left:4.5mm;display:flex;flex-direction:column;justify-content:center}
+.lo .eventi h3{font-family:var(--font-numeri);font-weight:800;font-size:5.6mm;line-height:1.05;letter-spacing:-.005em}
+.lo .eventi .nota{font-size:3.7mm;line-height:1.25;margin-top:1.2mm;color:var(--inchiostro)}
+.lo .eventi .attesa{color:var(--rosso);font-weight:800}
+.lo .eventi li.mese{height:10mm;display:flex;align-items:center;font-family:var(--font-numeri);font-style:italic;font-weight:500;font-size:7mm;color:var(--inchiostro)}
+
+.lo .sempre{left:var(--sx);width:var(--lg);top:387mm;display:grid;grid-template-columns:repeat(3,1fr);column-gap:7mm;border-top:.8mm solid var(--verde-loggia);padding-top:4mm}
+.lo .sempre .etichetta{grid-column:1/-1;font-size:3.6mm;margin-bottom:3mm;color:var(--rosso)}
+.lo .sempre div{display:grid;grid-template-columns:18mm 1fr;column-gap:3.5mm;align-items:center}
+.lo .sempre img{width:18mm;height:18mm;display:block}
+.lo .sempre b{display:block;font-family:var(--font-numeri);font-weight:800;font-size:5.4mm;line-height:1.05}
+.lo .sempre span{display:block;font:500 3.8mm/1.25 var(--font-sans);color:var(--inchiostro);margin-top:1mm}
+
+.lo .piede{left:var(--sx);width:var(--lg);top:421mm;display:flex;justify-content:space-between;align-items:flex-end}
+.lo .promotori .etichetta{font-size:3.4mm;margin-bottom:2.2mm}
+.lo .loghi{display:flex;gap:3mm;align-items:center}
+.lo .loghi img{height:16mm;display:block;background:#fff;padding:1.5mm 3mm}
+.lo .loghi span{height:16mm;padding:0 3mm;display:flex;align-items:center;border:.4mm dashed var(--verde-loggia);font:600 3.4mm/1.1 var(--font-sans);color:var(--inchiostro);text-align:center}
+.lo .contatti{text-align:right}
+.lo .contatti .info{font-size:7mm}
+.lo .contatti .nota{font-size:5mm;color:var(--rosso);margin-top:1mm;font-weight:800;letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="lo">
+  <div class="abs fascia su">
+    <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/portici.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pallina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campanile.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
+  </div>
+
+  <h1><img class="abs titolo" src="../design-system/marchio/marchio-verde-rosso.svg" alt="Motta a Natale"></h1>
+  <p class="abs frase">Eventi e intrattenimento per tutta la famiglia.</p>
+  <p class="abs quando info">Dal 5 dicembre al 6 gennaio · centro storico di Motta di Livenza</p>
+
+  <div class="abs intesta"><h2>Il programma</h2><p class="frase">dicembre e gennaio</p></div>
+  <div class="abs eventi" id="eventi"></div>
+
+  <div class="abs sempre">
+    <p class="etichetta">Per tutto il periodo</p>
+    <div><img src="../design-system/tessere/stellina.svg" alt=""><p><b>Pista di pattinaggio</b><span>[luogo] · [orari]</span></p></div>
+    <div><img src="../design-system/tessere/zenzerino.svg" alt=""><p><b>Caccia a Zenzerino</b><span>Cercalo nelle vetrine dei negozi del centro</span></p></div>
+    <div><img src="../design-system/tessere/stella.svg" alt=""><p><b>L'albero e le luci</b><span>[luogo]</span></p></div>
+  </div>
+
+  <div class="abs piede">
+    <div class="promotori">
+      <p class="etichetta">Promosso da</p>
+      <div class="loghi">
+        <img src="../assets/logo-vivimotta.png" alt="Vivi Motta">
+        <span>[logo<br>Comune]</span><span>[logo<br>Ascom]</span><span>[logo Fondazione<br>Giacomini]</span>
+      </div>
+    </div>
+    <div class="contatti">
+      <p class="info">@vivimotta</p>
+      <p class="nota">#mottanatale</p>
+    </div>
+  </div>
+
+  <div class="abs fascia giu">
+    <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/fiocco.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/zenzerino.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/bastoncino.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
+  </div>
+</div>
+<p class="didascalia">Locandina A3+ (329×483 mm) con 3 mm di abbondanza per lato, ridotta al 50%. Tutti i 12 giorni del programma, le attività di tutto il periodo, i promotori e i contatti. PDF di stampa: <code>stampa/Locandina-A3plus.pdf</code>.</p>
+</div>
+<script>
+// Il programma: ogni giorno ha il suo colore fisso, uguale in tutta la campagna.
+// [mese, giorno, numero, fondo, inchiostro, titolo, dettagli, da confermare]
+const C={rosso:"panna",ocra:"verde-loggia","verde-loggia":"panna","verde-cupola":"inchiostro",azzurro:"inchiostro"};
+const giorni=[
+ ["dic","sab",5,"rosso","Push Day: si accendono le luci","[ora] · Musica, intrattenimento, pattinaggio gratuito, Babbo Natale e presepe in piazza"],
+ ["dic","dom",6,"ocra","San Nicolò con la parrocchia","[ora] · [luogo]"],
+ ["dic","mar",8,"verde-cupola","Mercatino dell'antiquariato e albero della Madonna","[ora] · Con il mercatino dei bambini, a cura della Pro Loco",true],
+ ["dic","sab",12,"verde-loggia","Concerto dell'Orchestra dei Fiati della Livenza","[ora] · Sotto la Loggia, con Babbo Natale"],
+ ["dic","dom",13,"azzurro","Christmas Gravel Ride","[ora] · Con Zero 5 Bike Team"],
+ ["dic","sab",19,"ocra","Festa dell'asilo con Babbo Natale","[ora] · Animazione e concerto di Natale del gruppo TAM <span class=\"attesa\">(concerto da confermare)</span>"],
+ ["dic","dom",20,"verde-cupola","Mercatino dell'hobbistica e mercato natalizio","[ora] · Della Pro Loco, con giochi in legno e il concerto di Evoluzione Musica"],
+ ["dic","mer",23,"ocra","Letture danzanti","Ore 18.00 in piazza · Percorso tra parole e movimento nel centro. <span class=\"attesa\">Prenotazione obbligatoria</span>"],
+ ["dic","gio",24,"rosso","Il pomeriggio della Pro Loco","[ora] · [luogo]"],
+ ["dic","sab",26,"verde-loggia","Smalti Panettone, la corsa podistica","[ora] · A cura di Podistica Mottense"],
+ ["gen","mar",5,"azzurro","Pan e Vin","[ora] · A cura del CAI Motta"],
+ ["gen","mer",6,"ocra","Elfifania","[ora] · Con il rinfresco della Pro Loco"]
+];
+const riga=([mese,g,n,b,t,d,attesa])=>`<li><div class="casella" style="background:var(--${b});color:var(--${C[b]})"><span class="m">${g}</span><span class="n">${n}</span></div>
+ <div class="testo"><h3>${t}</h3><p class="nota">${d}${attesa?' <span class="attesa">(da confermare)</span>':''}</p></div></li>`;
+const sx=giorni.slice(0,6), dx=giorni.slice(6);
+let col2="";dx.forEach((x,i)=>{ if(x[0]==="gen" && (i===0||dx[i-1][0]!=="gen")) col2+='<li class="mese">gennaio</li>'; col2+=riga(x); });
+document.getElementById("eventi").innerHTML=`<ol>${sx.map(riga).join("")}</ol><ol>${col2}</ol>`;
+</script>
+</body>
+</html>

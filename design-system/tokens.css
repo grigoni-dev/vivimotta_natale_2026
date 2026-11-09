@@ -21,9 +21,10 @@
   --arco: 999px 999px 0 0; /* semicerchio: raggio = metà larghezza */
   --font-numeri: "Bodoni Moda", "Bodoni 72", Didot, serif;
   --font-sans: Archivo, "Helvetica Neue", Arial, sans-serif;
+  --opsz-bodoni: "opsz" 11; /* dimensione ottica di Bodoni Moda per tutti gli usi */
 }
 /* Numeri del calendario: il giorno è il protagonista. */
-.numero-xl { font-family: var(--font-numeri); font-size: 700px; line-height: 0.74; font-weight: 900; letter-spacing: -0.03em; font-variation-settings: "opsz" 28; }
+.numero-xl { font-family: var(--font-numeri); font-size: 700px; line-height: 0.74; font-weight: 900; letter-spacing: -0.03em; font-variation-settings: "opsz" 11; }
 .numero-m  { font-family: var(--font-numeri); font-size: 76px;  line-height: 1;    font-weight: 900; }
 .numero-s  { font-family: var(--font-numeri); font-size: 44px;  line-height: 1;    font-weight: 900; }
 /* Titoli: stessa famiglia del numero, in tondo, frasi concrete. */

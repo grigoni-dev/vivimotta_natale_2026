@@ -7,25 +7,59 @@
 <link rel="stylesheet" href="../design-system/tokens.css">
 <link rel="stylesheet" href="campagna.css">
 <style>
-.an{background:var(--rosso);color:var(--panna)}
-.an .finestra{left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--panna);align-items:flex-end}
-.an .finestra img{width:560px;display:block;margin-bottom:-4px}
-.an .testo{left:var(--mezza);top:846px;width:945px}
-.an .frase{margin-top:20px}
-.an .info{left:var(--mezza);bottom:52px}
+/* Annuncio: il marchio a tutta larghezza tra due fasce di tessere, l'albero nell'arco accanto alle informazioni. */
+.an{background:var(--panna);color:var(--verde-loggia)}
+.an .fascia{left:0;width:1080px}
+.an .fascia.su{top:0}
+.an .fascia.giu{top:1215px}
+.an .titolo{left:50%;top:176px;transform:translateX(-50%);width:900px;display:block}
+.an .frase{left:0;width:1080px;top:722px;text-align:center;color:var(--inchiostro)}
+.an .blocco{left:var(--mezza);top:850px;width:945px;height:270px;display:grid;grid-template-columns:270px 1fr;align-items:center}
+.an .finestra{width:270px;height:270px;background:var(--rosa);align-items:flex-end}
+.an .finestra img{width:226px;display:block;margin-bottom:-2px}
+.an .dati{padding-left:40px}
+.an .dati .info{font-size:30px}
+.an .dati .corpo{margin-top:10px;font-size:30px;line-height:1.3;color:var(--inchiostro)}
+.an .dati hr{border:0;border-top:3px solid var(--verde-loggia);margin:20px 0}
+.an .dati .tag{color:var(--rosso);text-transform:none;letter-spacing:.02em}
 </style>
 </head>
 <body>
 <div class="foglio">
 <div class="cornice"><div class="post an">
-  <div class="abs arco finestra"><img src="../design-system/illustrazioni/albero.svg" alt="Albero di Natale"></div>
-  <div class="abs testo">
-    <h1><img src="../design-system/marchio/marchio-panna.svg" alt="Motta a Natale" style="width:500px;display:block"></h1>
-    <p class="frase">Eventi e intrattenimento per tutta la famiglia.</p>
+  <div class="abs griglia fascia su">
+    <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/portici.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pallina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campanile.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
   </div>
-  <p class="abs info">Dal 5 dicembre al 6 gennaio</p>
+  <h1><img class="abs titolo" src="../design-system/marchio/marchio-verde-rosso.svg" alt="Motta a Natale"></h1>
+  <p class="abs frase">Eventi e intrattenimento per tutta la famiglia.</p>
+  <div class="abs blocco">
+    <div class="arco finestra"><img src="../design-system/illustrazioni/albero.svg" alt="Albero di Natale"></div>
+    <div class="dati">
+      <p class="info">Dal 5 dicembre al 6 gennaio</p>
+      <p class="corpo">Nel centro storico: luci, pista di pattinaggio, concerti, mercatini, attività e Zenzerino nascosto nelle vetrine.</p>
+      <hr>
+      <p class="info tag">#mottanatale</p>
+    </div>
+  </div>
+  <div class="abs griglia fascia giu">
+    <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/fiocco.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/candela.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/bastoncino.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
+  </div>
 </div></div>
-<p class="didascalia">Post di annuncio 1080×1350 · l'albero nell'arco, il marchio in grande, la frase, le date. Nient'altro: il programma arriva nei post successivi.</p>
+<p class="didascalia">Annuncio 1080×1350 · il marchio a tutta larghezza tra due fasce di tessere, la frase, l'albero in un arco rosa da 2×2 caselle accanto alle date, a cosa succede e all'hashtag.</p>
 </div>
 </body>
 </html>

@@ -92,6 +92,15 @@
         ],
         "createdAt": "2026-11-09T16:01:48.374Z",
         "reason": "model decision: full-bleed tile grid / post frame bleeds to edge by design"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/Locandina.html"
+        ],
+        "createdAt": "2026-11-09T23:05:49.497Z",
+        "reason": "model decision: print poster with full-bleed tile bands and flush day caselle by design (same pattern as the post pages)"
       }
     ]
   }

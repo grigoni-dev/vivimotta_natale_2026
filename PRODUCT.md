@@ -28,7 +28,7 @@ Il Natale di Motta si distingue per due cose che un paese vicino non può copiar
 - Ritmo di pubblicazione per circa un mese: annuncio, programma, un post e una storia per evento, rubrica botteghe, caroselli sponsor, caccia a Zenzerino, auguri.
 
 ## Identità e vincoli
-- Nome: **Motta a Natale** (dal novembre 2026; prima "Vivi Motta a Natale"). La campagna è promossa da Vivi Motta, che firma come associazione. Frase: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: #MottaANatale.
+- Nome: **Motta a Natale** (dal novembre 2026; prima "Vivi Motta a Natale"). La campagna è promossa da Vivi Motta, che firma come associazione. Frase: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: #mottanatale.
 - Simboli: la **stella a quattro punte** è il simbolo di tutte le grafiche di Natale; **Zenzerino** (pan di zenzero) è la mascotte delle vetrine.
 - Logo istituzionale esistente (in `assets/`), con fondo bianco: non si modifica; resta per l'uso di tutto l'anno. Per la campagna di Natale c'è un marchio dedicato, "Motta ✦ Natale" in Bodoni Moda (la stella si legge "a") (`design-system/marchio/`), che firma tutti i contenuti social della campagna (scelta del cliente, novembre 2026).
 - Mascotte: **Zenzerino**, omino di pan di zenzero. Deve restare secondario: non presente in ogni post e mai elemento dominante. Il disegno definitivo lo farà un artista a mano.

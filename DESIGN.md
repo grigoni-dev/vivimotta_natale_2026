@@ -19,14 +19,14 @@ typography:
     fontWeight: 900
     lineHeight: 0.74
     letterSpacing: "-0.03em"
-    fontVariation: '"opsz" 28'
+    fontVariation: '"opsz" 11'
   numero-xl:
     fontFamily: "Bodoni Moda, Bodoni 72, Didot, serif"
     fontSize: "700px"
     fontWeight: 900
     lineHeight: 0.74
     letterSpacing: "-0.03em"
-    fontVariation: '"opsz" 28'
+    fontVariation: '"opsz" 11'
   numero-bottega:
     fontFamily: "Bodoni Moda, Bodoni 72, Didot, serif"
     fontSize: "190px"
@@ -358,7 +358,7 @@ Un post verde-loggia per ogni installazione offerta da un solo sponsor. Marchio 
 - **Logo illeggibile:** la casella bianca si toglie e resta il nome.
 
 ### Timbro
-L'unica tessera del post: 135px nell'angolo in basso a destra, a filo dei bordi. Di norma è la `stellina` (stella rossa su rosa), simbolo della campagna, come nel post evento. Le 18 tessere SVG (`tessere/`) hanno fondo e figura fissi e si caricano così come sono; quattro sono di Motta: portici, cupola (la Loggia), campanile (il Duomo), onda (la Livenza: due onde parallele verde-loggia su azzurro, da bordo a bordo).
+L'unica tessera del post: 135px nell'angolo in basso a destra, a filo dei bordi. Di norma è la `stellina` (stella rossa su rosa), simbolo della campagna, come nel post evento. Le 18 tessere SVG (`tessere/`) hanno fondo e figura fissi e si caricano così come sono; quattro sono di Motta: portici, cupola (il Santuario della Madonna dei Miracoli), campanile (il Duomo), onda (la Livenza: due onde parallele verde-loggia su azzurro, da bordo a bordo).
 
 ### I due simboli
 - **La stella a quattro punte:** il simbolo di tutte le grafiche di Natale. Sta nel marchio (al posto della "a"), in cima all'albero e nel timbro d'angolo. Da sola è `marchio/stella.svg`, in ocra.

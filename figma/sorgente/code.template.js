@@ -21,6 +21,10 @@ async function font(family, style) {
   if (!FONT_DISPONIBILI) FONT_DISPONIBILI = await figma.listAvailableFontsAsync();
   let stessaFamiglia = FONT_DISPONIBILI.filter(f => f.fontName.family === family).map(f => f.fontName);
   if (!stessaFamiglia.length) stessaFamiglia = FONT_DISPONIBILI.filter(f => f.fontName.family.startsWith(family)).map(f => f.fontName);
+  if (!stessaFamiglia.length && family === "Bodoni Moda 11pt") {
+    if (!avvisi.some(x => x.startsWith("Bodoni Moda 11pt"))) avvisi.push("Bodoni Moda 11pt non installato: uso Bodoni Moda (linee sottili). Installa i font di design-system/font e riavvia il plugin");
+    return font("Bodoni Moda", style);
+  }
   let scelto = stessaFamiglia.find(f => norm(f.style) === norm(style));
   if (!scelto && stessaFamiglia.length) {
     const italic = /italic/i.test(style);
@@ -36,6 +40,7 @@ async function font(family, style) {
     avvisi.push(`${family} non disponibile: uso Inter`);
   }
   await figma.loadFontAsync(scelto);
+  if (family.startsWith("Bodoni Moda")) { try { await figma.loadFontAsync({ family: scelto.family }); } catch (e) {} }
   return scelto;
 }
 
@@ -58,28 +63,49 @@ function rgb(hex) {
 async function colora(nodo, colore) { await nodo.setFillStyleIdAsync(STILI_COLORE[colore].id); }
 
 const DEF_TESTO = {
-  "numero-arco":      ["Bodoni Moda", "Black", 700, 74, -3, "ORIGINAL"],
-  "numero-programma": ["Bodoni Moda", "Black", 180, 80, -3, "ORIGINAL"],
-  "numero-bottega":   ["Bodoni Moda", "Black", 190, 100, -3, "ORIGINAL"],
-  "titolo-l":         ["Bodoni Moda", "ExtraBold", 104, 98, -1.5, "ORIGINAL"],
-  "titolo-m":         ["Bodoni Moda", "ExtraBold", 76, 100, -1, "ORIGINAL"],
-  "nome-evento":      ["Bodoni Moda", "ExtraBold", 58, 102, -1, "ORIGINAL"],
-  "nome-casella":     ["Bodoni Moda", "ExtraBold", 34, 102, 0, "ORIGINAL"],
-  "frase":            ["Bodoni Moda", "Medium Italic", 44, 115, 0, "ORIGINAL"],
+  "numero-arco":      ["Bodoni Moda 11pt", "Black", 700, 74, -3, "ORIGINAL"],
+  "numero-programma": ["Bodoni Moda 11pt", "Black", 180, 80, -3, "ORIGINAL"],
+  "numero-bottega":   ["Bodoni Moda 11pt", "Black", 190, 100, -3, "ORIGINAL"],
+  "titolo-l":         ["Bodoni Moda 11pt", "ExtraBold", 104, 98, -1.5, "ORIGINAL"],
+  "titolo-m":         ["Bodoni Moda 11pt", "ExtraBold", 76, 100, -1, "ORIGINAL"],
+  "nome-evento":      ["Bodoni Moda 11pt", "ExtraBold", 58, 102, -1, "ORIGINAL"],
+  "nome-casella":     ["Bodoni Moda 11pt", "ExtraBold", 34, 102, 0, "ORIGINAL"],
+  "frase":            ["Bodoni Moda 11pt", "Medium Italic", 44, 115, 0, "ORIGINAL"],
   "info":             ["Archivo", "ExtraBold", 40, 120, 6, "UPPER"],
   "etichetta":        ["Archivo", "ExtraBold", 22, 100, 10, "UPPER"],
   "corpo":            ["Archivo", "Medium", 36, 135, 0, "ORIGINAL"],
   "nota":             ["Archivo", "SemiBold", 24, 130, 0, "ORIGINAL"]
 };
+// Bodoni Moda è un font variabile: la dimensione ottica 11 (asse opsz) dà le linee sottili robuste
+// che reggono sul telefono. Figma per default userebbe la versione da titolo, troppo sottile.
+const OPSZ_BODONI = 11;
+let OPSZ_OK = false;
+function conOpsz(fn) {
+  return (OPSZ_OK && fn.family.startsWith("Bodoni Moda")) ? { family: fn.family, style: fn.style, variationSettings: { opsz: OPSZ_BODONI } } : fn;
+}
+const haOpsz = fn => !!(fn && fn.variationSettings && Math.round(fn.variationSettings.opsz) === OPSZ_BODONI);
+let STILE_SENZA_OPSZ = false;   // se gli stili di testo non accettano l'asse, lo si applica a ogni testo
+
 const STILI_TESTO = {};
 async function creaStiliTesto() {
+  try {
+    const assi = figma.getFontFamilyVariationAxes ? await Promise.resolve(figma.getFontFamilyVariationAxes("Bodoni Moda")) : null;
+    const tag = a => (typeof a === "string" ? a : (a && (a.tag || a.axisTag)));
+    OPSZ_OK = Array.isArray(assi) && assi.some(a => tag(a) === "opsz");
+  } catch (e) { OPSZ_OK = false; }
+  if (!OPSZ_OK) avvisi.push("Bodoni Moda: asse della dimensione ottica non disponibile, impostalo a mano (Type details → Variable → Optical size = 11)");
   const esistenti = await figma.getLocalTextStylesAsync();
   for (const [nome, [fam, sty, size, lh, ls, tc]] of Object.entries(DEF_TESTO)) {
     const fn = await font(fam, sty);
     const n = `Motta/${nome}`;
     let s = esistenti.find(x => x.name === n);
     if (!s) { s = figma.createTextStyle(); s.name = n; }
-    s.fontName = fn; s.fontSize = size;
+    s.fontName = fn;
+    if (OPSZ_OK && fn.family.startsWith("Bodoni Moda")) {
+      try { s.fontName = conOpsz(fn); } catch (e) { /* versione di Figma che non lo accetta sugli stili */ }
+      if (!haOpsz(s.fontName)) STILE_SENZA_OPSZ = true;
+    }
+    s.fontSize = size;
     s.lineHeight = { unit: "PERCENT", value: lh };
     s.letterSpacing = { unit: "PERCENT", value: ls };
     s.textCase = tc;
@@ -105,6 +131,9 @@ async function testo(padre, nome, contenuto, stile, colore, x, y, w, opz = {}) {
   const t = figma.createText(); t.name = nome;
   await t.setTextStyleIdAsync(STILI_TESTO[stile].id);
   t.characters = contenuto;
+  if (STILE_SENZA_OPSZ && OPSZ_OK && t.fontName && t.fontName.family && t.fontName.family.startsWith("Bodoni Moda")) {
+    try { t.fontName = conOpsz(t.fontName); } catch (e) {}
+  }
   if (opz.size) t.fontSize = opz.size;
   if (opz.lh) t.lineHeight = { unit: "PERCENT", value: opz.lh };
   if (opz.ls !== undefined) t.letterSpacing = { unit: "PERCENT", value: opz.ls };
@@ -164,28 +193,44 @@ const marchioPost = (f, variante) => istanza(f, C[`marchio-${variante}`], MEZZA,
 const tessera = (f, nome, x, y, lato = CASELLA) => istanza(f, C[`tessera-${nome}`], x, y, lato, `Tessera ${nome}`);
 
 async function annuncio() {
-  const [w, h] = POST; const f = cornice("Annuncio · 1080×1350", w, h); await colora(f, "rosso");
-  const a = await arco(f, "Arco", CASELLA, CASELLA, 810, 675, "panna");
-  const alb = istanza(a, C.albero, 125, 0, 560, "Albero"); alb.y = 675 - alb.height + 4;
-  const m = istanza(f, C["marchio-panna"], MEZZA, 846, 500, "Marchio (titolo)");
-  await testo(f, "Frase", "Eventi e intrattenimento per tutta la famiglia.", "frase", "panna", MEZZA, m.y + m.height + 20, 945);
-  await testo(f, "Date", "Dal 5 dicembre al 6 gennaio", "info", "panna", MEZZA, h - 52 - 48, null);
+  const [w, h] = POST; const f = cornice("Annuncio · 1080×1350", w, h); await colora(f, "panna");
+  // Fasce di tessere sopra e sotto: mai due fondi uguali accanto, mai tessere a fondo panna.
+  ["stella", "portici", "pallina", "cupola", "regalo", "campanile", "stellina", "onda"].forEach((n, i) => tessera(f, n, i * CASELLA, 0));
+  ["campana", "fiocco", "candela", "cupola", "pois", "bastoncino", "regalo", "stella"].forEach((n, i) => tessera(f, n, i * CASELLA, h - CASELLA));
+  istanza(f, C["marchio-verde-rosso"], (w - 900) / 2, 176, 900, "Marchio (titolo)");
+  await testo(f, "Frase", "Eventi e intrattenimento per tutta la famiglia.", "frase", "inchiostro", 0, 722, w, { align: "CENTER" });
+  // Blocco delle informazioni: l'albero in un arco rosa da 2×2 caselle, poi date, cosa succede, linea, hashtag.
+  const a = await arco(f, "Arco", MEZZA, 850, 2 * CASELLA, 2 * CASELLA, "rosa");
+  const alb = istanza(a, C.albero, 0, 0, 226, "Albero"); alb.x = (a.width - alb.width) / 2; alb.y = a.height - alb.height + 2;
+  const x = MEZZA + 2 * CASELLA + 40, lw = 945 - 2 * CASELLA - 40;
+  const d1 = await testo(f, "Date", "Dal 5 dicembre al 6 gennaio", "info", "verde-loggia", x, 0, lw, { size: 30 });
+  const d2 = await testo(f, "Cosa succede", "Nel centro storico: luci, pista di pattinaggio, concerti, mercatini, attività e Zenzerino nascosto nelle vetrine.", "corpo", "inchiostro", x, 0, lw, { size: 30, lh: 130 });
+  const d3 = await riquadro(f, "Linea", x, 0, lw, 3, "verde-loggia");
+  const d4 = await testo(f, "Hashtag", "#mottanatale", "info", "rosso", x, 0, lw, { size: 30, ls: 2 }); d4.textCase = "ORIGINAL";
+  const alto = d1.height + 10 + d2.height + 20 + 3 + 20 + d4.height;
+  impila([d1, d2, d3, d4], 850 + (270 - alto) / 2, [10, 20, 20]);
   return f;
 }
 
 const EVENTI = [
-  [[5, "sab", "rosso", "panna", "Si accendono le luci, apre la pista di pattinaggio", "[ora] · [luogo]"],
+  [[5, "sab", "rosso", "panna", "Push Day: si accendono le luci", "[ora] · Musica, pattinaggio gratuito, Babbo Natale e presepe in piazza"],
    [6, "dom", "ocra", "verde-loggia", "San Nicolò con la parrocchia", "[ora] · [luogo]"],
-   [12, "sab", "verde-loggia", "panna", "Concerto dell'Orchestra dei Fiati della Livenza", "[ora] · [luogo]"]],
-  [[13, "dom", "azzurro", "inchiostro", "Christmas Gravel Ride con Zero 5 Bike Team", "[ora] · [luogo]"],
-   [20, "dom", "verde-cupola", "inchiostro", "Mercatino dell'hobbistica e mercato natalizio", "[ora] · [luogo]"],
-   [23, "mer", "ocra", "verde-loggia", "Letture danzanti nel centro", "Ore 18.00 · [luogo]"]]
+   [8, "mar", "verde-cupola", "inchiostro", "Mercatino dell'antiquariato e albero della Madonna", "[ora] · Con il mercatino dei bambini, a cura della Pro Loco"]],
+  [[12, "sab", "verde-loggia", "panna", "Concerto dell'Orchestra dei Fiati della Livenza", "[ora] · Sotto la Loggia, con Babbo Natale"],
+   [13, "dom", "azzurro", "inchiostro", "Christmas Gravel Ride", "[ora] · Con Zero 5 Bike Team"],
+   [19, "sab", "ocra", "verde-loggia", "Festa dell'asilo con Babbo Natale", "[ora] · Animazione e concerto di Natale del gruppo TAM"]],
+  [[20, "dom", "verde-cupola", "inchiostro", "Mercatino dell'hobbistica e mercato natalizio", "[ora] · Della Pro Loco, giochi in legno, concerto di Evoluzione Musica"],
+   [23, "mer", "ocra", "verde-loggia", "Letture danzanti", "Ore 18.00 in piazza · Prenotazione obbligatoria"],
+   [24, "gio", "rosso", "panna", "Il pomeriggio della Pro Loco", "[ora] · [luogo]"]],
+  [[26, "sab", "verde-loggia", "panna", "Smalti Panettone, la corsa podistica", "[ora] · A cura di Podistica Mottense"],
+   [5, "mar", "azzurro", "inchiostro", "Pan e Vin", "[ora] · A cura del CAI Motta"],
+   [6, "mer", "ocra", "verde-loggia", "Elfifania", "[ora] · Con il rinfresco della Pro Loco"]]
 ];
-async function programma(pagina, eventi, piede) {
+async function programma(pagina, eventi, piede, mese = "dicembre") {
   const [w, h] = POST; const f = cornice(`Programma ${pagina} · 1080×1350`, w, h); await colora(f, "rosa");
   marchioPost(f, "verde");
   await testo(f, "Titolo", "Il programma", "titolo-l", "verde-loggia", MEZZA, 175, null);
-  await testo(f, "Mese", "dicembre", "frase", "inchiostro", MEZZA, 290, null);
+  await testo(f, "Mese", mese, "frase", "inchiostro", MEZZA, 290, null);
   for (let i = 0; i < eventi.length; i++) {
     const [n, g, fondo, inchiostro, titolo, nota] = eventi[i]; const y = 405 + i * 270;
     const riga = figma.createFrame(); riga.name = `Giorno ${n}`; riga.resize(w, 270); riga.x = 0; riga.y = y; riga.fills = []; f.appendChild(riga);
@@ -337,8 +382,10 @@ async function main() {
   await figma.setCurrentPageAsync(pTpl);
   const cornici = [];
   cornici.push(await annuncio());
-  cornici.push(await programma("1 di 2", EVENTI[0], "Scorri per le altre date →"));
-  cornici.push(await programma("2 di 2", EVENTI[1], "#MottaANatale"));
+  cornici.push(await programma("1 di 4", EVENTI[0], "Scorri per le altre date →"));
+  cornici.push(await programma("2 di 4", EVENTI[1], "Scorri per le altre date →"));
+  cornici.push(await programma("3 di 4", EVENTI[2], "Scorri per le altre date →"));
+  cornici.push(await programma("4 di 4", EVENTI[3], "#mottanatale", "dicembre e gennaio"));
   cornici.push(await evento());
   cornici.push(await storia());
   for (const b of await botteghe()) cornici.push(b);
@@ -349,6 +396,7 @@ async function main() {
   let x = 0;
   for (const c of cornici) { pTpl.appendChild(c); c.x = x; c.y = 0; x += c.width + 120; }
   figma.viewport.scrollAndZoomIntoView(cornici);
+  if (STILE_SENZA_OPSZ) avvisi.push("Dimensione ottica 11 applicata a ogni testo Bodoni (gli stili di testo di questa versione di Figma non la salvano)");
   figma.notify(`Motta a Natale: ${cornici.length} template creati` + (avvisi.length ? ` · ${avvisi.length} avvisi sui font` : ""), { timeout: 6000 });
   if (avvisi.length) console.warn(avvisi.join("\n"));
 }

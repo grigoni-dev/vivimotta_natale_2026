@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposte carattere</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Gloock&family=Chonburi&family=Young+Serif&display=swap">
+<style>
+main{max-width:1260px;margin:0 auto}
+h1{font-family:var(--font-sans);font-weight:800;font-size:40px;color:var(--verde-loggia)}
+.intro{font:500 17px/1.5 var(--font-sans);max-width:74ch;margin-top:10px}
+section{margin-top:48px;padding-top:24px;border-top:1px solid rgba(43,32,25,.18)}
+h2{font:800 26px/1.2 var(--font-sans);color:var(--verde-loggia)}
+h2 small{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--rosso);margin-right:10px}
+.descr{font:500 15px/1.5 var(--font-sans);max-width:80ch;margin-top:8px}
+.riga{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px;align-items:flex-start}
+/* Le cornici mostrano il post a 1/3, circa come appare sul telefono. */
+.mini{width:360px;height:450px;overflow:hidden;flex:none;box-shadow:0 1px 2px rgba(43,32,25,.12),0 8px 24px rgba(43,32,25,.1)}
+.mini .post{transform:scale(.3333)}
+.dettaglio{width:520px;background:var(--rosa);padding:28px 32px;color:var(--verde-loggia)}
+.dettaglio .r{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+.dettaglio .cas{width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--verde-loggia);color:var(--panna)}
+.dettaglio .cas small{font:800 11px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.dettaglio .cas b{font-size:80px;line-height:.8}
+.dettaglio p.t{font-size:30px;line-height:1.02}
+.dettaglio p.f{font-size:26px;margin-top:18px;color:var(--inchiostro)}
+.nota-f{font:600 13px/1.4 var(--font-sans);color:#4a3f36;margin-top:8px;max-width:520px}
+</style>
+</head>
+<body>
+<main>
+<h1>Il carattere dei titoli e dei numeri</h1>
+<p class="intro">Ogni proposta è applicata al post evento, ridotto a circa un terzo, cioè più o meno come si vede sul telefono, e a un dettaglio del programma: numero del giorno, nome dell'attività e frase in corsivo. Sono tutti caratteri gratuiti su Google Fonts, quindi già disponibili in Figma. Il marchio resta quello disegnato: le sue lettere sono già convertite in forme e non dipendono dal font.</p>
+<div id="proposte"></div>
+</main>
+<script>
+const P=[
+ {n:"1",t:"Bodoni Moda, versione robusta",f:"'Bodoni Moda'",wN:900,wT:800,fv:"'opsz' 11",it:"'Bodoni Moda'",itw:500,itfv:"'opsz' 11",
+  d:"Lo stesso carattere, impostato sulla dimensione ottica piccola: linee sottili più spesse, tutto il resto uguale. In Figma si imposta nelle opzioni del testo (Type details → Variable → Optical size = 11) e si salva negli stili, oppure lo fa il plugin se Figma lo permette.",
+  nota:"Nessun cambio di identità. Da verificare: che il Bodoni Moda di Figma mostri l'asse della dimensione ottica."},
+ {n:"2",t:"Libre Bodoni",f:"'Libre Bodoni'",wN:700,wT:700,fv:"normal",it:"'Libre Bodoni'",itw:500,itfv:"normal",
+  d:"Un Bodoni disegnato per i testi: contrasto più basso, linee sottili robuste, corsivo vero. Il più vicino al sistema attuale; i numeri sono meno \"grassi\" perché il peso massimo è il Bold.",
+  nota:"Stessa famiglia di gusto, cambia poco. Ha il corsivo, quindi copre anche la frase."},
+ {n:"3",t:"Gloock",f:"'Gloock'",wN:400,wT:400,fv:"normal",it:"'Bodoni Moda'",itw:500,itfv:"'opsz' 11",
+  d:"Bodoniano con le grazie morbide e il contrasto controllato: regge bene in piccolo e ha più carattere. Un solo peso, molto nero: perfetto per numeri e titoli.",
+  nota:"Non ha il corsivo: la frase resterebbe in Bodoni Moda corsivo robusto (come qui)."},
+ {n:"4",t:"Chonburi",f:"'Chonburi'",wN:400,wT:400,fv:"normal",it:"'Bodoni Moda'",itw:500,itfv:"'opsz' 11",
+  d:"Un \"fat face\" ottocentesco, da manifesto: tratti spessi e sottili entrambi solidi. Il più festoso e il più leggibile in piccolo; più rétro degli altri.",
+  nota:"Un solo peso, niente corsivo: la frase resterebbe in Bodoni Moda."},
+ {n:"5",t:"Young Serif",f:"'Young Serif'",wN:400,wT:400,fv:"normal",it:"'Libre Bodoni'",itw:500,itfv:"normal",
+  d:"Esce dal bodoniano: una serif calda e robusta, quasi senza contrasto. La più leggibile in assoluto, ma perde l'eleganza che lega titoli e marchio.",
+  nota:"Un solo peso, niente corsivo: la frase andrebbe in Libre Bodoni corsivo (come qui)."}
+];
+const evento=p=>`<div class="mini"><div class="post" style="background:var(--verde-loggia);color:var(--panna)">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="">
+  <div class="abs arco" style="left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--rosso);align-items:flex-end">
+    <div style="font-family:${p.f};font-weight:${p.wN};font-variation-settings:${p.fv};font-size:700px;line-height:.74;letter-spacing:-.03em;color:var(--panna);margin-bottom:-24px">5</div></div>
+  <div class="abs" style="left:var(--mezza);top:850px;width:810px">
+    <h3 style="font-family:${p.f};font-weight:${p.wT};font-variation-settings:${p.fv};font-size:104px;line-height:.98;letter-spacing:-.015em">Luci accese,<br>pista aperta</h3>
+    <p class="corpo" style="margin-top:20px">Musica, pattinaggio gratuito, Babbo Natale e il presepe.</p>
+    <p class="info" style="margin-top:22px;color:var(--ocra)">Sabato 5 dicembre · [luogo]</p></div>
+  <div class="abs casella timbro"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+</div></div>`;
+const dettaglio=p=>`<div><div class="dettaglio">
+  <div class="r"><div class="cas"><small>sab</small><b style="font-family:${p.f};font-weight:${p.wN};font-variation-settings:${p.fv}">12</b></div>
+  <p class="t" style="font-family:${p.f};font-weight:${p.wT};font-variation-settings:${p.fv}">Concerto dell'Orchestra dei Fiati della Livenza</p></div>
+  <p class="f" style="font-family:${p.it};font-weight:${p.itw};font-style:italic;font-variation-settings:${p.itfv}">Eventi e intrattenimento per tutta la famiglia.</p>
+</div><p class="nota-f">${p.nota}</p></div>`;
+document.getElementById("proposte").innerHTML=P.map(p=>`<section><h2><small>Proposta ${p.n}</small>${p.t}</h2><p class="descr">${p.d}</p><div class="riga">${evento(p)}${dettaglio(p)}</div></section>`).join("");
+</script>
+</body>
+</html>

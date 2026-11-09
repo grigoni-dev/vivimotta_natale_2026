@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposte nome</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+main{max-width:1240px;margin:0 auto}
+h1{font-family:var(--font-numeri);font-weight:800;font-size:56px;line-height:1;color:var(--verde-loggia)}
+.intro{font:500 17px/1.5 var(--font-sans);max-width:72ch;margin-top:12px}
+section{margin-top:64px;padding-top:28px;border-top:1px solid rgba(43,32,25,.18)}
+h2{font-family:var(--font-numeri);font-weight:800;font-size:40px;line-height:1.05;color:var(--verde-loggia)}
+h2 small{font-family:var(--font-sans);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--rosso);margin-right:12px;vertical-align:middle}
+.descr{font:500 16px/1.5 var(--font-sans);max-width:72ch;margin-top:10px}
+.riga{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px;align-items:flex-start}
+.campo{width:300px;height:300px;display:flex;align-items:center;justify-content:center}
+.piccoli{display:flex;flex-direction:column;gap:14px;font:600 13px/1.3 var(--font-sans);color:#4a3f36;max-width:230px}
+.piccoli .coppia{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.piccoli .coppia > div{padding:10px}
+
+/* I marchi: Bodoni Moda, la stella a quattro punte al posto della "a". */
+.mk{font-family:var(--font-numeri);line-height:1;white-space:nowrap;display:inline-block}
+.mk .r{font-weight:800;letter-spacing:-.01em}
+.mk .it{font-weight:500;font-style:italic}
+.mk svg{display:inline-block}
+.mk2 .st{position:relative;display:inline-flex;align-items:center;justify-content:center;vertical-align:-.12em;margin:0 .06em}
+.mk2 .st svg{width:.9em;height:.9em}
+.mk2 .st b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:600;font-style:italic;font-size:.34em;padding-bottom:.08em}
+</style>
+</head>
+<body>
+<main>
+<h1>Motta ✦ Natale</h1>
+<p class="intro">Il nome si legge <em>Motta a Natale</em>: la "a" in mezzo diventa la stella a quattro punte della campagna. Tre modi di comporlo, tutti in Bodoni Moda, più il marchio attuale per confronto. Ognuno è mostrato su tre fondi, in piccolo come appare sul telefono (circa 100px e 60px) e applicato al post evento e all'annuncio. Hashtag: <strong>#MottaANatale</strong>.</p>
+<div id="proposte"></div>
+</main>
+<script>
+const S='<svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 0 Q108 92 200 100 Q108 108 100 200 Q92 108 0 100 Q92 92 100 0Z" fill="currentColor"/></svg>';
+const V={v:"var(--verde-loggia)",r:"var(--rosso)",p:"var(--panna)",o:"var(--ocra)"};
+
+// fs = corpo del testo in px; t = colore del nome; a = colore della stella; f = colore del fondo (serve alla "a" dentro la stella)
+const marchi={
+ riga:(fs,t,a)=>`<span class="mk" style="font-size:${fs}px;color:${t}"><span class="r">Motta</span><span style="color:${a};display:inline-block;width:.46em;height:.46em;margin:0 .13em;vertical-align:.06em">${S}</span><span class="r">Natale</span></span>`,
+ dentro:(fs,t,a,f)=>`<span class="mk mk2" style="font-size:${fs}px;color:${t}"><span class="r">Motta</span><span class="st" style="color:${a}">${S}<b style="color:${f}">a</b></span><span class="r">Natale</span></span>`,
+ righe:(fs,t,a)=>`<span class="mk" style="font-size:${fs}px;color:${t}"><span class="r" style="display:block">Motta</span><span style="display:block;margin-top:.04em"><span style="color:${a};display:inline-block;width:.5em;height:.5em;margin-right:.14em;vertical-align:.02em">${S}</span><span class="it" style="color:${a}">Natale</span></span></span>`,
+ attuale:(fs,t,a)=>`<img src="../design-system/marchio/marchio-${t===V.p?(a===V.o?"panna-ocra":"panna"):(a===V.r?"verde-rosso":"verde")}.svg" alt="" style="height:${fs*2.04}px;display:block">`
+};
+
+// [colore fondo del campo, colore nome, colore stella]
+const fondi=[[V.v,V.p,V.o],[V.r,V.p,V.p],["var(--panna)",V.v,V.r]];
+
+const proposte=[
+ {k:"riga",n:"1",t:"Su una riga",fsG:36,fsS:[30,18],fsPost:54,fsAnn:112,d:"\"Motta ✦ Natale\": la stella sta all'altezza delle minuscole, tra le due parole, come una lettera. È la versione più pulita; la \"a\" si capisce dall'hashtag e dalle didascalie che la scrivono per esteso."},
+ {k:"dentro",n:"2",t:"La stella con la \"a\" dentro",fsG:36,fsS:[30,18],fsPost:54,fsAnn:112,d:"Una piccola \"a\" corsiva al centro della stella, nel colore del fondo: si legge sempre \"a\". Il rischio: in piccolo la stella diventa un pallino con una lettera, e la \"a\" a 60px sparisce."},
+ {k:"righe",n:"3",t:"Su due righe",fsG:62,fsS:[40,24],fsPost:50,fsAnn:118,d:"\"Motta\" sopra, \"✦ Natale\" sotto in corsivo: la stella apre la seconda riga dove prima c'era \"a\", come nel marchio attuale. Diventa un blocco quasi quadrato: perfetto per profilo, annuncio e timbri."},
+ {k:"attuale",n:"—",t:"Per confronto: Vivi Motta a Natale",fsG:38,fsS:[30,18],fsPost:50,fsAnn:118,d:"Il marchio attuale, alla stessa scala."}
+];
+
+function evento(p){
+  return `<div class="cornice"><div class="post" style="background:var(--verde-loggia);color:var(--panna)">
+   <div class="abs" style="left:var(--mezza);top:40px">${marchi[p.k](p.fsPost,V.p,V.o,"var(--verde-loggia)")}</div>
+   <div class="abs arco" style="left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--rosso);align-items:flex-end"><div class="numero-xl" style="color:var(--panna);font-size:700px;margin-bottom:-24px">5</div></div>
+   <div class="abs" style="left:var(--mezza);top:850px;width:810px"><h3 class="titolo-l">Luci accese,<br>pista aperta</h3>
+     <p class="corpo" style="margin-top:20px">Musica, pattinaggio gratuito, Babbo Natale e il presepe.</p>
+     <p class="info" style="margin-top:22px;color:var(--ocra)">Sabato 5 dicembre · [luogo]</p></div>
+   <div class="abs casella timbro"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+  </div></div>`;
+}
+function annuncio(p){
+  return `<div class="cornice"><div class="post" style="background:var(--rosso);color:var(--panna)">
+   <div class="abs arco" style="left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--panna);align-items:flex-end"><img src="../design-system/illustrazioni/albero.svg" alt="" style="width:560px;display:block;margin-bottom:-4px"></div>
+   <div class="abs" style="left:var(--mezza);top:840px;width:945px">${marchi[p.k](p.fsAnn,V.p,V.p,"var(--rosso)")}
+     <p class="frase" style="margin-top:22px">Eventi e intrattenimento per tutta la famiglia.</p></div>
+   <p class="abs info" style="left:var(--mezza);bottom:52px">Dal 5 dicembre al 6 gennaio</p>
+  </div></div>`;
+}
+
+document.getElementById("proposte").innerHTML=proposte.map(p=>`
+<section>
+  <h2><small>${p.n==="—"?"Riferimento":"Proposta "+p.n}</small>${p.t}</h2>
+  <p class="descr">${p.d}</p>
+  <div class="riga">${fondi.map(([f,t,a])=>`<div class="campo" style="background:${f}">${marchi[p.k](p.fsG,t,a,f)}</div>`).join("")}
+    <div class="piccoli"><div class="coppia">
+      <div style="background:var(--verde-loggia)">${marchi[p.k](p.fsS[0],V.p,V.o,"var(--verde-loggia)")}</div>
+      <div style="background:var(--verde-loggia)">${marchi[p.k](p.fsS[1],V.p,V.o,"var(--verde-loggia)")}</div>
+    </div><span>Come appare sul telefono, alle due misure più piccole d'uso.</span></div>
+  </div>
+  <div class="riga">${evento(p)}${annuncio(p)}</div>
+</section>`).join("");
+</script>
+</body>
+</html>

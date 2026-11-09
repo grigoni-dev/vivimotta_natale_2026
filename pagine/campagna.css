@@ -1,0 +1,36 @@
+/* Impaginazione comune degli esempi. I valori di colore e tipo sono in ../design-system/tokens.css */
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..900;1,6..96,500..900&family=Archivo:wght@500;600;800;900&display=swap");
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#d6d8d7}
+body{margin:0;padding:32px 24px 48px;font-family:var(--font-sans);color:var(--inchiostro)}
+::selection{background:var(--rosso);color:var(--panna)}
+
+.foglio{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;align-items:flex-start}
+.didascalia{flex-basis:100%;text-align:center;font:600 15px/1.4 var(--font-sans);color:#5a4d42;margin-top:-8px}
+
+/* Cornice di anteprima: il post resta a misura reale e viene ridotto al 50%. */
+.cornice{width:540px;height:675px;overflow:hidden;flex:none;box-shadow:0 1px 2px rgba(43,32,25,.12),0 8px 24px rgba(43,32,25,.10)}
+.cornice.storia{height:960px}
+.post{width:1080px;height:1350px;position:relative;overflow:hidden;transform:scale(.5);transform-origin:0 0}
+.storia .post{height:1920px}
+
+.abs{position:absolute}
+
+/* Casella: quadrata, spigolo vivo, accostata senza spazio. */
+.griglia{display:grid;grid-template-columns:repeat(8,var(--casella));grid-auto-rows:var(--casella)}
+.casella{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.casella > img{position:absolute;left:-0.5px;top:-0.5px;width:calc(100% + 1px);height:calc(100% + 1px);display:block}
+.casella .n{font-family:var(--font-numeri);font-weight:900;font-size:76px;line-height:1;position:relative}
+.casella .m{position:absolute;left:14px;top:14px;font:800 22px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.abs.casella{position:absolute}
+
+/* Marchio della campagna: in alto a sinistra, largo 190px, sempre su un fondo pieno. */
+.marchio{left:var(--mezza);top:20px;width:190px;height:auto}
+
+
+/* Finestra ad arco: raggio = metà della larghezza. */
+.arco{border-radius:999px 999px 0 0;overflow:hidden;display:flex;justify-content:center}
+
+/* Timbro: l'unica tessera del post, nell'angolo in basso a destra. */
+.timbro{right:0;bottom:0;width:var(--casella);height:var(--casella)}

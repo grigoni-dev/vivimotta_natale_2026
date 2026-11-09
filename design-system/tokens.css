@@ -1,0 +1,37 @@
+/* Motta a Natale — generato da tokens.json */
+:root, [data-theme="light"] {
+  --panna: #f4ecdc;
+  --bianco: #ffffff;
+  --verde-loggia: #1a5548;
+  --verde-cupola: #2e9c8e;
+  --rosso: #bd3128;
+  --rosa: #f3b2c1;
+  --ocra: #e8a63a;
+  --azzurro: #86b6de;
+  --inchiostro: #2b2019;
+  --biscotto: #b8743e;
+}
+:root {
+  /* Il passo della casella governa tutto: post 8×10 caselle, storie 9×16. */
+  --casella: 135px;
+  --casella-storia: 120px;
+  --mezza: 67.5px;
+  --casella-logo: 216px; /* solo per i loghi degli sponsor */
+  --retto: 0px;
+  --arco: 999px 999px 0 0; /* semicerchio: raggio = metà larghezza */
+  --font-numeri: "Bodoni Moda", "Bodoni 72", Didot, serif;
+  --font-sans: Archivo, "Helvetica Neue", Arial, sans-serif;
+}
+/* Numeri del calendario: il giorno è il protagonista. */
+.numero-xl { font-family: var(--font-numeri); font-size: 700px; line-height: 0.74; font-weight: 900; letter-spacing: -0.03em; font-variation-settings: "opsz" 28; }
+.numero-m  { font-family: var(--font-numeri); font-size: 76px;  line-height: 1;    font-weight: 900; }
+.numero-s  { font-family: var(--font-numeri); font-size: 44px;  line-height: 1;    font-weight: 900; }
+/* Titoli: stessa famiglia del numero, in tondo, frasi concrete. */
+.titolo-l  { font-family: var(--font-numeri); font-size: 104px; line-height: 0.98; font-weight: 800; letter-spacing: -0.015em; }
+.titolo-m  { font-family: var(--font-numeri); font-size: 76px;  line-height: 1;    font-weight: 800; letter-spacing: -0.01em; }
+.frase     { font-family: var(--font-numeri); font-size: 44px;  line-height: 1.15; font-weight: 500; font-style: italic; }
+/* Informazioni pratiche: quando e dove. */
+.info      { font-family: var(--font-sans); font-size: 40px; line-height: 1.2;  font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.etichetta { font-family: var(--font-sans); font-size: 22px; line-height: 1;    font-weight: 800; letter-spacing: 0.1em;  text-transform: uppercase; }
+.corpo     { font-family: var(--font-sans); font-size: 36px; line-height: 1.35; font-weight: 500; }
+.nota      { font-family: var(--font-sans); font-size: 24px; line-height: 1.3;  font-weight: 600; }

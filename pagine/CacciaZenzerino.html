@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CacciaZenzerino</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+.cz{background:var(--verde-loggia);color:var(--panna)}
+.cz .griglia{left:0;top:0}
+.cz .testo{left:var(--mezza);top:1110px;width:740px}
+.cz .titolo-l{font-size:96px;white-space:nowrap}
+.cz .corpo{margin-top:12px}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="cornice"><div class="post cz">
+  <div class="abs griglia" id="caccia" aria-label="Griglia di tessere con Zenzerino nascosto"></div>
+  <div class="abs testo">
+    <h1 class="titolo-l">Dov'è Zenzerino?</h1>
+    <p class="corpo">Trovalo qui sopra, poi cercalo nelle vetrine delle botteghe di Motta.</p>
+  </div>
+  <img class="abs" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale" style="right:var(--mezza);bottom:40px;width:170px">
+</div></div>
+<p class="didascalia">Caccia a Zenzerino · 8×8 caselle, una sola Zenzerino, in un posto diverso ogni volta.</p>
+</div>
+<script>
+// Disposizione fissa ma irregolare: nessuna tessera accanto a una uguale o con lo stesso fondo.
+const fondo={abete:"p",caramella:"p",corona:"p",righe:"p",stella:"v",bastoncino:"v",fiocco:"v",portici:"o",regalo:"o",onda:"a",candela:"r",stellina:"r",pois:"R",pallina:"R",campana:"R"};
+const nomi=Object.keys(fondo);
+let seme=11;const caso=()=>(seme=(seme*48271)%2147483647)/2147483647;
+const Z=37, celle=[];
+for(let i=0;i<64;i++){
+  if(i===Z){celle.push("zenzerino");continue}
+  const vicini=[i%8?celle[i-1]:null,i>=8?celle[i-8]:null].filter(Boolean);
+  const bg=n=>n==="zenzerino"?"r":fondo[n];
+  let n;do{n=nomi[Math.floor(caso()*nomi.length)]}while(vicini.some(v=>v===n||bg(v)===bg(n))||(i===Z+1&&bg(n)==="r")||(i===Z+8&&bg(n)==="r"));
+  celle.push(n);
+}
+document.getElementById("caccia").innerHTML=celle.map(n=>`<div class="casella"><img src="../design-system/tessere/${n}.svg" alt=""></div>`).join("");
+</script>
+</body>
+</html>

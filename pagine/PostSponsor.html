@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostSponsor</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+.sp{background:var(--verde-loggia);color:var(--panna)}
+.sp .titolo-l{left:var(--mezza);top:175px}
+.sp .corpo{left:var(--mezza);top:400px;width:880px}
+/* 15 caselle da 216px (5×3) a tutta larghezza: 7 loghi su bianco, 8 tessere (regalo, pallina, bastoncino) agli angoli e in mezzo. */
+.sp .scacchiera{left:0;bottom:0;display:grid;grid-template-columns:repeat(5,216px);grid-auto-rows:216px}
+.sp .marchio-sponsor{background:var(--bianco);display:flex;align-items:center;justify-content:center;color:var(--inchiostro);text-align:center}
+.sp .marchio-sponsor .segno{width:151px;height:151px;border:2px dashed rgba(43,32,25,.3);display:flex;align-items:center;justify-content:center;font:600 16px/1.3 var(--font-sans);letter-spacing:.08em;text-transform:uppercase}
+.sp .marchio-sponsor .nome{font-family:var(--font-numeri);font-weight:800;font-size:34px;line-height:1.02;padding:0 18px;color:var(--verde-loggia)}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="cornice"><div class="post sp">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <h1 class="abs titolo-l">Il Natale in centro<br>lo firmano loro</h1>
+  <p class="abs corpo">Queste attività sostengono il Natale nel centro di Motta. Grazie.</p>
+  <div class="abs scacchiera" id="scacchiera" aria-label="Le attività che sostengono Motta a Natale"></div>
+</div></div>
+<p class="didascalia">Post sponsor 1080×1350 · un post singolo ogni 7 attività. I loghi stanno su caselle bianche (al massimo il 70% della casella, centrati); se un logo non è leggibile, al suo posto il nome in Bodoni (come nella casella al centro). Le caselle grafiche sono le tessere regalo, pallina e bastoncino.</p>
+</div>
+<script>
+// Regalo, pallina, bastoncino. Il bastoncino (fondo verde-loggia) mai nella riga in alto, che tocca il fondo verde.
+const tessere=["regalo","pallina","regalo","bastoncino","bastoncino","pallina","regalo","pallina"];
+let t=0, l=0, html="";
+for(let r=0;r<3;r++)for(let c=0;c<5;c++){
+  if((r+c)%2===0){ html+=`<div class="casella"><img src="../design-system/tessere/${tessere[t++]}.svg" alt=""></div>`; }
+  else { l++; html+= l===4 ? `<div class="casella marchio-sponsor"><span class="nome">Nome attività</span></div>`
+                            : `<div class="casella marchio-sponsor"><span class="segno">logo</span></div>`; }
+}
+document.getElementById("scacchiera").innerHTML=html;
+</script>
+</body>
+</html>

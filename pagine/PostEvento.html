@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostEvento</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+.ev{background:var(--verde-loggia);color:var(--panna)}
+/* L'arco è la casella del giorno aperta: 6 caselle di larghezza, 5 di altezza, nel colore fisso del giorno. */
+.ev .finestra{left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--rosso);align-items:flex-end}
+.ev .finestra .numero-xl{color:var(--panna);font-size:700px;margin-bottom:-24px}
+.ev .testo{left:var(--mezza);top:850px;width:810px}
+.ev .corpo{margin-top:20px}
+.ev .info{margin-top:22px;color:var(--ocra)}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="cornice"><div class="post ev">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <div class="abs arco finestra"><div class="numero-xl">5</div></div>
+  <div class="abs testo">
+    <h1 class="titolo-l">Luci accese,<br>pista aperta</h1>
+    <p class="corpo">Musica, pattinaggio gratuito, Babbo Natale e il presepe.</p>
+    <p class="info">Sabato 5 dicembre · [luogo]</p>
+  </div>
+  <div class="abs casella timbro"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+</div></div>
+<p class="didascalia">Post evento 1080×1350 · il giorno dell'evento nell'arco, nel suo colore fisso (il 5 è rosso). Il marchio in alto a sinistra, una sola tessera nell'angolo. Il luogo va preso dal programma.</p>
+</div>
+</body>
+</html>

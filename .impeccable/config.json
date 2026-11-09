@@ -1,0 +1,98 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/CacciaZenzerino.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.387Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/CaroselloBotteghe.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.433Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/CaroselloSponsor.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.478Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/PostAnnuncio.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.532Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/PostEvento.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.570Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/PostProgramma.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.609Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/Storia.html"
+        ],
+        "createdAt": "2026-11-09T11:50:57.645Z",
+        "reason": "model decision: mosaic tiles and logo casella bleed to the post edge by design (full-bleed Instagram tile grid)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/Mosaico.html"
+        ],
+        "createdAt": "2026-11-09T12:03:48.878Z",
+        "reason": "model decision: specimen swatch frames a full-bleed casella sample on its post ground by design"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/PostSponsor.html"
+        ],
+        "createdAt": "2026-11-09T16:01:48.327Z",
+        "reason": "model decision: full-bleed tile grid / post frame bleeds to edge by design"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/PostOffertoDa.html"
+        ],
+        "createdAt": "2026-11-09T16:01:48.374Z",
+        "reason": "model decision: full-bleed tile grid / post frame bleeds to edge by design"
+      }
+    ]
+  }
+}

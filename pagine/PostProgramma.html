@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostProgramma</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+.pr{background:var(--rosa);color:var(--verde-loggia)}
+.pr .titolo-l{left:var(--mezza);top:175px}
+.pr .mese{left:var(--mezza);top:290px;color:var(--inchiostro)}
+/* Tre eventi per pagina: casella del giorno da 270px a filo sinistro, testo accanto. */
+.pr .eventi{left:0;top:405px;width:1080px;list-style:none}
+.pr .eventi li{display:grid;grid-template-columns:270px 1fr;height:270px}
+.pr .eventi .casella{width:270px;height:270px;flex-direction:column}
+.pr .eventi .casella .n{font-size:180px;letter-spacing:-.03em;line-height:.8}
+.pr .eventi .casella .m{position:static;font-size:22px;margin-bottom:22px}
+.pr .eventi .testo{padding:0 var(--mezza) 0 44px;display:flex;flex-direction:column;justify-content:center}
+.pr .eventi h2{font-family:var(--font-numeri);font-weight:800;font-size:58px;line-height:1.02;letter-spacing:-.01em}
+.pr .eventi .nota{margin-top:14px;color:var(--inchiostro);font-size:26px}
+.pr .piede{left:var(--mezza);right:var(--mezza);bottom:52px;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="foglio" id="pagine"></div>
+<script>
+// Ogni giorno con evento ha il suo colore fisso, uguale in tutta la campagna.
+const pagine=[
+ {piede:"Scorri per le altre date →",eventi:[
+  [5,"sab","--rosso","--panna","Si accendono le luci, apre la pista di pattinaggio","[ora] · [luogo]"],
+  [6,"dom","--ocra","--verde-loggia","San Nicolò con la parrocchia","[ora] · [luogo]"],
+  [12,"sab","--verde-loggia","--panna","Concerto dell'Orchestra dei Fiati della Livenza","[ora] · [luogo]"]]},
+ {piede:"#MottaANatale",eventi:[
+  [13,"dom","--azzurro","--inchiostro","Christmas Gravel Ride con Zero 5 Bike Team","[ora] · [luogo]"],
+  [20,"dom","--verde-cupola","--inchiostro","Mercatino dell'hobbistica e mercato natalizio","[ora] · [luogo]"],
+  [23,"mer","--ocra","--verde-loggia","Letture danzanti nel centro","Ore 18.00 · [luogo]"]]}
+];
+document.getElementById("pagine").innerHTML=pagine.map(p=>`
+<div class="cornice"><div class="post pr">
+  <img class="abs marchio" src="../design-system/marchio/marchio-verde.svg" alt="Motta a Natale">
+  <h1 class="abs titolo-l">Il programma</h1>
+  <p class="abs frase mese">dicembre</p>
+  <ol class="abs eventi">${p.eventi.map(([n,g,b,c,t,i])=>`
+    <li><div class="casella" style="background:var(${b});color:var(${c})"><span class="m">${g}</span><span class="n">${n}</span></div>
+    <div class="testo"><h2>${t}</h2><p class="nota">${i}</p></div></li>`).join("")}
+  </ol>
+  <div class="abs piede nota"><span>${p.piede}</span></div>
+</div></div>`).join("")+`<p class="didascalia">Carosello del programma · solo i giorni con un'attività, tre per pagina, ognuno nel suo colore fisso. Titolo e posizioni uguali su tutte le pagine; orari e luoghi vanno presi dal programma.</p>`;
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposte marchio</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+main{max-width:1240px;margin:0 auto}
+h1{font-family:var(--font-numeri);font-weight:800;font-size:56px;line-height:1;color:var(--verde-loggia)}
+.intro{font:500 17px/1.5 var(--font-sans);max-width:70ch;margin-top:12px}
+section{margin-top:64px;padding-top:28px;border-top:1px solid rgba(43,32,25,.18)}
+h2{font-family:var(--font-numeri);font-weight:800;font-size:40px;line-height:1.05;color:var(--verde-loggia)}
+h2 small{font-family:var(--font-sans);font-weight:800;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--rosso);margin-right:12px;vertical-align:middle}
+.descr{font:500 16px/1.5 var(--font-sans);max-width:72ch;margin-top:10px}
+.riga{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px;align-items:flex-start}
+.campo{width:300px;height:300px;display:flex;align-items:center;justify-content:center}
+.piccoli{display:flex;flex-direction:column;gap:14px;font:600 13px/1.3 var(--font-sans);color:#4a3f36}
+.piccoli .coppia{display:flex;align-items:flex-end;gap:14px}
+
+/* Marchio 1 — Arco */
+.m-arco{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:999px 999px 0 0;font-family:var(--font-numeri);text-align:center}
+.m-arco .a{font-weight:900;letter-spacing:.06em;line-height:.9}
+.m-arco .b{font-weight:900;letter-spacing:.16em;line-height:1;margin-left:.16em}
+.m-arco .c{font-weight:500;font-style:italic;line-height:1}
+
+/* Marchio 2 — Casella */
+.m-cas{display:flex;flex-direction:column;justify-content:center;font-family:var(--font-numeri)}
+.m-cas .a{font-weight:900;line-height:.82;letter-spacing:-.02em}
+.m-cas .b{font-weight:900;line-height:1;letter-spacing:.075em}
+.m-cas .c{font-weight:500;font-style:italic;line-height:1}
+
+/* Marchio 3 — Firma con le stelle */
+.m-firma{font-family:var(--font-numeri);white-space:nowrap;line-height:1}
+.m-firma .a{font-weight:800;letter-spacing:-.01em}
+.m-firma .c{font-weight:500;font-style:italic}
+.m-firma .i{position:relative;display:inline-block}
+.m-firma .i svg{position:absolute;left:50%;transform:translateX(-50%);top:-.08em;width:.36em;height:.36em}
+</style>
+</head>
+<body>
+<main>
+<h1>Il marchio di Natale</h1>
+<p class="intro">Tre proposte per il marchio della campagna, tutte in Bodoni Moda. Firmano post e storie al posto della casella bianca col logo istituzionale, che resta per l'uso di tutto l'anno. Ogni proposta è mostrata in grande sui fondi della campagna, in piccolo (alla misura della casella da 135px e a 60px, come appare sul telefono) e applicata al post evento.</p>
+<div id="proposte"></div>
+</main>
+<script>
+const stella='<svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 0 Q108 92 200 100 Q108 108 100 200 Q92 108 0 100 Q92 92 100 0Z" fill="currentColor"/></svg>';
+const C={v:"var(--verde-loggia)",r:"var(--rosso)",p:"var(--panna)",o:"var(--ocra)",rs:"var(--rosa)"};
+
+// Ogni marchio è disegnato su una misura base (s = lato in px) e scala con essa.
+const marchi={
+ arco:(s,fondo,testo,acc)=>`<div class="m-arco" style="width:${s}px;height:${s*1.12}px;background:${fondo};color:${testo};padding-top:${s*.2}px">
+   <span class="a" style="font-size:${s*.3}px">VIVI</span>
+   <span class="b" style="font-size:${s*.17}px">MOTTA</span>
+   <span class="c" style="font-size:${s*.15}px;color:${acc};margin-top:${s*.06}px">a Natale</span></div>`,
+ casella:(s,fondo,testo,acc)=>`<div class="m-cas" style="width:${s}px;height:${s}px;background:${fondo};color:${testo};padding:0 ${s*.1}px">
+   <span class="a" style="font-size:${s*.4}px">Vivi</span>
+   <span class="b" style="font-size:${s*.172}px">MOTTA</span>
+   <span class="c" style="font-size:${s*.16}px;color:${acc};margin-top:${s*.05}px">a Natale</span></div>`,
+ firma:(s,fondo,testo,acc)=>`<div class="m-firma" style="font-size:${s*.17}px;color:${testo}">
+   <div class="a">V<span class="i" style="color:${acc}"><span style="color:${testo}">ı</span>${stella}</span>v<span class="i" style="color:${acc}"><span style="color:${testo}">ı</span>${stella}</span> Motta</div>
+   <div class="c" style="color:${acc};font-size:.8em;margin-top:.08em;padding-left:.05em">a Natale</div></div>`
+};
+
+const proposte=[
+ {k:"arco",n:"1",t:"L'arco",d:"Il nome dentro una finestra ad arco, come i portici: VIVI grande, MOTTA spaziato sotto, \"a Natale\" in corsivo. È l'arco del sistema, in piccolo. Funziona da solo su qualsiasi fondo, senza casella bianca.",
+  grandi:[[C.p,C.v,C.r,"var(--verde-loggia)"],[C.v,C.p,C.o,"var(--rosso)"],[C.r,C.p,C.p,"var(--verde-loggia)"]]},
+ {k:"casella",n:"2",t:"La casella",d:"Il nome composto dentro un quadrato, come una casella del giorno: \"Vivi\" enorme, MOTTA giustificato sotto alla stessa larghezza, \"a Natale\" in corsivo. Prende il posto esatto della casella bianca del logo, sul passo da 135px.",
+  grandi:[[C.v,C.p,C.o,"var(--rosa)"],[C.p,C.v,C.r,"var(--rosso)"],[C.r,C.p,C.p,"var(--verde-loggia)"]]},
+ {k:"firma",n:"3",t:"La firma con le stelle",d:"Il nome scritto come una firma, su due righe: i puntini delle due i diventano le stelle a quattro punte della campagna. È il più leggero dei tre, sta nell'angolo in alto a sinistra e non occupa caselle.",
+  grandi:[[null,C.v,C.r,"var(--panna)"],[null,C.p,C.o,"var(--verde-loggia)"],[null,C.p,C.p,"var(--rosso)"]]}
+];
+
+function postEvento(p){
+  const s=p.k==="firma"?null:135;
+  const marchio = p.k==="arco" ? `<div class="abs" style="right:var(--mezza);top:0">${marchi.arco(135,C.p,C.v,C.r)}</div>`
+    : p.k==="casella" ? `<div class="abs" style="right:0;top:0">${marchi.casella(135,C.p,C.v,C.r)}</div>`
+    : `<div class="abs" style="left:var(--mezza);top:30px">${marchi.firma(290,null,C.p,C.o)}</div>`;
+  const giorno = p.k==="firma" ? "" : `<p class="abs frase" style="left:var(--mezza);top:40px">sabato</p>`;
+  return `<div class="cornice"><div class="post" style="background:var(--verde-loggia);color:var(--panna)">
+    ${giorno}${marchio}
+    <div class="abs arco" style="left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--rosso);align-items:flex-end"><div class="numero-xl" style="color:var(--panna);font-size:700px;margin-bottom:-24px">5</div></div>
+    <div class="abs" style="left:var(--mezza);top:850px;width:810px"><h3 class="titolo-l">Luci accese,<br>pista aperta</h3>
+      <p class="corpo" style="margin-top:20px">Musica, pattinaggio gratuito, Babbo Natale e il presepe.</p>
+      <p class="info" style="margin-top:22px;color:var(--ocra)">Sabato 5 dicembre · [luogo]</p></div>
+  </div></div>`;
+}
+
+document.getElementById("proposte").innerHTML=proposte.map(p=>`
+<section>
+  <h2><small>Proposta ${p.n}</small>${p.t}</h2>
+  <p class="descr">${p.d}</p>
+  <div class="riga">${p.grandi.map(([f,t,a,campo])=>`<div class="campo" style="background:${campo}">${marchi[p.k](p.k==="firma"?260:200,f,t,a)}</div>`).join("")}</div>
+  <div class="riga">
+    <div class="piccoli"><div class="coppia">
+      <div style="background:${p.grandi[0][3]};padding:12px">${marchi[p.k](p.k==="firma"?150:67,p.grandi[0][0],p.grandi[0][1],p.grandi[0][2])}</div>
+      <div style="background:${p.grandi[0][3]};padding:8px">${marchi[p.k](p.k==="firma"?70:30,p.grandi[0][0],p.grandi[0][1],p.grandi[0][2])}</div>
+    </div><span>Come appare sul telefono: alla misura della casella da 135px e a 60px.</span></div>
+    ${postEvento(p)}
+  </div>
+</section>`).join("");
+</script>
+</body>
+</html>

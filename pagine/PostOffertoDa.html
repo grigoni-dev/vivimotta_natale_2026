@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostOffertoDa</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+.od{background:var(--verde-loggia);color:var(--panna)}
+/* Arco di 6×5 caselle con la foto dell'installazione. */
+.od .finestra{left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--panna);align-items:center}
+.od .segnaposto{font:800 22px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia);text-align:center;margin-top:120px}
+/* Firma dello sponsor: casella bianca da 216px col logo, accanto "offerta da" e il nome. */
+.od .firma{left:var(--mezza);bottom:60px;display:flex;align-items:center;gap:36px}
+.od .firma .logo-sponsor{width:216px;height:216px;background:var(--bianco);display:flex;align-items:center;justify-content:center}
+.od .firma .logo-sponsor span{width:151px;height:151px;border:2px dashed rgba(43,32,25,.3);display:flex;align-items:center;justify-content:center;font:600 16px/1.3 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro)}
+.od .firma .frase{color:var(--ocra)}
+.od .firma .nome{font-family:var(--font-numeri);font-weight:800;font-size:58px;line-height:1.02;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="cornice"><div class="post od">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <div class="abs arco finestra"><p class="segnaposto">Foto dell'installazione<br>verticale, luce naturale</p></div>
+  <h1 class="abs titolo-m" style="left:var(--mezza);top:846px;width:945px">Nome dell'installazione</h1>
+  <div class="abs firma">
+    <div class="logo-sponsor"><span>logo</span></div>
+    <div><p class="frase">offerta da</p><p class="nome">Nome dello sponsor</p></div>
+  </div>
+</div></div>
+<p class="didascalia">Post "Offerto da" 1080×1350 · uno per ogni installazione o attività offerta da un singolo sponsor (luci, albero, pista…). La foto nell'arco, il nome di ciò che è stato offerto come titolo, sotto la firma dello sponsor col logo su bianco. Se il logo non è leggibile, basta il nome.</p>
+</div>
+</body>
+</html>

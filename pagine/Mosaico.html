@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosaico</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+main{max-width:1100px;margin:0 auto}
+h1{font-family:var(--font-numeri);font-weight:800;font-size:56px;line-height:1;color:var(--verde-loggia)}
+h2{font-family:var(--font-numeri);font-weight:800;font-size:34px;line-height:1.1;color:var(--verde-loggia);margin:56px 0 8px}
+.intro,.spiega{font:500 17px/1.5 var(--font-sans);max-width:68ch;color:var(--inchiostro);margin-top:10px}
+.tessere{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:0;margin-top:20px}
+figure{margin:0}
+figure img{display:block;width:100%;aspect-ratio:1}
+figcaption{font:700 13px/1 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;padding:10px 0 18px;color:var(--inchiostro)}
+.stati{display:flex;flex-wrap:wrap;gap:28px;margin-top:20px}
+.stato{width:150px}
+.stato .fondo{width:150px;height:150px;display:flex;align-items:center;justify-content:center}
+.stato .casella{width:135px;height:135px}
+.stato p{font:500 14px/1.4 var(--font-sans);margin-top:10px;color:var(--inchiostro)}
+.stato b{display:block;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.campioni{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0;margin-top:20px}
+.campioni div{height:130px;padding:14px;font:700 14px/1.3 var(--font-sans)}
+.tipi{margin-top:20px;display:grid;gap:22px}
+.tipi div{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:baseline;border-top:1px solid rgba(43,32,25,.15);padding-top:14px}
+.tipi span{font:700 13px/1.3 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:#5a4d42}
+</style>
+</head>
+<body>
+<main>
+<h1>Il mosaico</h1>
+<p class="intro">Due famiglie di quadrati sullo stesso passo (135px nei post, 120px nelle storie): le <strong>caselle</strong> con il numero dei giorni di attività e le <strong>tessere</strong> con una figura piatta. Si accostano senza spazio.</p>
+
+<h2>Il marchio</h2>
+<p class="spiega">"Motta" in Bodoni Moda ExtraBold e sotto "✦ Natale" in corsivo: la stella prende il posto della "a" e si legge <em>Motta a Natale</em>. La stella è il simbolo della campagna. Il marchio sta in alto a sinistra, largo 190px, sempre su un fondo pieno e mai sopra una foto. Quattro versioni, una per fondo, in <code>design-system/marchio/</code>.</p>
+<div class="campioni" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+  <div style="background:var(--verde-loggia);height:160px;display:flex;flex-direction:column;justify-content:space-between"><img src="../design-system/marchio/marchio-panna-ocra.svg" alt="" style="width:130px"><span style="color:var(--panna)">panna-ocra · su verde-loggia</span></div>
+  <div style="background:var(--rosso);height:160px;display:flex;flex-direction:column;justify-content:space-between"><img src="../design-system/marchio/marchio-panna.svg" alt="" style="width:130px"><span style="color:var(--panna)">panna · su rosso</span></div>
+  <div style="background:var(--rosa);height:160px;display:flex;flex-direction:column;justify-content:space-between"><img src="../design-system/marchio/marchio-verde.svg" alt="" style="width:130px"><span style="color:var(--verde-loggia)">verde · su rosa e azzurro</span></div>
+  <div style="background:var(--panna);height:160px;display:flex;flex-direction:column;justify-content:space-between"><img src="../design-system/marchio/marchio-verde-rosso.svg" alt="" style="width:130px"><span style="color:var(--verde-loggia)">verde-rosso · su panna</span></div>
+</div>
+
+<h2>La casella del giorno</h2>
+<p class="spiega">Solo i giorni con un'attività hanno una casella. Ogni giorno ha un colore fisso, uguale in tutti i post, e mai uguale al fondo del post.</p>
+<div class="stati">
+  <div class="stato"><div class="fondo" style="background:var(--rosa)"><div class="casella" style="background:var(--rosso);color:var(--panna);flex-direction:column"><span class="m" style="position:static;margin-bottom:6px">sab</span><span class="n">5</span></div></div><p><b>Casella</b>Nel programma: numero grande, giorno della settimana sopra.</p></div>
+  <div class="stato"><div class="fondo" style="background:var(--verde-loggia)"><div class="casella arco" style="background:var(--rosso);color:var(--panna);align-items:flex-end"><span class="n" style="font-size:120px;margin-bottom:-14px">5</span></div></div><p><b>Aperta</b>Nel post e nella storia dell'evento la casella si apre ad arco.</p></div>
+</div>
+
+<h2>L'albero</h2>
+<p class="spiega">L'unica illustrazione grande della campagna, per l'annuncio e gli auguri. File in <code>design-system/illustrazioni/albero.svg</code>.</p>
+<div class="stati"><div style="width:270px;height:270px;background:var(--panna);display:flex;align-items:flex-end;justify-content:center;border-radius:135px 135px 0 0;overflow:hidden"><img src="../design-system/illustrazioni/albero.svg" alt="Albero di Natale" style="width:200px;display:block"></div></div>
+
+<h2>Le 18 tessere</h2>
+<p class="spiega">File SVG in <code>design-system/tessere/</code>, da caricare su Canva. Fondo e figura sono fissi. Si usano con parsimonia: una sola per post, nell'angolo, salvo la caccia a Zenzerino e le copertine. Le tessere di Motta sono <em>portici</em>, <em>cupola</em> (la Loggia), <em>campanile</em> (il Duomo) e <em>onda</em> (la Livenza).</p>
+<div class="tessere" id="tessere"></div>
+
+<h2>Colori</h2>
+<div class="campioni">
+  <div style="background:var(--verde-loggia);color:var(--panna)">verde-loggia<br>#1A5548 · fondo</div>
+  <div style="background:var(--rosso);color:var(--panna)">rosso<br>#BD3128 · fondo</div>
+  <div style="background:var(--rosa);color:var(--verde-loggia)">rosa<br>#F3B2C1 · fondo</div>
+  <div style="background:var(--azzurro);color:var(--inchiostro)">azzurro<br>#86B6DE · fondo</div>
+  <div style="background:var(--ocra);color:var(--inchiostro)">ocra<br>#E8A63A · caselle</div>
+  <div style="background:var(--panna);color:var(--verde-loggia)">panna<br>#F4ECDC · caselle e archi</div>
+  <div style="background:var(--verde-cupola);color:var(--inchiostro)">verde-cupola<br>#2E9C8E · caselle, tessera cupola</div>
+  <div style="background:var(--inchiostro);color:var(--panna)">inchiostro<br>#2B2019 · testi</div>
+</div>
+
+<h2>Caratteri</h2>
+<div class="tipi">
+  <div><span>numero · Bodoni Moda 900</span><p class="numero-m" style="color:var(--rosso)">5 · 12 · 24 · 31</p></div>
+  <div><span>titolo · Bodoni Moda 800</span><p class="titolo-m" style="color:var(--verde-loggia)">Luci accese, pista aperta</p></div>
+  <div><span>frase · Bodoni Moda 500 corsivo</span><p class="frase" style="font-size:36px">Eventi e intrattenimento per tutta la famiglia.</p></div>
+  <div><span>info · Archivo 800</span><p class="info" style="color:var(--verde-loggia)">Sabato 5 dicembre · [luogo]</p></div>
+  <div><span>corpo · Archivo 500</span><p class="corpo" style="font-size:24px">Musica, pattinaggio gratuito, Babbo Natale e il presepe in piazza.</p></div>
+</div>
+</main>
+<script>
+const nomi=["portici","cupola","campanile","onda","abete","stella","stellina","pallina","campana","candela","regalo","fiocco","corona","caramella","bastoncino","righe","pois","zenzerino"];
+document.getElementById("tessere").innerHTML=nomi.map(n=>`<figure><img src="../design-system/tessere/${n}.svg" alt=""><figcaption>${n}</figcaption></figure>`).join("");
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Copie della skill Impeccable per altri strumenti AI (resta solo .claude/)
+.agent/
+.agents/
+.devin/
+.opencode/
+.codex/
+.cursor/
+.gemini/
+
+# File locali di Impeccable
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+
+# Sistema
+.DS_Store

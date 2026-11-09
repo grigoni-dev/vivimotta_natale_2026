@@ -1,0 +1,440 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-11-09T17:07:02+00:00",
+ "title": "Design System: Motta a Natale 2026",
+ "extensions": {
+  "colorMeta": {
+   "verde-loggia": {
+    "role": "primary",
+    "displayName": "Verde Loggia",
+    "canonical": "#1a5548",
+    "tonalRamp": [
+     "#12221d",
+     "#143029",
+     "#173f35",
+     "#184a3f",
+     "#48776d",
+     "#81a29a",
+     "#baccc8",
+     "#e4ebe9"
+    ]
+   },
+   "rosso": {
+    "role": "primary",
+    "displayName": "Rosso Duomo",
+    "canonical": "#bd3128",
+    "tonalRamp": [
+     "#431713",
+     "#661e19",
+     "#89261f",
+     "#a32b24",
+     "#ca5a53",
+     "#db8e89",
+     "#ebc1be",
+     "#f7e6e5"
+    ]
+   },
+   "rosa": {
+    "role": "secondary",
+    "displayName": "Rosa Confetto",
+    "canonical": "#f3b2c1",
+    "tonalRamp": [
+     "#533e41",
+     "#815f66",
+     "#af808a",
+     "#d199a6",
+     "#f5c1cd",
+     "#f8d5dd",
+     "#fbe8ec",
+     "#fef6f8"
+    ]
+   },
+   "azzurro": {
+    "role": "secondary",
+    "displayName": "Azzurro Livenza",
+    "canonical": "#86b6de",
+    "tonalRamp": [
+     "#333f4a",
+     "#4a6174",
+     "#62839e",
+     "#749cbe",
+     "#9ec5e5",
+     "#bcd7ed",
+     "#dbe9f5",
+     "#f0f6fb"
+    ]
+   },
+   "ocra": {
+    "role": "tertiary",
+    "displayName": "Ocra della Torre",
+    "canonical": "#e8a63a",
+    "tonalRamp": [
+     "#503a18",
+     "#7c5922",
+     "#a7782c",
+     "#c78f33",
+     "#edb861",
+     "#f2ce93",
+     "#f8e4c4",
+     "#fcf4e7"
+    ]
+   },
+   "verde-cupola": {
+    "role": "tertiary",
+    "displayName": "Verde Cupola",
+    "canonical": "#2e9c8e",
+    "tonalRamp": [
+     "#183732",
+     "#1e544c",
+     "#257166",
+     "#29867a",
+     "#58b0a5",
+     "#8cc9c1",
+     "#c0e1dd",
+     "#e6f3f1"
+    ]
+   },
+   "biscotto": {
+    "role": "tertiary",
+    "displayName": "Biscotto",
+    "canonical": "#b8743e",
+    "tonalRamp": [
+     "#422b1a",
+     "#644024",
+     "#85552e",
+     "#9f6436",
+     "#c69065",
+     "#d8b395",
+     "#ead5c5",
+     "#f6eee8"
+    ]
+   },
+   "panna": {
+    "role": "neutral",
+    "displayName": "Panna Sportello",
+    "canonical": "#f4ecdc",
+    "tonalRamp": [
+     "#544f49",
+     "#827c73",
+     "#afa99d",
+     "#d2cabc",
+     "#f6f0e3",
+     "#f9f5ec",
+     "#fcf9f4",
+     "#fefdfb"
+    ]
+   },
+   "inchiostro": {
+    "role": "neutral",
+    "displayName": "Inchiostro",
+    "canonical": "#2b2019",
+    "tonalRamp": [
+     "#17120e",
+     "#1d1612",
+     "#231a14",
+     "#271d17",
+     "#554d47",
+     "#8a8480",
+     "#bfbcba",
+     "#e6e4e3"
+    ]
+   },
+   "bianco": {
+    "role": "neutral",
+    "displayName": "Bianco Logo",
+    "canonical": "#ffffff",
+    "tonalRamp": [
+     "#575554",
+     "#878684",
+     "#b7b6b6",
+     "#dbdbda",
+     "#ffffff",
+     "#ffffff",
+     "#ffffff",
+     "#ffffff"
+    ]
+   }
+  },
+  "typographyMeta": {
+   "numero-xl-storia": {
+    "displayName": "Numero XL storia",
+    "purpose": "Il giorno nell'arco della storia; esce dalla base di circa 28px."
+   },
+   "numero-xl": {
+    "displayName": "Numero XL",
+    "purpose": "Il giorno nell'arco del post evento; esce dalla base di circa 24px."
+   },
+   "numero-bottega": {
+    "displayName": "Numero bottega",
+    "purpose": "Numero d'ordine nella casella rossa da 270px di scheda e articolo."
+   },
+   "numero-programma": {
+    "displayName": "Numero programma",
+    "purpose": "Il giorno nella casella da 270px del programma."
+   },
+   "numero-m": {
+    "displayName": "Numero M",
+    "purpose": "Il numero in una casella da 135px."
+   },
+   "titolo-copertina": {
+    "displayName": "Titolo copertina",
+    "purpose": "\"Le botteghe di Motta\" sulla copertina del carosello."
+   },
+   "titolo-annuncio": {
+    "displayName": "Titolo annuncio",
+    "purpose": "Titolo d'auguri, nella struttura dell'annuncio. Nell'annuncio il titolo è il marchio."
+   },
+   "titolo-caccia": {
+    "displayName": "Titolo caccia",
+    "purpose": "\"Dov'è Zenzerino?\" sotto la griglia."
+   },
+   "titolo-l": {
+    "displayName": "Titolo L",
+    "purpose": "Titolo di evento, storia, programma, post sponsor e scheda; massimo due righe."
+   },
+   "titolo-m": {
+    "displayName": "Titolo M",
+    "purpose": "Nome dell'articolo nella fascia; nome dell'installazione nell'offerto da."
+   },
+   "nome-evento": {
+    "displayName": "Nome evento",
+    "purpose": "Nome dell'attività accanto alla casella del programma, massimo tre righe."
+   },
+   "nome-sponsor": {
+    "displayName": "Nome sponsor",
+    "purpose": "Nome dello sponsor nella firma dell'offerto da, in panna; stessa misura del nome evento."
+   },
+   "nome-sponsor-casella": {
+    "displayName": "Nome sponsor casella",
+    "purpose": "Nome al posto di un logo illeggibile nella casella bianca del post sponsor, in verde-loggia."
+   },
+   "frase-oggi": {
+    "displayName": "Frase oggi",
+    "purpose": "\"oggi è il\" sopra l'arco della storia.",
+    "fontStyle": "italic"
+   },
+   "frase": {
+    "displayName": "Frase",
+    "purpose": "Payoff dell'annuncio, mese del programma, sottotitolo della copertina, \"offerta da\" in ocra.",
+    "fontStyle": "italic"
+   },
+   "info": {
+    "displayName": "Info",
+    "purpose": "Data e luogo per esteso sotto il titolo; date dell'annuncio; \"L'idea regalo di …\" in ocra nella fascia dell'articolo.",
+    "textTransform": "uppercase"
+   },
+   "corpo": {
+    "displayName": "Corpo",
+    "purpose": "Descrizioni di massimo due righe."
+   },
+   "nota-programma": {
+    "displayName": "Nota programma",
+    "purpose": "Ora e luogo sotto il nome dell'evento nel programma."
+   },
+   "nota": {
+    "displayName": "Nota",
+    "purpose": "Hashtag, indirizzi, invito a scorrere."
+   },
+   "etichetta": {
+    "displayName": "Etichetta",
+    "purpose": "Giorno della settimana nella casella del giorno.",
+    "textTransform": "uppercase"
+   }
+  },
+  "shadows": [],
+  "motion": [],
+  "breakpoints": [
+   {
+    "name": "post",
+    "value": "1080px × 1350px"
+   },
+   {
+    "name": "storia",
+    "value": "1080px × 1920px"
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Casella del giorno",
+   "kind": "custom",
+   "refersTo": "casella-giorno",
+   "description": "Il giorno con un'attività, nel suo colore fisso: etichetta sopra, numero sotto. Nel programma 270px a filo sinistro.",
+   "html": "<div class=\"ds-riga\"><div class=\"ds-casella\" tabindex=\"0\"><span class=\"ds-m\">sab</span><span class=\"ds-n\">5</span></div><div class=\"ds-casella ds-chiara\" tabindex=\"0\"><span class=\"ds-m\">dom</span><span class=\"ds-n\">6</span></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-riga{display:flex;background:var(--rosa)}.ds-casella{width:135px;height:135px;background:var(--rosso);color:var(--panna);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:0;outline:none}.ds-chiara{background:var(--ocra);color:var(--verde-loggia)}.ds-m{font:800 11px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:11px}.ds-n{font-family:var(--font-numeri);font-weight:900;font-size:90px;line-height:.8;letter-spacing:-.03em}.ds-casella:focus-visible{box-shadow:inset 0 0 0 4px var(--panna)}.ds-chiara:focus-visible{box-shadow:inset 0 0 0 4px var(--verde-loggia)}"
+  },
+  {
+   "name": "Riga del programma",
+   "kind": "card",
+   "refersTo": "casella-giorno",
+   "description": "Casella del giorno a sinistra, nome evento e nota programma accanto, su fondo rosa.",
+   "html": "<div class=\"ds-prog\"><div class=\"ds-c\"><span class=\"ds-m\">sab</span><span class=\"ds-n\">12</span></div><div class=\"ds-t\"><h2>Concerto dell'Orchestra dei Fiati della Livenza</h2><p>[ora] · [luogo]</p></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-prog{display:grid;grid-template-columns:135px 1fr;height:135px;width:540px;background:var(--rosa);color:var(--verde-loggia)}.ds-c{background:var(--verde-loggia);color:var(--panna);display:flex;flex-direction:column;align-items:center;justify-content:center}.ds-m{font:800 11px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:11px}.ds-n{font-family:var(--font-numeri);font-weight:900;font-size:90px;line-height:.8;letter-spacing:-.03em}.ds-t{padding:0 34px 0 22px;display:flex;flex-direction:column;justify-content:center}.ds-t h2{margin:0;font-family:var(--font-numeri);font-weight:800;font-size:29px;line-height:1.02;letter-spacing:-.01em}.ds-t p{margin:7px 0 0;font:600 13px/1.3 var(--font-sans);color:var(--inchiostro)}"
+  },
+  {
+   "name": "Arco aperto",
+   "kind": "custom",
+   "refersTo": "arco-evento",
+   "description": "La casella del giorno aperta come arcata dei portici, numero panna che ne sfonda la base. Al massimo uno per post.",
+   "html": "<div class=\"ds-fondo\"><div class=\"ds-arco\"><span class=\"ds-xl\">5</span></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-fondo{background:var(--verde-loggia);padding:68px 68px 0;display:inline-block}.ds-arco{width:405px;height:338px;background:var(--rosso);border-radius:999px 999px 0 0;overflow:hidden;display:flex;justify-content:center;align-items:flex-end}.ds-xl{font-family:var(--font-numeri);font-weight:900;font-size:350px;line-height:.74;letter-spacing:-.03em;color:var(--panna);margin-bottom:-12px;font-variation-settings:\"opsz\" 28}"
+  },
+  {
+   "name": "Arco dell'albero",
+   "kind": "custom",
+   "refersTo": "arco-albero",
+   "description": "L'arco panna dell'annuncio e degli auguri, con l'albero appoggiato alla base.",
+   "html": "<div class=\"ds-fondo\"><div class=\"ds-arco\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 640\" width=\"200\" height=\"213\"><path d=\"M300 150 L392 278 L208 278 Z\" fill=\"#1A5548\"/><path d=\"M300 222 L446 392 L154 392 Z\" fill=\"#1A5548\"/><path d=\"M300 318 L500 532 L100 532 Z\" fill=\"#1A5548\"/><rect x=\"268\" y=\"532\" width=\"64\" height=\"74\" fill=\"#1A5548\"/><circle cx=\"276\" cy=\"250\" r=\"15\" fill=\"#BD3128\"/><circle cx=\"338\" cy=\"336\" r=\"15\" fill=\"#E8A63A\"/><circle cx=\"238\" cy=\"362\" r=\"15\" fill=\"#F4ECDC\"/><circle cx=\"362\" cy=\"470\" r=\"15\" fill=\"#BD3128\"/><circle cx=\"212\" cy=\"492\" r=\"15\" fill=\"#E8A63A\"/><circle cx=\"296\" cy=\"444\" r=\"15\" fill=\"#F4ECDC\"/><path d=\"M300 34 Q308 104 374 112 Q308 120 300 190 Q292 120 226 112 Q292 104 300 34 Z\" fill=\"#E8A63A\"/></svg>\n</div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-fondo{background:var(--rosso);padding:68px 68px 0;display:inline-block}.ds-arco{width:405px;height:338px;background:var(--panna);border-radius:999px 999px 0 0;overflow:hidden;display:flex;justify-content:center;align-items:flex-end}.ds-arco svg{width:280px;height:auto;display:block;margin-bottom:-2px}"
+  },
+  {
+   "name": "Scheda bottega",
+   "kind": "card",
+   "refersTo": "arco-bottega",
+   "description": "Arco panna con la foto della vetrina e, accanto, la casella rossa da 270px con il numero della bottega.",
+   "html": "<div class=\"ds-sch\"><div class=\"ds-arco\"><span>Foto della vetrina</span></div><div class=\"ds-num\">01</div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-sch{background:var(--azzurro);display:inline-flex;align-items:flex-start;padding:34px 34px 0 68px}.ds-arco{width:270px;height:338px;background:var(--panna);border-radius:999px 999px 0 0;overflow:hidden;display:flex;align-items:center;justify-content:center}.ds-arco span{font:800 11px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia)}.ds-num{width:135px;height:135px;background:var(--rosso);color:var(--panna);display:flex;align-items:center;justify-content:center;font-family:var(--font-numeri);font-weight:900;font-size:95px;line-height:1;letter-spacing:-.03em}"
+  },
+  {
+   "name": "Fascia articolo",
+   "kind": "card",
+   "refersTo": "fascia",
+   "description": "Fascia verde-loggia alta due caselle sotto la foto quadrata: nome dell'articolo in titolo M panna, sotto \"L'idea regalo di [negozio]\" in info ocra, la casella del numero a destra.",
+   "html": "<div class=\"ds-art\"><div class=\"ds-foto\"></div><div class=\"ds-fascia\"><div class=\"ds-t\"><h3>Nome dell'articolo</h3><p>L'idea regalo di Nome del negozio</p></div><div class=\"ds-num\">01</div></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-art{width:540px}.ds-foto{height:300px;background:var(--panna)}.ds-fascia{height:135px;background:var(--verde-loggia);color:var(--panna);display:flex;justify-content:space-between}.ds-t{padding:30px 34px 0}.ds-t h3{margin:0;font-family:var(--font-numeri);font-weight:800;font-size:38px;line-height:1;letter-spacing:-.01em}.ds-t p{margin:8px 0 0;font:800 20px/1.2 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ocra)}.ds-num{width:135px;height:135px;background:var(--rosso);display:flex;align-items:center;justify-content:center;font-family:var(--font-numeri);font-weight:900;font-size:95px;line-height:1;letter-spacing:-.03em}"
+  },
+  {
+   "name": "Post sponsor",
+   "kind": "custom",
+   "refersTo": "casella-logo",
+   "description": "Scacchiera di 15 caselle da 216px (5×3) a filo del fondo verde-loggia: 7 caselle logo bianche (logo al massimo il 70%) alternate a 8 tessere regalo, pallina e bastoncino agli angoli e in mezzo, il bastoncino mai nella riga in alto; un logo illeggibile diventa il nome in Bodoni 800 verde-loggia.",
+   "html": "<div class=\"ds-sp\"><div class=\"ds-g\"><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"82\" width=\"112\" height=\"92\" fill=\"#1A5548\"/><rect x=\"92\" y=\"82\" width=\"16\" height=\"92\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"114\" width=\"112\" height=\"14\" fill=\"#E8A63A\"/><circle cx=\"83\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/><circle cx=\"117\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#BD3128\"/><defs><clipPath id=\"pcpallina1\"><circle cx=\"100\" cy=\"112\" r=\"60\"/></clipPath></defs><rect x=\"88\" y=\"36\" width=\"24\" height=\"18\" fill=\"#F4ECDC\"/><circle cx=\"100\" cy=\"112\" r=\"60\" fill=\"#F4ECDC\"/><g clip-path=\"url(#pcpallina1)\"><rect x=\"30\" y=\"70\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"98\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"126\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"154\" width=\"140\" height=\"13\" fill=\"#BD3128\"/></g></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"82\" width=\"112\" height=\"92\" fill=\"#1A5548\"/><rect x=\"92\" y=\"82\" width=\"16\" height=\"92\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"114\" width=\"112\" height=\"14\" fill=\"#E8A63A\"/><circle cx=\"83\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/><circle cx=\"117\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#1A5548\"/><path d=\"M78 176 L78 76 A30 30 0 0 1 138 76 L138 112\" fill=\"none\" stroke=\"#F4ECDC\" stroke-width=\"26\"/><path d=\"M78 176 L78 76 A30 30 0 0 1 138 76 L138 112\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"26\" stroke-dasharray=\"13 15\"/></svg>\n</div><div class=\"ds-logo\"><b>Nome attività</b></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#1A5548\"/><path d=\"M78 176 L78 76 A30 30 0 0 1 138 76 L138 112\" fill=\"none\" stroke=\"#F4ECDC\" stroke-width=\"26\"/><path d=\"M78 176 L78 76 A30 30 0 0 1 138 76 L138 112\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"26\" stroke-dasharray=\"13 15\"/></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#BD3128\"/><defs><clipPath id=\"pcpallina2\"><circle cx=\"100\" cy=\"112\" r=\"60\"/></clipPath></defs><rect x=\"88\" y=\"36\" width=\"24\" height=\"18\" fill=\"#F4ECDC\"/><circle cx=\"100\" cy=\"112\" r=\"60\" fill=\"#F4ECDC\"/><g clip-path=\"url(#pcpallina2)\"><rect x=\"30\" y=\"70\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"98\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"126\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"154\" width=\"140\" height=\"13\" fill=\"#BD3128\"/></g></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"82\" width=\"112\" height=\"92\" fill=\"#1A5548\"/><rect x=\"92\" y=\"82\" width=\"16\" height=\"92\" fill=\"#E8A63A\"/><rect x=\"44\" y=\"114\" width=\"112\" height=\"14\" fill=\"#E8A63A\"/><circle cx=\"83\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/><circle cx=\"117\" cy=\"62\" r=\"15\" fill=\"none\" stroke=\"#1A5548\" stroke-width=\"10\"/></svg>\n</div><div class=\"ds-logo\"><span>logo</span></div><div class=\"ds-t\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\"><rect width=\"200\" height=\"200\" fill=\"#BD3128\"/><defs><clipPath id=\"pcpallina3\"><circle cx=\"100\" cy=\"112\" r=\"60\"/></clipPath></defs><rect x=\"88\" y=\"36\" width=\"24\" height=\"18\" fill=\"#F4ECDC\"/><circle cx=\"100\" cy=\"112\" r=\"60\" fill=\"#F4ECDC\"/><g clip-path=\"url(#pcpallina3)\"><rect x=\"30\" y=\"70\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"98\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"126\" width=\"140\" height=\"13\" fill=\"#BD3128\"/><rect x=\"30\" y=\"154\" width=\"140\" height=\"13\" fill=\"#BD3128\"/></g></svg>\n</div></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-sp{background:var(--verde-loggia);padding-top:40px;width:540px}.ds-g{display:grid;grid-template-columns:repeat(5,108px);grid-auto-rows:108px}.ds-t svg{display:block;width:100%;height:100%}.ds-logo{background:var(--bianco);display:flex;align-items:center;justify-content:center;text-align:center}.ds-logo span{width:76px;height:76px;display:flex;align-items:center;justify-content:center;font:600 9px/1 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro);outline:1px dashed rgba(43,32,25,.3)}.ds-logo b{font-family:var(--font-numeri);font-weight:800;font-size:17px;line-height:1.02;padding:0 9px;color:var(--verde-loggia)}"
+  },
+  {
+   "name": "Offerto da",
+   "kind": "card",
+   "refersTo": "firma-sponsor",
+   "description": "Arco 6×5 con la foto dell'installazione, nome in titolo M panna, firma dello sponsor: casella logo bianca da 216px, \"offerta da\" in frase ocra e il nome in Bodoni 800 58px panna.",
+   "html": "<div class=\"ds-od\"><div class=\"ds-arco\"><span>Foto dell'installazione</span></div><h3>Nome dell'installazione</h3><div class=\"ds-firma\"><div class=\"ds-logo\"><span>logo</span></div><div><p class=\"ds-fr\">offerta da</p><p class=\"ds-nm\">Nome dello sponsor</p></div></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-od{background:var(--verde-loggia);color:var(--panna);width:540px;height:675px;position:relative}.ds-arco{position:absolute;left:68px;top:68px;width:405px;height:338px;background:var(--panna);border-radius:999px 999px 0 0;display:flex;align-items:center;justify-content:center}.ds-arco span{font:800 11px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia)}.ds-od h3{position:absolute;left:34px;top:423px;margin:0;font-family:var(--font-numeri);font-weight:800;font-size:38px;line-height:1;letter-spacing:-.01em}.ds-firma{position:absolute;left:34px;bottom:30px;display:flex;align-items:center;gap:18px}.ds-logo{width:108px;height:108px;background:var(--bianco);display:flex;align-items:center;justify-content:center}.ds-logo span{width:76px;height:76px;display:flex;align-items:center;justify-content:center;font:600 9px/1 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro);outline:1px dashed rgba(43,32,25,.3)}.ds-fr{margin:0;font-family:var(--font-numeri);font-style:italic;font-weight:500;font-size:22px;color:var(--ocra)}.ds-nm{margin:3px 0 0;font-family:var(--font-numeri);font-weight:800;font-size:29px;line-height:1.02}"
+  },
+  {
+   "name": "Timbro",
+   "kind": "custom",
+   "refersTo": "timbro",
+   "description": "L'unica tessera del post, 135px in basso a destra a filo dei bordi; di norma la stellina, simbolo della campagna.",
+   "html": "<div class=\"ds-post\"><div class=\"ds-timbro\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" width=\"135\" height=\"135\"><rect width=\"200\" height=\"200\" fill=\"#F3B2C1\"/><path d=\"M100 22 Q107 93 178 100 Q107 107 100 178 Q93 107 22 100 Q93 93 100 22Z\" fill=\"#BD3128\"/></svg></div></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-post{position:relative;width:270px;height:270px;background:var(--verde-loggia)}.ds-timbro{position:absolute;right:0;bottom:0;width:135px;height:135px}.ds-timbro svg{display:block;width:100%;height:100%}"
+  },
+  {
+   "name": "Riga titolo e info",
+   "kind": "custom",
+   "refersTo": "arco-evento",
+   "description": "Sotto l'arco: titolo L su due righe, corpo, info in ocra con giorno e luogo.",
+   "html": "<div class=\"ds-testo\"><h1>Luci accese,<br>pista aperta</h1><p class=\"ds-corpo\">Musica, pattinaggio gratuito, Babbo Natale e il presepe.</p><p class=\"ds-info\">Sabato 5 dicembre · [luogo]</p></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-testo{background:var(--verde-loggia);color:var(--panna);padding:34px;width:472px}.ds-testo h1{margin:0;font-family:var(--font-numeri);font-weight:800;font-size:52px;line-height:.98;letter-spacing:-.015em}.ds-corpo{margin:10px 0 0;font:500 18px/1.35 var(--font-sans)}.ds-info{margin:11px 0 0;font:800 20px/1.2 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ocra)}"
+  },
+  {
+   "name": "Marchio",
+   "kind": "custom",
+   "refersTo": "marchio",
+   "description": "La firma \"Motta a Natale\": \"Motta\" sopra, la stella al posto della \"a\" e \"Natale\" in corsivo sotto. In alto a sinistra a (67,5; 20), largo 190px, sempre su fondo pieno nella versione del fondo (qui panna-ocra sul verde-loggia).",
+   "html": "<div class=\"ds-fondo-marchio\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 374 220\" width=\"190\" height=\"112\"><title>Motta a Natale</title><path d=\"M45.54 93.2 12.18 2.0H34.26L56.58 61.82L77.34 2.0H79.08L47.46 93.2ZM13.08 2.0V90.38H22.08V92.0H2.76V90.38H11.34V3.6200000000000045H2.16V2.0ZM108.96 2.0V3.6200000000000045H100.56V90.38H108.96V92.0H69.0V90.38H78.6V2.0Z M145.14 93.2Q135.78 93.2 129.03 89.24000000000001Q122.28 85.28 118.65 78.74000000000001Q115.02 72.2 115.02 64.4Q115.02 56.6 118.65 50.06Q122.28 43.52 129.03 39.56Q135.78 35.6 145.14 35.6Q154.5 35.6 161.22 39.56Q167.94 43.52 171.6 50.06Q175.26 56.6 175.26 64.4Q175.26 72.2 171.6 78.74000000000001Q167.94 85.28 161.22 89.24000000000001Q154.5 93.2 145.14 93.2ZM145.14 91.58Q147.72 91.58 149.55 89.57Q151.38 87.56 152.55 83.87Q153.72 80.18 154.26 75.23Q154.8 70.28 154.8 64.4Q154.8 58.52 154.26 53.57000000000001Q153.72 48.620000000000005 152.55 44.93000000000001Q151.38 41.24 149.55 39.230000000000004Q147.72 37.22 145.14 37.22Q142.56 37.22 140.73000000000002 39.230000000000004Q138.9 41.24 137.73000000000002 44.93000000000001Q136.56 48.620000000000005 136.01999999999998 53.57000000000001Q135.48 58.52 135.48 64.4Q135.48 70.28 136.01999999999998 75.23Q136.56 80.18 137.73000000000002 83.87Q138.9 87.56 140.73000000000002 89.57Q142.56 91.58 145.14 91.58Z M204.18 92.84Q197.94 92.84 194.61 91.01Q191.28 89.18 190.01999999999998 85.79Q188.76 82.4 188.76 77.78V24.799999999999997Q193.44 24.799999999999997 198.99 23.990000000000002Q204.54 23.180000000000007 208.32 21.200000000000003V80.06Q208.32 84.56 209.37 86.57Q210.42 88.58 212.88 88.58Q215.51999999999998 88.58 218.45999999999998 86.33Q221.39999999999998 84.08 223.26 79.52L224.76 80.12Q222.6 85.76 217.47 89.30000000000001Q212.34 92.84 204.18 92.84ZM180.12 38.42V36.800000000000004H221.16V38.42Z M250.26000000000002 92.84Q244.02 92.84 240.69 91.01Q237.36 89.18 236.10000000000002 85.79Q234.84 82.4 234.84 77.78V24.799999999999997Q239.52 24.799999999999997 245.07 23.990000000000002Q250.62 23.180000000000007 254.4 21.200000000000003V80.06Q254.4 84.56 255.45 86.57Q256.5 88.58 258.96000000000004 88.58Q261.6 88.58 264.54 86.33Q267.48 84.08 269.34000000000003 79.52L270.84000000000003 80.12Q268.68 85.76 263.55 89.30000000000001Q258.42 92.84 250.26000000000002 92.84ZM226.20000000000002 38.42V36.800000000000004H267.24V38.42Z M326.70000000000005 93.2Q322.32 93.2 318.96000000000004 92.06Q315.6 90.92 313.68 88.55000000000001Q311.76 86.18 311.76 82.52V55.46Q311.76 51.14 310.92 47.0Q310.08000000000004 42.86 307.59000000000003 40.19Q305.1 37.52 300.3 37.52Q297.72 37.52 294.66 38.120000000000005Q291.6 38.72 288.78000000000003 40.07Q285.96000000000004 41.42 284.16 43.58Q282.36 45.74 282.36 48.980000000000004H280.44Q280.44 44.9 283.68 42.32Q286.92 39.74 291.3 39.74Q295.86 39.74 299.19000000000005 42.05Q302.52000000000004 44.36 302.52000000000004 48.74Q302.52000000000004 53.300000000000004 299.13 55.760000000000005Q295.74 58.22 291.3 58.22Q286.56 58.22 283.44 55.7Q280.32 53.18 280.32 48.980000000000004Q280.32 45.32 282.39 42.83Q284.46000000000004 40.34 287.85 38.78Q291.24 37.22 295.35 36.53Q299.46000000000004 35.84 303.54 35.84Q313.14 35.84 319.26 38.27Q325.38 40.7 328.35 45.11Q331.32 49.52 331.32 55.46V84.86Q331.32 86.84 332.25 88.19Q333.18 89.54 335.40000000000003 89.54Q336.90000000000003 89.54 339.21000000000004 88.31Q341.52 87.08 343.02 84.08L344.1 84.92Q342.24 89.0 337.56 91.1Q332.88 93.2 326.70000000000005 93.2ZM293.22 93.2Q285.42 93.2 280.77 89.21000000000001Q276.12 85.22 276.12 78.38Q276.12 70.34 283.14 65.84Q290.16 61.34 302.94 61.34H317.34000000000003V62.78H308.70000000000005Q304.5 62.78 301.95000000000005 64.94Q299.40000000000003 67.1 298.26 70.22Q297.12 73.34 297.12 76.16Q297.12 78.98 297.75 81.2Q298.38 83.42 299.73 84.71000000000001Q301.08000000000004 86.0 303.18 86.0Q305.40000000000003 86.0 307.35 84.35Q309.3 82.7 310.53 79.19Q311.76 75.68 311.76 70.28H312.90000000000003Q312.90000000000003 77.48 310.53000000000003 82.58000000000001Q308.16 87.68 303.75 90.44Q299.34000000000003 93.2 293.22 93.2Z\" fill=\"#F4ECDC\"/><path d=\"M116.112 191.04 84.184 112.0H98.172L121.416 170.708L134.832 112.0H136.548L118.556 191.04ZM56.467999999999996 190.0V188.336H80.28399999999999V190.0ZM66.244 190.0 83.404 113.664H73.10799999999999V112.0H85.484L68.012 190.0ZM122.352 113.664V112.0H146.584V113.664Z M152.928 191.04Q146.012 191.04 142.84 186.49Q139.668 181.94 139.668 174.14Q139.668 168.16 141.904 162.31Q144.14000000000001 156.46 147.858 151.676Q151.576 146.892 156.074 144.006Q160.572 141.12 165.148 141.12Q168.788 141.12 170.868 143.096Q172.948 145.072 173.80599999999998 148.348Q174.664 151.624 174.664 155.576Q174.664 158.852 173.962 162.752Q173.26 166.652 171.908 170.63Q170.55599999999998 174.608 168.632 178.274Q166.708 181.94 164.29000000000002 184.8Q161.872 187.66 159.038 189.35Q156.204 191.04 152.928 191.04ZM155.372 187.972Q158.076 187.972 160.676 185.94400000000002Q163.276 183.916 165.56400000000002 180.48399999999998Q167.852 177.052 169.594 172.814Q171.336 168.576 172.324 164.10399999999998Q173.312 159.632 173.312 155.576Q173.312 152.09199999999998 172.662 149.466Q172.012 146.84 170.608 145.358Q169.204 143.876 166.864 143.876Q164.316 143.876 161.79399999999998 146.164Q159.272 148.452 157.01 152.248Q154.748 156.044 152.954 160.594Q151.16 165.144 150.14600000000002 169.798Q149.132 174.452 149.132 178.404Q149.132 183.136 150.796 185.554Q152.46 187.972 155.372 187.972ZM175.964 191.04Q172.012 191.04 170.166 189.012Q168.32 186.984 168.32 183.656Q168.32 182.772 168.372 182.04399999999998Q168.424 181.316 168.528 180.796L170.036 172.84L172.636 164.78L174.09199999999998 155.732L177.368 142.16H187.612L176.224 185.008Q176.016 185.788 176.016 186.672Q176.016 187.452 176.458 188.05Q176.9 188.648 177.992 188.648Q180.176 188.648 182.204 187.14Q184.232 185.632 186.26 182.304Q188.288 178.976 190.524 173.464L192.084 173.984Q189.796 179.964 187.456 183.73399999999998Q185.11599999999999 187.504 182.334 189.272Q179.552 191.04 175.964 191.04Z M208.568 191.04Q205.136 191.04 203.00400000000002 190.0Q200.872 188.96 199.91000000000003 187.296Q198.948 185.632 198.948 183.812Q198.948 182.876 199.234 181.316Q199.52 179.756 199.936 178.196L212.468 131.76H222.244L207.84 184.228Q207.684 184.748 207.52800000000002 185.45Q207.372 186.152 207.372 186.88Q207.372 188.752 210.336 188.752Q212.416 188.752 214.47 187.764Q216.524 186.776 218.448 184.774Q220.372 182.772 222.21800000000002 179.73Q224.064 176.688 225.728 172.528L227.34 173.048Q225.052 178.82 222.322 182.85Q219.592 186.88 216.212 188.95999999999998Q212.832 191.04 208.568 191.04ZM199.26 143.876V142.16H228.796V143.876Z M244.916 191.04Q238.0 191.04 234.828 186.49Q231.656 181.94 231.656 174.14Q231.656 168.16 233.892 162.31Q236.12800000000001 156.46 239.846 151.676Q243.564 146.892 248.062 144.006Q252.56 141.12 257.136 141.12Q260.776 141.12 262.856 143.096Q264.936 145.072 265.794 148.348Q266.652 151.624 266.652 155.576Q266.652 158.852 265.95 162.752Q265.248 166.652 263.89599999999996 170.63Q262.544 174.608 260.62 178.274Q258.696 181.94 256.278 184.8Q253.86 187.66 251.026 189.35Q248.192 191.04 244.916 191.04ZM247.36 187.972Q250.064 187.972 252.664 185.94400000000002Q255.264 183.916 257.552 180.48399999999998Q259.84 177.052 261.582 172.814Q263.324 168.576 264.312 164.10399999999998Q265.3 159.632 265.3 155.576Q265.3 152.09199999999998 264.65 149.466Q264.0 146.84 262.596 145.358Q261.192 143.876 258.852 143.876Q256.304 143.876 253.78199999999998 146.164Q251.26 148.452 248.998 152.248Q246.736 156.044 244.942 160.594Q243.148 165.144 242.13400000000001 169.798Q241.12 174.452 241.12 178.404Q241.12 183.136 242.784 185.554Q244.448 187.972 247.36 187.972ZM267.952 191.04Q264.0 191.04 262.154 189.012Q260.308 186.984 260.308 183.656Q260.308 182.772 260.36 182.04399999999998Q260.412 181.316 260.516 180.796L262.024 172.84L264.624 164.78L266.08 155.732L269.356 142.16H279.6L268.212 185.008Q268.004 185.788 268.004 186.672Q268.004 187.452 268.446 188.05Q268.888 188.648 269.98 188.648Q272.164 188.648 274.192 187.14Q276.22 185.632 278.24800000000005 182.304Q280.276 178.976 282.512 173.464L284.072 173.984Q281.784 179.964 279.44399999999996 183.73399999999998Q277.104 187.504 274.322 189.272Q271.54 191.04 267.952 191.04Z M297.28 191.04Q292.912 191.04 290.832 189.168Q288.752 187.296 288.752 184.332Q288.752 183.136 288.908 182.226Q289.064 181.316 289.272 180.588L307.31600000000003 113.664H297.748V112.0H317.456L297.8 184.956Q297.696 185.424 297.644 185.892Q297.592 186.36 297.592 186.724Q297.592 188.648 299.516 188.648Q301.752 188.648 303.754 187.14Q305.756 185.632 307.80999999999995 182.304Q309.864 178.976 312.1 173.464L313.712 173.984Q311.372 179.964 309.03200000000004 183.73399999999998Q306.692 187.504 303.884 189.272Q301.076 191.04 297.28 191.04Z M335.604 191.04Q330.404 191.04 326.894 188.90800000000002Q323.384 186.776 321.56399999999996 183.032Q319.74399999999997 179.288 319.74399999999997 174.4Q319.74399999999997 168.316 322.006 162.388Q324.268 156.46 328.298 151.65Q332.328 146.84 337.736 143.98000000000002Q343.144 141.12 349.436 141.12Q355.572 141.12 358.926 144.032Q362.28 146.94400000000002 362.28 151.208Q362.28 155.316 359.524 158.59199999999998Q356.768 161.868 352.03599999999994 164.156Q347.304 166.44400000000002 341.402 167.796Q335.5 169.148 329.104 169.564V168.16Q333.368 167.9 337.13800000000003 166.834Q340.908 165.768 343.898 164.05200000000002Q346.888 162.336 349.072 159.996Q351.256 157.656 352.426 154.744Q353.596 151.832 353.596 148.50400000000002Q353.596 146.268 352.608 144.526Q351.62 142.784 349.228 142.784Q346.472 142.784 343.898 144.552Q341.324 146.32 339.036 149.362Q336.748 152.404 334.902 156.226Q333.056 160.048 331.70399999999995 164.234Q330.352 168.42000000000002 329.65 172.45Q328.948 176.48 328.948 179.912Q328.948 184.956 331.18399999999997 186.906Q333.42 188.856 336.852 188.856Q340.908 188.856 344.47 187.166Q348.032 185.476 351.022 182.512Q354.012 179.548 356.3 175.7L357.756 176.584Q355.624 180.432 352.452 183.73399999999998Q349.28 187.036 345.068 189.038Q340.856 191.04 335.604 191.04Z\" fill=\"#E8A63A\"/><path d=\"M24.2 138.0 Q25.9 158.2 46.2 160.0 Q25.9 161.8 24.2 182.0 Q22.4 161.8 2.2 160.0 Q22.4 158.2 24.2 138.0Z\" fill=\"#E8A63A\"/></svg></div>",
+   "css": ".ds-fondo-marchio{background:#1a5548;padding:20px 67.5px;display:inline-block;line-height:0}.ds-fondo-marchio svg{display:block;width:190px;height:auto}"
+  },
+  {
+   "name": "Stella",
+   "kind": "custom",
+   "refersTo": "marchio",
+   "description": "La stella a quattro punte da sola (marchio/stella.svg), in ocra: il simbolo di tutte le grafiche di Natale, nel marchio, in cima all'albero e nel timbro d'angolo.",
+   "html": "<div class=\"ds-fondo-stella\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" width=\"135\" height=\"135\"><title>Stella di Motta a Natale</title><path d=\"M100 0 Q108 92 200 100 Q108 108 100 200 Q92 108 0 100 Q92 92 100 0Z\" fill=\"#E8A63A\"/></svg></div>",
+   "css": ":host{--panna:#f4ecdc;--bianco:#ffffff;--verde-loggia:#1a5548;--verde-cupola:#2e9c8e;--rosso:#bd3128;--rosa:#f3b2c1;--ocra:#e8a63a;--azzurro:#86b6de;--inchiostro:#2b2019;--font-numeri:\"Bodoni Moda\",\"Bodoni 72\",Didot,serif;--font-sans:Archivo,\"Helvetica Neue\",Arial,sans-serif}.ds-fondo-stella{background:var(--verde-loggia);padding:34px;display:inline-block;line-height:0}.ds-fondo-stella svg{display:block;width:135px;height:135px}"
+  }
+ ],
+ "narrative": {
+  "northStar": "Il lunario della piazza",
+  "overview": "**Creative North Star: \"Il lunario della piazza\"**\n\nIl giorno è il protagonista. Solo i giorni con un'attività hanno una casella: un quadrato a spigolo vivo nel colore fisso di quel giorno, con il numero in Bodoni nerissimo come su un lunario appeso in cucina. I giorni senza attività non compaiono: niente calendario completo, niente caselle vuote. Nel programma le caselle si mettono in fila, tre per pagina; nel post e nella storia dell'evento la casella si apre come un'arcata dei portici, e il numero riempie la finestra e ne sfonda la base.\n\nIl mondo è piatto e geometrico, a colori pieni, senza profondità. La città entra con parsimonia: una sola tessera per post, come un timbro nell'angolo, e l'albero piatto dentro l'arco dell'annuncio. I simboli sono due: la stella a quattro punte firma tutte le grafiche di Natale (nel marchio, in cima all'albero, nel timbro d'angolo), Zenzerino resta la mascotte delle vetrine. Le griglie di tessere restano alla caccia a Zenzerino, alla copertina delle botteghe e al post sponsor, dove le tessere regalo, pallina e bastoncino si alternano ai loghi.\n\nLa densità è bassa: un arco o una fila di caselle, un titolo concreto, una riga di data e luogo. Le grafiche si eseguono in Canva: ogni regola qui sotto si ottiene con rettangoli, cerchi, SVG caricati e due famiglie Google Fonts.",
+  "keyCharacteristics": [
+   "Una casella solo per i giorni con un'attività, nel colore fisso del giorno.",
+   "Un passo unico di casella (135px nei post, 120px nelle storie, 270px per la casella doppia) governa margini, blocchi, archi e tessere; unica eccezione la casella logo da 216px degli sponsor.",
+   "Fondi pieni nei quattro colori di fondo; panna vive solo dentro archi, segnaposto foto e testi sui fondi scuri.",
+   "Al massimo una finestra ad arco per post, a semicerchio pieno sopra e base dritta.",
+   "Tessere con parsimonia: al massimo una per post, come timbro da 135px in basso a destra, di norma la stellina; fanno eccezione la caccia, la copertina delle botteghe e il post sponsor.",
+   "La stella a quattro punte è il simbolo di tutte le grafiche di Natale; Zenzerino è la mascotte delle vetrine.",
+   "Bodoni Moda per numeri, titoli e frase; Archivo maiuscolo per le informazioni pratiche.",
+   "Nessuna ombra, sfumatura o texture: solo superfici piatte accostate.",
+   "Il marchio \"Motta a Natale\", con la stella al posto della \"a\", firma le grafiche della campagna al posto del logo istituzionale, sempre su un fondo pieno."
+  ],
+  "rules": [
+   {
+    "name": "The Panna Inside Rule",
+    "body": "La panna non è mai un fondo pieno di post: sta dentro archi e segnaposto foto, o è il colore del testo sui fondi scuri.",
+    "section": "colors"
+   },
+   {
+    "name": "The Colore del Giorno Rule",
+    "body": "Ogni giorno con un'attività riceve un colore tra rosso, ocra, verde-loggia, azzurro, verde-cupola e rosa e lo tiene in tutta la campagna: casella del programma, arco del post, arco della storia. Due giorni vicini nel programma non hanno lo stesso colore, e il fondo del post non è mai il colore del giorno che ospita.",
+    "section": "colors"
+   },
+   {
+    "name": "The Fondo a Rotazione Rule",
+    "body": "I fondi dei post ruotano tra verde-loggia, rosso, rosa e azzurro; due post consecutivi non condividono il fondo.",
+    "section": "colors"
+   },
+   {
+    "name": "The Titolo Apre Rule",
+    "body": "Il titolo apre il post da solo: niente occhielli, rubriche o nome della campagna scritto sopra di lui. Il marchio nell'angolo e la casella dicono già chi parla.",
+    "section": "typography"
+   },
+   {
+    "name": "The Pesi Espliciti Rule",
+    "body": "In Canva Bodoni Moda va scelto con lo spessore dichiarato (Black per i numeri, ExtraBold per titoli e nomi); un sostituto bodoniano vale per tutta la campagna, mai per un solo post.",
+    "section": "typography"
+   },
+   {
+    "name": "The Passo Unico Rule",
+    "body": "Se un blocco, un arco o una casella non inizia e non finisce su un multiplo di casella o di mezza casella, è fuori sistema. L'unica eccezione è la casella logo da 216px degli sponsor.",
+    "section": "layout"
+   },
+   {
+    "name": "The Pagina Ferma Rule",
+    "body": "Nei caroselli marchio, titolo e fascia stanno nelle stesse posizioni su ogni pagina, così scorrendo non saltano.",
+    "section": "layout"
+   },
+   {
+    "name": "The Superficie Piena Rule",
+    "body": "Ogni area è un solo colore pieno; nessun elemento galleggia sopra un altro con un'ombra.",
+    "section": "elevation"
+   },
+   {
+    "name": "The Un Arco Rule",
+    "body": "Al massimo un arco per post. L'arco contiene il numero del giorno nel suo colore fisso, oppure l'albero su panna, oppure una foto (la vetrina, l'installazione offerta); mai due di queste cose, mai due archi.",
+    "section": "shapes"
+   },
+   {
+    "name": "The Marchio su Pieno Rule",
+    "body": "Il marchio vive solo su un fondo pieno e nella versione di quel fondo; dove c'è una foto, il marchio non c'è.",
+    "section": "components"
+   }
+  ],
+  "dos": [
+   "**Do** dare una casella solo ai giorni con un'attività, nel loro colore fisso, e tenerlo in ogni post in cui compaiono.",
+   "**Do** misurare tutto sulla casella: 135px nei post, 120px nelle storie, 270px per la casella doppia, testi a 67,5px dal bordo; 216px solo per le caselle logo degli sponsor.",
+   "**Do** usare al massimo una tessera per post, come timbro da 135px in basso a destra; griglie di tessere solo nella caccia a Zenzerino, nelle due righe della copertina botteghe e nella scacchiera del post sponsor.",
+   "**Do** scrivere nella riga info il luogo preciso dal programma, per esteso e in maiuscolo.",
+   "**Do** firmare ogni grafica con il marchio nella versione del suo fondo, nella stessa posizione per formato: in alto a sinistra largo 190px nei post, in alto al centro largo 260px nelle storie; fanno eccezione l'annuncio (il marchio è il titolo), la caccia (in basso a destra, 170px) e le pagine con la foto a tutta pagina (nessun marchio)."
+  ],
+  "donts": [
+   "**Don't** disegnare il calendario completo né caselle per i giorni senza attività.",
+   "**Don't** usare panna o bianco come fondo pieno di un post; il bianco sta solo dietro ai loghi.",
+   "**Don't** mettere più di un arco per post, né arrotondare gli spigoli delle caselle.",
+   "**Don't** usare ombre portate, sfumature, texture o illustrazioni realistiche.",
+   "**Don't** mettere scritte sopra al titolo: occhielli, rubriche o il nome della campagna in testo composto.",
+   "**Don't** mettere il marchio sopra una foto, sotto i 150px di larghezza su un post da 1080 o in colori fuori dalle quattro versioni; non ricomporlo e non deformarlo.",
+   "**Don't** sostituire la \"a\" con la stella fuori dal marchio: nei testi composti il nome è \"Motta a Natale\".",
+   "**Don't** accostare due tessere uguali o con lo stesso fondo.",
+   "**Don't** usare Zenzerino in più di un post su tre o più di una volta per post, fuori dalla caccia."
+  ]
+ }
+}

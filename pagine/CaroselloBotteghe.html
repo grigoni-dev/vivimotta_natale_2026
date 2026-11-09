@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CaroselloBotteghe</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+/* Le pagine condividono le posizioni: marchio in alto a sinistra, titolo da (67.5, 175), fascia in basso di 2 caselle. Sulle foto niente marchio. */
+.cop{background:var(--verde-loggia);color:var(--panna)}
+.cop .titolo-l{left:var(--mezza);top:180px;font-size:160px;line-height:.9;letter-spacing:-.02em}
+.cop .frase{left:var(--mezza);top:540px;width:800px}
+.cop .nota{left:var(--mezza);top:700px}
+.cop .griglia{left:0;bottom:0}
+
+.sch{background:var(--azzurro);color:var(--inchiostro)}
+.sch .titolo-l{left:var(--mezza);top:175px;color:var(--verde-loggia);width:810px}
+.sch .finestra{left:var(--casella);top:405px;width:540px;height:675px;background:var(--panna);align-items:center}
+.sch .num{left:675px;top:405px;width:270px;height:270px;background:var(--rosso);color:var(--panna)}
+.sch .num .n{font-size:190px;letter-spacing:-.03em}
+.sch .indirizzo{left:705px;top:710px;width:340px}
+.fascia{left:0;right:0;bottom:0;height:270px;background:var(--verde-loggia);color:var(--panna);padding:44px var(--mezza) 0}
+.fascia .corpo{margin-top:14px;max-width:900px}
+
+.art{background:var(--panna)}
+.art .foto{left:0;top:0;width:1080px;height:1080px;display:flex;align-items:center;justify-content:center}
+.art .fascia{padding-right:310px}
+.art .titolo-m{color:var(--panna);margin-top:12px}
+.art .fascia .nota{margin-top:12px}
+.art .num{right:0;bottom:0;width:270px;height:270px;background:var(--rosso);color:var(--panna)}
+.art .num .n{font-size:190px;letter-spacing:-.03em}
+
+.segnaposto{font:800 22px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia);text-align:center}
+.sch .segnaposto{margin-top:160px}
+</style>
+</head>
+<body>
+<div class="foglio" id="pagine"></div>
+<script>
+const tessere=["regalo","righe","portici","stellina","onda","pallina","abete","cupola","caramella","campanile","candela","corona","stella","portici","pois","fiocco"];
+const copertina=`
+<div class="cornice"><div class="post cop">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <h1 class="abs titolo-l">Le botteghe<br>di Motta</h1>
+  <p class="abs frase">Chi c'è dietro le vetrine del centro, una bottega alla volta.</p>
+  <p class="abs nota">Scorri per conoscerle →</p>
+  <div class="abs griglia" aria-hidden="true">${tessere.map(n=>`<div class="casella"><img src="../design-system/tessere/${n}.svg" alt=""></div>`).join("")}</div>
+</div></div>`;
+const bottega=num=>`
+<div class="cornice"><div class="post sch">
+  <img class="abs marchio" src="../design-system/marchio/marchio-verde.svg" alt="Motta a Natale">
+  <h2 class="abs titolo-l">Nome del negozio</h2>
+  <div class="abs arco finestra"><p class="segnaposto">Foto della vetrina<br>verticale, luce naturale</p></div>
+  <div class="abs casella num"><span class="n">${num}</span></div>
+  <p class="abs nota indirizzo">Via Esempio 1<br>@profiloinstagram</p>
+  <div class="abs fascia">
+    <p class="corpo" style="margin-top:0">Una riga sul negozio, scritta da chi ci lavora: cosa si trova, da quanto c'è, chi lo porta avanti.</p>
+  </div>
+</div></div>
+<div class="cornice"><div class="post art">
+  <div class="abs foto"><p class="segnaposto">Foto dell'articolo in evidenza<br>quadrata, a tutta pagina</p></div>
+  <div class="abs fascia">
+    <h3 class="titolo-m" style="margin-top:0">Nome dell'articolo</h3>
+    <p class="info" style="color:var(--ocra);margin-top:16px">L'idea regalo di Nome del negozio</p>
+  </div>
+  <div class="abs casella num"><span class="n">${num}</span></div>
+</div></div>`;
+document.getElementById("pagine").innerHTML=copertina+bottega("01")+bottega("02")+
+ `<p class="didascalia">Carosello "Le botteghe di Motta": copertina, poi per ogni bottega la scheda e la foto dell'articolo in evidenza, e si ricomincia. Fino a 9 botteghe per carosello (Instagram ammette 20 pagine). Testi e foto sono segnaposto: li fornisce il negozio.</p>`;
+</script>
+</body>
+</html>

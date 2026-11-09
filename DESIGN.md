@@ -221,7 +221,7 @@ Il giorno è il protagonista. Solo i giorni con un'attività hanno una casella: 
 
 Il mondo è piatto e geometrico, a colori pieni, senza profondità. La città entra con parsimonia: una sola tessera per post, come un timbro nell'angolo, e l'albero piatto dentro l'arco dell'annuncio. I simboli sono due: la stella a quattro punte firma tutte le grafiche di Natale (nel marchio, in cima all'albero, nel timbro d'angolo), Zenzerino resta la mascotte delle vetrine. Le griglie di tessere restano alla caccia a Zenzerino, alla copertina delle botteghe e al post sponsor, dove le tessere regalo, pallina e bastoncino si alternano ai loghi.
 
-La densità è bassa: un arco o una fila di caselle, un titolo concreto, una riga di data e luogo. Le grafiche si eseguono in Canva: ogni regola qui sotto si ottiene con rettangoli, cerchi, SVG caricati e due famiglie Google Fonts.
+La densità è bassa: un arco o una fila di caselle, un titolo concreto, una riga di data e luogo. Le grafiche si eseguono in Figma, con i template del plugin in `figma/`: ogni regola qui sotto si ottiene con rettangoli, cerchi, SVG caricati e due famiglie Google Fonts.
 
 **Key Characteristics:**
 - Una casella solo per i giorni con un'attività, nel colore fisso del giorno.
@@ -295,7 +295,7 @@ Una tavolozza da lunario di paese, presa dal logo e dai materiali del centro: ve
 ### Named Rules
 **The Titolo Apre Rule.** Il titolo apre il post da solo: niente occhielli, rubriche o nome della campagna scritto sopra di lui. Il marchio nell'angolo e la casella dicono già chi parla.
 
-**The Pesi Espliciti Rule.** In Canva Bodoni Moda va scelto con lo spessore dichiarato (Black per i numeri, ExtraBold per titoli e nomi); un sostituto bodoniano vale per tutta la campagna, mai per un solo post.
+**The Pesi Espliciti Rule.** In Figma Bodoni Moda va scelto con lo spessore dichiarato (Black per i numeri, ExtraBold per titoli e nomi); un sostituto bodoniano vale per tutta la campagna, mai per un solo post.
 
 ## Layout
 

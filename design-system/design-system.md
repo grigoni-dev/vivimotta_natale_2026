@@ -40,7 +40,7 @@ Il sistema grafico della campagna social di Natale 2026 dell'associazione Vivi M
 
 ## Tipografia
 
-Due famiglie, entrambe su Google Fonts e nel menu font di Canva.
+Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 
 - **Bodoni Moda** è la voce della campagna: la stessa famiglia di caratteri del logo "VIVI MOTTA" (bodoniano ad alto contrasto).
   - **900** per i numeri dei giorni: `numero-xl` (dentro l'arco, 700px nel post, 780px nella storia), numero da 180px nelle caselle del programma, `numero-m` e `numero-s` per le caselle piccole.
@@ -48,7 +48,7 @@ Due famiglie, entrambe su Google Fonts e nel menu font di Canva.
   - **500 corsivo** per la `frase`: il payoff, il mese nel programma, "oggi è il" nella storia, "offerta da".
 - **Archivo** per tutto ciò che è pratico: `info` (800 maiuscolo 40px, quando e dove), `etichetta` (800 maiuscolo, giorno della settimana nella casella), `corpo` (500 36px, descrizioni di massimo due righe), `nota` (600 24–26px, orari, indirizzi, hashtag).
 - Niente scritte sopra al titolo (rubrica, nome della campagna): il titolo apre il post da solo; il marchio dice già chi parla.
-- In Canva: Bodoni Moda va impostato con lo spessore esplicito (Black per i numeri, ExtraBold per i titoli). Se non comparisse nel menu, usa un altro bodoniano gratuito (per esempio Libre Bodoni) e segnalalo, così il cambio vale per tutta la campagna.
+- In Figma gli stili di testo `Motta/…` hanno già carattere, spessore e misure. Se si imposta a mano, Bodoni Moda va scelto con lo spessore esplicito (Black per i numeri, ExtraBold per i titoli). Se non comparisse nel menu, usa un altro bodoniano gratuito (per esempio Libre Bodoni) e segnalalo, così il cambio vale per tutta la campagna.
 
 ## La casella del giorno
 
@@ -60,7 +60,7 @@ Due famiglie, entrambe su Google Fonts e nel menu font di Canva.
 
 ## Le tessere: con parsimonia
 
-- 18 tessere SVG (`tessere/`) con fondo e figura fissi, da caricare su Canva così come sono.
+- 18 tessere SVG (`tessere/`) con fondo e figura fissi, già pronte come componenti nel file Figma (pagina "Componenti").
 - Le tessere di Motta sono quattro: `portici`, `cupola` (la Loggia), `campanile` (il Duomo), `onda` (la Livenza).
 - **Al massimo una tessera per post**, come timbro nell'angolo in basso a destra (135px): di norma la `stellina`, simbolo della campagna. Fanno eccezione solo la caccia a Zenzerino (griglia piena), la copertina delle botteghe (due righe in fondo) e il post sponsor (regalo, pallina e bastoncino alternati ai loghi).
 - Nei post con la foto (schede botteghe, articolo in evidenza) e nell'annuncio non serve nessuna tessera.
@@ -76,7 +76,7 @@ Due famiglie, entrambe su Google Fonts e nel menu font di Canva.
 - La finestra ad arco richiama i portici del centro: lato superiore a semicerchio con raggio uguale a metà della larghezza, base dritta.
 - Una sola per post. Inizia e finisce su multipli della casella (post: 6×5 caselle, x 135–945, y 135–810; storia: 7×6 caselle da 120px; scheda bottega: 4×5).
 - Contiene il numero del giorno (che esce dal fondo dell'arco) nel colore del giorno, oppure l'albero, oppure la foto della vetrina o dell'installazione offerta da uno sponsor.
-- In Canva: rettangolo + cerchio dello stesso colore, oppure la cornice ad arco con la foto dentro.
+- In Figma: una cornice con i due angoli in alto arrotondati a metà larghezza e "Clip content" attivo; la foto si mette come riempimento immagine.
 
 ## Zenzerino
 

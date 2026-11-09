@@ -144,3 +144,16 @@ Dopo un breve confronto sul nome (`pagine/ProposteNome.html`), il cliente ha sce
 - **Aggiornamento:** su richiesta del cliente, le caselle grafiche del post sponsor sono le tessere `regalo`, `pallina` e `bastoncino` al posto delle tessere di Motta.
 - **Aggiornamento:** il "Christmas Kit" non si nomina più nei testi pubblicati. Il post sponsor dice "Queste attività sostengono il Natale nel centro di Motta. Grazie." La regola è in `design-system.md` (tono) e in `PRODUCT.md`.
 - **Aggiornamento:** la tessera `onda` ora ha due onde parallele invece di tre (`design-system/tessere/onda.svg`).
+
+---
+
+# Template per Figma
+
+Le grafiche si producono in **Figma** (piano gratuito) invece che in Canva.
+- **Plugin:** in `figma/plugin/` c'è un plugin "in sviluppo" che, avviato in un file Figma, crea:
+  - gli stili di colore e di testo `Motta/…`;
+  - una pagina di componenti (tessere, marchio, albero, stella);
+  - 11 template modificabili, uno per formato.
+- **Istruzioni:** in `figma/LEGGIMI.md`.
+- **Aggiornamento:** il plugin incorpora i file SVG del design system; se cambiano, si rigenera con `python3 figma/sorgente/genera.py`.
+- **Riferimenti:** `PRODUCT.md`, `design-system.md`, `DESIGN.md`, le schede e i LEGGIMI ora parlano di Figma al posto di Canva.

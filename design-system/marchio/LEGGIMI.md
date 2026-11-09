@@ -1,6 +1,6 @@
 # Marchio "Motta a Natale"
 
-"Motta" sopra, "✦ Natale" sotto in corsivo: la stella prende il posto della "a". File vettoriali con il testo già convertito in tracciati: si caricano su Canva così come sono, senza bisogno del font.
+"Motta" sopra, "✦ Natale" sotto in corsivo: la stella prende il posto della "a". File vettoriali con il testo già convertito in tracciati: si usano in Figma (dove sono già componenti) o in qualunque altro programma, senza bisogno del font.
 
 | File | Fondo |
 |---|---|

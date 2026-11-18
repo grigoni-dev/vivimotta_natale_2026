@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locandina Gravel chiara</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,500..900;1,62..125,500..900&display=swap">
+<style>
+/* Locandina A3 (297×420 mm) con 3 mm di abbondanza: foglio 303×426 mm.
+   Versione chiara: fondo e colori presi dal logo "La Motha" (rosso, nero, giallo, verde agrifoglio).
+   Della campagna restano la fascia di tessere, il marchio e i caratteri. */
+@page{size:303mm 426mm;margin:0}
+.lc{--fondo:#f4ede3;--r:#e8051e;--n:#17110e;--g:#f5b700;--v:#2c7a30;--m:18mm;
+  width:303mm;height:426mm;position:relative;overflow:hidden;background:var(--fondo);color:var(--n);flex:none;zoom:.62;
+  box-shadow:0 1px 2px rgba(43,32,25,.12),0 8px 24px rgba(43,32,25,.10);font-family:Archivo,sans-serif}
+@media print{html,body{background:none;padding:0}.lc{zoom:1;box-shadow:none}.didascalia{display:none}}
+.lc .fascia{left:0;top:0;width:303mm;display:grid;grid-template-columns:repeat(10,30.3mm);grid-auto-rows:30.3mm}
+
+/* Il carattere "da corsa": Archivo stretto, nero pieno, corsivo come GRAVEL BIKE-DAY nel logo. */
+.lc .corsa{font-family:Archivo,sans-serif;font-stretch:68%;font-weight:900;font-style:italic;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+
+.lc .logo{left:50%;top:39mm;width:258mm;transform:translateX(-50%)}
+.lc .edizione{left:50%;top:166mm;width:186mm;transform:translateX(-50%)}
+
+/* La data: il 13 rosso con il contorno e l'ombra nera del logo. */
+.lc .data{left:var(--m);right:var(--m);top:189mm;display:flex;align-items:center;justify-content:center;gap:7mm}
+.lc .data .num{font-size:66mm;color:var(--r);-webkit-text-stroke:1.6mm var(--n);paint-order:stroke fill;text-shadow:1.6mm 1.8mm 0 var(--n);padding-right:2mm}
+.lc .data .gg{font-size:24mm;display:block}
+.lc .data .mese{font-size:24mm;color:var(--v);display:block}
+
+/* La bici col regalo pedala in salita sopra la fascia gialla. */
+.lc .bici{left:237mm;top:221mm;width:48mm;transform:rotate(-2.2deg);z-index:1}
+.lc .bici.prima{left:14mm;top:229.8mm}
+
+/* Fascia gialla inclinata come le righe sotto LA MOTHA. */
+.lc .nastro{left:-4mm;right:-4mm;top:257mm;height:26mm;background:var(--g);transform:rotate(-2.2deg);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-top:1.2mm solid var(--n);border-bottom:1.2mm solid var(--n)}
+.lc .nastro .frase{font-size:10.4mm}
+.lc .nastro .km{font:800 5mm/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:2.2mm}
+
+/* La giornata in tre tempi. */
+.lc .tappe{left:var(--m);right:var(--m);top:295mm;display:grid;grid-template-columns:repeat(3,1fr)}
+.lc .tappe div{text-align:center;padding:0 3mm}
+.lc .tappe div + div{border-left:.7mm solid var(--n)}
+.lc .tappe .et{font:800 4.4mm/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--r)}
+.lc .tappe b{display:block;font-size:12mm;margin-top:2.6mm}
+.lc .tappe span{display:block;font:600 4.4mm/1.25 Archivo,sans-serif;margin-top:1.6mm}
+.lc .tappe div:nth-child(3) b{color:var(--v)}
+
+/* Iscrizioni: due modi, il QR del modulo e il telefono di Lorenzo. Accanto il bollino della quota. */
+.lc .iscrivi{left:var(--m);right:70mm;top:334mm;display:grid;grid-template-columns:36mm 1fr;column-gap:7mm;align-items:center}
+.lc .iscrivi .qr{width:36mm;height:36mm;background:#fff;border:1mm solid var(--n);padding:1.2mm;display:block}
+.lc .iscrivi h3{font-size:11mm;color:var(--r)}
+.lc .iscrivi .modo{font:600 4.8mm/1.25 Archivo,sans-serif;margin-top:2mm;max-width:105mm}
+.lc .iscrivi .tel{display:block;font-size:11mm;margin-top:1mm;white-space:nowrap}
+.lc .iscrivi .tel em{font-style:inherit;color:var(--v)}
+.lc .iscrivi .nota{font:600 3.8mm/1.25 Archivo,sans-serif;margin-top:2mm}
+.lc .bollino{right:24mm;top:333mm;width:40mm;height:40mm;border-radius:50%;background:var(--r);color:#fff;border:1.2mm solid var(--n);box-shadow:1.4mm 1.6mm 0 var(--n);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg)}
+.lc .bollino small{font:800 3.4mm/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.lc .bollino b{font-size:15mm;margin-top:1mm}
+
+/* Loghi sul fondo chiaro: quelli con fondo bianco si fondono col "moltiplica". */
+.lc .promotori{left:var(--m);right:var(--m);bottom:10mm;border-top:.7mm solid var(--n);padding-top:4mm;display:flex;justify-content:space-between;align-items:flex-start}
+.lc .promotori .et{font:800 3.2mm/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--v);margin-bottom:3mm}
+.lc .promotori .collab .et{text-align:right}
+.lc .loghi{display:flex;gap:6mm;align-items:center;height:26mm}
+.lc .loghi img{display:block;height:100%;width:auto;mix-blend-mode:multiply}
+.lc .loghi img.viotto{height:12.5mm;mix-blend-mode:normal}
+.lc .comune{display:flex;align-items:center;gap:2.5mm;height:100%}
+.lc .comune span{font:700 3.3mm/1.15 Archivo,sans-serif}
+.lc .marchio-c{right:var(--m);top:4.5mm;width:0}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="lc">
+  <div class="abs fascia">
+    <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/portici.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pallina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campanile.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/abete.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
+  </div>
+
+  <img class="abs logo" src="../assets/gravel/la-motha.png" alt="La Motha Gravel Bike-Day">
+  <img class="abs edizione" src="../assets/gravel/christmas-edition.png" alt="Christmas Edition">
+
+  <div class="abs data">
+    <span class="corsa num">13</span>
+    <span><span class="corsa gg">Domenica</span><span class="corsa mese">dicembre</span></span>
+  </div>
+
+  <img class="abs bici prima" src="../design-system/illustrazioni/bici-chiara-verde.svg" alt="">
+  <img class="abs bici" src="../design-system/illustrazioni/bici-chiara.svg" alt="">
+
+  <div class="abs nastro">
+    <p class="corsa frase">Una giornata di gravel, Natale e convivialità!</p>
+    <p class="km">44 km attorno a Motta di Livenza</p>
+  </div>
+
+  <div class="abs tappe">
+    <div><p class="et">Partenza</p><b class="corsa">9.30–10.30</b><span>Libera, dall'Area festeggiamenti<br>di Villanova</span></div>
+    <div><p class="et">Ristoro</p><b class="corsa">Piazza Luzzati</b><span>Nel centro<br>di Motta di Livenza</span></div>
+    <div><p class="et">Arrivo</p><b class="corsa">Pasta Party</b><span>All'Area festeggiamenti,<br>tutti insieme</span></div>
+  </div>
+
+  <div class="abs iscrivi">
+    <img class="qr" src="../assets/gravel/qr-iscrizione.png" alt="QR code del modulo di iscrizione">
+    <div>
+      <h3 class="corsa">Iscriviti!</h3>
+      <p class="modo">Inquadra il QR e compila il modulo, oppure chiama o scrivi a Lorenzo</p>
+      <b class="corsa tel"><em>+39</em> 342 501 7672</b>
+      <p class="nota">Anche in negozio da Cicli Zabel.</p>
+    </div>
+  </div>
+  <div class="abs bollino"><small>Quota</small><b class="corsa">15 €</b></div>
+
+  <div class="abs promotori">
+    <div>
+      <p class="et">Organizzano</p>
+      <div class="loghi">
+        <div class="comune"><img src="../assets/gravel/comune.png" alt=""><span>Città di<br>Motta di<br>Livenza</span></div>
+        <img src="../assets/gravel/vivimotta.png" alt="Vivi Motta">
+        <img src="../assets/gravel/zero5.png" alt="Zero5 Bike Team">
+      </div>
+    </div>
+    <div class="collab">
+      <p class="et">In collaborazione con</p>
+      <div class="loghi">
+        <img src="../assets/gravel/proloco.png" alt="Pro Loco Motta di Livenza">
+        <img src="../assets/gravel/villanova.png" alt="Villanova">
+        <img class="viotto" src="../assets/gravel/viotto.png" alt="Viotto Grafica">
+      </div>
+    </div>
+  </div>
+</div>
+<p class="didascalia">Locandina A3, versione chiara, ridotta. PDF: <code>stampa/Locandina-GravelRide-A3-chiara.pdf</code>.</p>
+</div>
+</body>
+</html>

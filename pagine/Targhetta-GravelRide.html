@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Targhetta Gravel Ride</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+/* Targhetta da bici 150×100 mm con 3 mm di abbondanza per lato: il foglio è 156×106 mm.
+   Le misure sono sul foglio con abbondanza; il taglio è a 3 mm dal bordo, i testi stanno ad almeno 7 mm dal taglio.
+   Gli angoli in alto restano liberi per i fori delle fascette. */
+@page{size:156mm 106mm;margin:0}
+.ta{--t:19.5mm; /* tessera: 8 nella larghezza del foglio */
+  width:156mm;height:106mm;position:relative;overflow:hidden;background:var(--verde-loggia);color:var(--panna);flex:none;zoom:1.6;
+  box-shadow:0 1px 2px rgba(43,32,25,.12),0 8px 24px rgba(43,32,25,.10)}
+@media print{html,body{background:none;padding:0}.ta{zoom:1;box-shadow:none}.didascalia{display:none}}
+
+.ta .fascia{left:0;bottom:0;width:156mm;display:grid;grid-template-columns:repeat(8,var(--t));grid-auto-rows:var(--t)}
+/* La bici con il regalo sul portapacchi. */
+.ta .bici{left:9mm;top:31mm;width:54mm;display:block}
+.ta .marchio-t{left:65mm;top:13mm;width:30mm;display:block}
+.ta .titolo{left:65mm;top:33mm;width:80mm;font-family:var(--font-numeri);font-weight:800;font-size:8.6mm;line-height:.98;letter-spacing:-.01em}
+.ta .quando{left:65mm;top:54.5mm;font-size:3.4mm;color:var(--ocra)}
+/* Il cartellino vuoto: chi pedala ci scrive il suo nome. */
+.ta .nome{left:65mm;top:61mm;width:78mm;height:16mm;background:var(--panna)}
+</style>
+</head>
+<body>
+<div class="foglio">
+<div class="ta">
+  <img class="abs bici" src="../design-system/illustrazioni/bici.svg" alt="Bici con un regalo sul portapacchi">
+  <img class="abs marchio-t" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <p class="abs titolo">La Motha<br>Xmas Gravel Ride</p>
+  <p class="abs quando info">Domenica 13 dicembre</p>
+  <div class="abs nome" aria-label="Spazio per il nome"></div>
+  <div class="abs fascia">
+    <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/portici.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pallina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/zenzerino.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
+  </div>
+</div>
+<p class="didascalia">Targhetta da bici 150×100 mm con 3 mm di abbondanza, ingrandita. La bici con il regalo sul portapacchi, il nome dell'evento, il cartellino vuoto dove scrivere il proprio nome, la fascia di tessere in basso. Gli angoli in alto sono liberi per i fori delle fascette. PDF: <code>stampa/Targhetta-GravelRide-15x10.pdf</code>.</p>
+</div>
+</body>
+</html>

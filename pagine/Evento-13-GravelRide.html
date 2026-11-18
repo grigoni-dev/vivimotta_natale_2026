@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravel Ride 13</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+/* Post evento del 13 dicembre: il colore fisso del 13 è azzurro, quindi fondo verde-loggia. */
+.ev{background:var(--verde-loggia);color:var(--panna)}
+.ev .finestra{left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--azzurro);align-items:flex-end}
+/* Sull'azzurro il numero è verde-loggia: il panna non avrebbe contrasto. */
+.ev .finestra .numero-xl{color:var(--verde-loggia);font-size:700px;margin-bottom:-24px}
+.ev .testo{left:var(--mezza);top:850px;width:945px}
+.ev .corpo{margin-top:20px}
+.ev .info{margin-top:22px;color:var(--ocra)}
+/* #export: il post a misura reale, per salvare il PNG. */
+.export body{padding:0;background:none}
+.export .cornice{width:1080px;height:1350px;box-shadow:none}
+.export .post{transform:none}
+.export .didascalia{display:none}
+</style>
+<script>if(location.hash==="#export")document.documentElement.classList.add("export")</script>
+</head>
+<body>
+<div class="foglio">
+<div class="cornice"><div class="post ev">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <div class="abs arco finestra"><div class="numero-xl">13</div></div>
+  <div class="abs testo">
+    <h1 class="titolo-l">La Motha<br>Xmas Gravel Ride</h1>
+    <p class="corpo">La pedalata di Natale in gravel, con Zero 5 Bike Team.</p>
+    <p class="info">Domenica 13 dicembre</p>
+  </div>
+  <div class="abs casella timbro"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+</div></div>
+<p class="didascalia">Post evento del 13 dicembre, 1080×1350 · l'arco nel colore fisso del 13 (azzurro), il nome dell'evento, la descrizione e il giorno (il luogo è nel carosello). PNG pronto da pubblicare: <code>post/2026-12-13-gravel-ride.png</code>.</p>
+</div>
+</body>
+</html>

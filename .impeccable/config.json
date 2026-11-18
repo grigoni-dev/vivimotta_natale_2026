@@ -101,6 +101,24 @@
         ],
         "createdAt": "2026-11-09T23:05:49.497Z",
         "reason": "model decision: print poster with full-bleed tile bands and flush day caselle by design (same pattern as the post pages)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/Targhetta-GravelRide.html"
+        ],
+        "createdAt": "2026-11-10T15:03:53.214Z",
+        "reason": "model decision: print plate with full-bleed tile band by design (same pattern as the poster and post pages)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "pagine/Flyer-GravelRide.html"
+        ],
+        "createdAt": "2026-11-10T15:09:58.698Z",
+        "reason": "model decision: print flyer with full-bleed tile bands by design (same pattern as poster and plate)"
       }
     ]
   }

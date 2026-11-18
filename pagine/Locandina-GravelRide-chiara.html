@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>var f=location.hash.slice(1);if(f==="post"||f==="story"||f==="whatsapp")document.documentElement.classList.add("social","f-"+f)</script>
 <title>Locandina Gravel chiara</title>
 <link rel="stylesheet" href="../design-system/tokens.css">
 <link rel="stylesheet" href="campagna.css">
@@ -22,7 +23,7 @@
 .lc .corsa{font-family:Archivo,sans-serif;font-stretch:68%;font-weight:900;font-style:italic;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
 
 .lc .logo{left:50%;top:39mm;width:258mm;transform:translateX(-50%)}
-.lc .edizione{left:50%;top:166mm;width:186mm;transform:translateX(-50%)}
+.lc .edizione{left:0;right:0;top:166mm;text-align:center;font-size:17mm;letter-spacing:.03em}
 
 /* La data: il 13 rosso con il contorno e l'ombra nera del logo. */
 .lc .data{left:var(--m);right:var(--m);top:189mm;display:flex;align-items:center;justify-content:center;gap:7mm}
@@ -40,24 +41,27 @@
 .lc .nastro .frase{font-size:10.4mm}
 .lc .nastro .km{font:800 5mm/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:2.2mm}
 
-/* La giornata in tre tempi. */
-.lc .tappe{left:var(--m);right:var(--m);top:295mm;display:grid;grid-template-columns:repeat(3,1fr)}
+/* Le due cose che contano: dove e quando si parte, e il pasta party (aperto anche a chi non corre).
+   Il ristoro in Piazza Luzzati sta nella fascia gialla, perché non sembri il luogo di partenza. */
+.lc .tappe{left:var(--m);right:var(--m);top:294mm;display:grid;grid-template-columns:repeat(2,1fr)}
 .lc .tappe div{text-align:center;padding:0 3mm}
 .lc .tappe div + div{border-left:.7mm solid var(--n)}
 .lc .tappe .et{font:800 4.4mm/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--r)}
 .lc .tappe b{display:block;font-size:12mm;margin-top:2.6mm}
+.lc .tappe i{display:block;font-size:7mm;margin-top:1.6mm}
 .lc .tappe span{display:block;font:600 4.4mm/1.25 Archivo,sans-serif;margin-top:1.6mm}
-.lc .tappe div:nth-child(3) b{color:var(--v)}
+.lc .tappe div:nth-child(2) b{color:var(--v)}
+.lc .tappe .invito{display:block;font-size:6.4mm;color:var(--r);margin-top:2mm}
 
-/* Iscrizioni: due modi, il QR del modulo e il telefono di Lorenzo. Accanto il bollino della quota. */
-.lc .iscrivi{left:var(--m);right:70mm;top:334mm;display:grid;grid-template-columns:36mm 1fr;column-gap:7mm;align-items:center}
+/* Iscrizioni: due modi, il QR del modulo e il telefono di Maurizio. Accanto il bollino della quota. */
+.lc .iscrivi{left:var(--m);right:70mm;top:339mm;display:grid;grid-template-columns:36mm 1fr;column-gap:7mm;align-items:center}
 .lc .iscrivi .qr{width:36mm;height:36mm;background:#fff;border:1mm solid var(--n);padding:1.2mm;display:block}
 .lc .iscrivi h3{font-size:11mm;color:var(--r)}
 .lc .iscrivi .modo{font:600 4.8mm/1.25 Archivo,sans-serif;margin-top:2mm;max-width:105mm}
 .lc .iscrivi .tel{display:block;font-size:11mm;margin-top:1mm;white-space:nowrap}
 .lc .iscrivi .tel em{font-style:inherit;color:var(--v)}
 .lc .iscrivi .nota{font:600 3.8mm/1.25 Archivo,sans-serif;margin-top:2mm}
-.lc .bollino{right:24mm;top:333mm;width:40mm;height:40mm;border-radius:50%;background:var(--r);color:#fff;border:1.2mm solid var(--n);box-shadow:1.4mm 1.6mm 0 var(--n);
+.lc .bollino{right:24mm;top:337mm;width:40mm;height:40mm;border-radius:50%;background:var(--r);color:#fff;border:1.2mm solid var(--n);box-shadow:1.4mm 1.6mm 0 var(--n);
   display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg)}
 .lc .bollino small{font:800 3.4mm/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .lc .bollino b{font-size:15mm;margin-top:1mm}
@@ -72,6 +76,25 @@
 .lc .comune{display:flex;align-items:center;gap:2.5mm;height:100%}
 .lc .comune span{font:700 3.3mm/1.15 Archivo,sans-serif}
 .lc .marchio-c{right:var(--m);top:4.5mm;width:0}
+.lc .contenuto{left:0;top:var(--dy,0mm);width:303mm;height:426mm}
+
+/* Versioni social, dallo stesso file: #post (1080×1350) e #story (1080×1920).
+   Niente loghi né QR; le iscrizioni rimandano al link in bio. 303 mm = 1145 px, quindi zoom 1080/1145. */
+.lc .modo.social,.lc .fascia.giu{display:none}
+.social body{padding:0;margin:0;background:none}
+.social .foglio{display:block}
+.social .didascalia,.social .lc .promotori,.social .lc .qr,.social .lc .modo.stampa{display:none}
+.social .lc .modo.social{display:block}
+.social .lc{zoom:.9431;box-shadow:none}
+.social .lc .iscrivi{grid-template-columns:1fr;right:75mm}
+.f-post .lc{height:378.75mm;--dy:-5mm}
+.f-story .lc{height:538.67mm;--dy:47mm}
+.f-story .lc .fascia.giu{display:grid;top:auto;bottom:0}
+/* #whatsapp: come il post, ma il link per iscriversi è nel testo del messaggio. */
+.lc .modo.wa,.f-whatsapp .lc .modo.social{display:none}
+.f-whatsapp .lc .modo.wa{display:block}
+.lc .iscrivi .modo.wa{max-width:none}
+.f-whatsapp .lc{height:378.75mm;--dy:-5mm}
 </style>
 </head>
 <body>
@@ -89,9 +112,22 @@
     <div class="casella"><img src="../design-system/tessere/abete.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
   </div>
+  <div class="abs fascia giu">
+    <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/portici.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pallina.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campanile.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/abete.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
+  </div>
 
+  <div class="abs contenuto">
   <img class="abs logo" src="../assets/gravel/la-motha.png" alt="La Motha Gravel Bike-Day">
-  <img class="abs edizione" src="../assets/gravel/christmas-edition.png" alt="Christmas Edition">
+  <p class="abs corsa edizione">Christmas Edition</p>
 
   <div class="abs data">
     <span class="corsa num">13</span>
@@ -103,21 +139,22 @@
 
   <div class="abs nastro">
     <p class="corsa frase">Una giornata di gravel, Natale e convivialità!</p>
-    <p class="km">44 km attorno a Motta di Livenza</p>
+    <p class="km">44 km attorno a Motta · ristoro in Piazza Luzzati</p>
   </div>
 
   <div class="abs tappe">
-    <div><p class="et">Partenza</p><b class="corsa">9.30–10.30</b><span>Libera, dall'Area festeggiamenti<br>di Villanova</span></div>
-    <div><p class="et">Ristoro</p><b class="corsa">Piazza Luzzati</b><span>Nel centro<br>di Motta di Livenza</span></div>
-    <div><p class="et">Arrivo</p><b class="corsa">Pasta Party</b><span>All'Area festeggiamenti,<br>tutti insieme</span></div>
+    <div><p class="et">Partenza libera</p><b class="corsa">9.30–10.30</b><i class="corsa">Centro Polivalente di Villanova</i><span>Villanova di Motta di Livenza (TV)<br>Parti quando vuoi nella fascia oraria</span></div>
+    <div><p class="et">Arrivo</p><b class="corsa">Pasta Party</b><i class="corsa">Centro Polivalente di Villanova</i><span>Villanova di Motta di Livenza (TV)</span><em class="corsa invito">Non corri? Vieni lo stesso!</em></div>
   </div>
 
   <div class="abs iscrivi">
     <img class="qr" src="../assets/gravel/qr-iscrizione.png" alt="QR code del modulo di iscrizione">
     <div>
       <h3 class="corsa">Iscriviti!</h3>
-      <p class="modo">Inquadra il QR e compila il modulo, oppure chiama o scrivi a Lorenzo</p>
-      <b class="corsa tel"><em>+39</em> 342 501 7672</b>
+      <p class="modo stampa">Inquadra il QR e compila il modulo, oppure chiama o scrivi a Maurizio</p>
+      <p class="modo social">Link in bio, oppure chiama o scrivi a Maurizio</p>
+      <p class="modo wa">Link nel messaggio, oppure chiama o scrivi a Maurizio</p>
+      <b class="corsa tel"><em>+39</em> 349 559 4311</b>
       <p class="nota">Anche in negozio da Cicli Zabel.</p>
     </div>
   </div>
@@ -141,8 +178,9 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
-<p class="didascalia">Locandina A3, versione chiara, ridotta. PDF: <code>stampa/Locandina-GravelRide-A3-chiara.pdf</code>.</p>
+<p class="didascalia">Locandina A3, versione chiara, ridotta. Versioni social: aggiungi <code>#post</code>, <code>#story</code> o <code>#whatsapp</code> all'indirizzo. PDF: <code>stampa/Locandina-GravelRide-A3-chiara.pdf</code>.</p>
 </div>
 </body>
 </html>

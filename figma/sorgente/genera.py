@@ -9,7 +9,8 @@ assets = {
     "marchio": {p.stem.replace("marchio-", ""): pulisci(p.read_text()) for p in sorted((R / "design-system/marchio").glob("marchio-*.svg"))},
     "albero": pulisci((R / "design-system/illustrazioni/albero.svg").read_text()),
     "stella": pulisci((R / "design-system/marchio/stella.svg").read_text()),
+    "illustrazioni": {n: pulisci((R / f"design-system/illustrazioni/{n}.svg").read_text()) for n in ["pattino", "panettone", "corridore-verde", "corridore-rosso"]},
 }
 tpl = (R / "figma/sorgente/code.template.js").read_text()
 (R / "figma/plugin/code.js").write_text(tpl.replace("__ASSETS__", json.dumps(assets, ensure_ascii=False)))
-print("code.js:", len(assets["tessere"]), "tessere,", len(assets["marchio"]), "marchi")
+print("code.js:", len(assets["tessere"]), "tessere,", len(assets["marchio"]), "marchi,", len(assets["illustrazioni"]), "illustrazioni")

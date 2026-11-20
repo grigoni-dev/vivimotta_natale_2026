@@ -332,3 +332,20 @@ Nuovo carosello di sei pagine (`pagine/CaroselloPushDay.html`, regole in `design
   - `post/2026-12-26-panettone-post.png`;
   - `post/2026-12-26-panettone-story.png`.
 - **Correzione:** il testo sulla fascia ocra è in `inchiostro`. In `verde-loggia` il contrasto era basso.
+
+---
+
+# Plugin Figma aggiornato
+
+- **Nuovi template**, 23 in tutto:
+  - Push Day: 5 pagine, con il filo di lampadine disegnato come vettore e diviso tra le pagine;
+  - carosello del giorno: esempio sul 12, 3 pagine, con la fascia di tessere spostata di mezza casella;
+  - pista di pattinaggio;
+  - Smaltiamo il panettone: post e storia, ricavati dalle misure della locandina A3.
+- **Tolto** il template del vecchio post evento.
+- **Nuovi componenti:**
+  - le illustrazioni pattino, panettone, corridore verde e corridore rosso;
+  - le quattro versioni del marchio su una riga.
+- **Correzione:** dopo l'aggiunta dei marchi su una riga il plugin si sarebbe fermato: il fondo dei nuovi marchi non era definito. Ora prendono lo stesso fondo delle versioni su due righe.
+- **Verifica:** il plugin è stato eseguito per intero su un Figma simulato, per controllare nomi, stili e intervalli di testo. Non è ancora stato provato nell'app Figma vera.
+- **Istruzioni:** in `figma/LEGGIMI.md` ci sono l'elenco aggiornato e come fare il carosello di un giorno nuovo.

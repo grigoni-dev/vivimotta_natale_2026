@@ -8,18 +8,21 @@ Il plugin in `plugin/` costruisce dentro un file Figma tutto il necessario per p
 - **Stili di testo** `Motta/titolo-l`, `Motta/frase`, `Motta/info`, … : Bodoni Moda e Archivo con le misure giuste.
 - **Pagina "Motta Natalè · Componenti":**
   - le 18 tessere;
-  - le quattro versioni del marchio;
-  - l'albero;
-  - la stella.
-- **Pagina "Motta Natalè · Template":** 13 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
+  - le otto versioni del marchio (quattro su due righe, quattro su una riga);
+  - l'albero e la stella;
+  - le illustrazioni: pattino, panettone, i due corridori.
+- **Pagina "Motta Natalè · Template":** 23 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
   - Annuncio;
   - Programma (4 pagine);
-  - Evento;
+  - Push Day, 5 dicembre (5 pagine, con il filo di lampadine);
+  - Il giorno, esempio sul 12 dicembre (3 pagine, con la fascia di tessere);
   - Storia;
+  - Pista di pattinaggio;
   - Botteghe: copertina, scheda e articolo;
   - Sponsor;
   - Offerto da;
-  - Caccia a Zenzerino.
+  - Caccia a Zenzerino;
+  - Smaltiamo il panettone: post e storia.
 
 ## Come si avvia (una volta sola)
 
@@ -50,6 +53,10 @@ Il plugin si avvia **una volta per file**: ogni avvio aggiunge due pagine nuove.
 5. **Loghi degli sponsor:** trascina il logo nella casella bianca, entro il riquadro tratteggiato (al massimo il 70% della casella), poi cancella il riquadro e la scritta "logo".
 6. **Marchio:** è un'istanza del componente. Per cambiarne la versione (per esempio su un fondo rosso) usa lo scambio di istanza nel pannello a destra e scegli `Marchio/panna`.
 7. **Caccia a Zenzerino:** sposta la tessera Zenzerino in un punto diverso a ogni post, scambiandola con un'altra tessera.
+8. **Carosello di un giorno nuovo:** duplica tutte le pagine del carosello "Il giorno" insieme, così la fascia di tessere resta continua.
+   - Cambia il numero nell'arco e nella casella in alto a destra.
+   - Colora l'arco e la casella con il colore fisso del giorno. Il fondo non deve mai essere lo stesso colore: se il giorno è `verde-loggia`, usa il fondo `rosso`.
+   - Se servono più attività, duplica l'ultima pagina e spostala a destra di 1080 px. Poi correggi la fascia: trascina le tessere di mezza casella perché combacino con la pagina prima.
 
 ## Esportare per Instagram
 

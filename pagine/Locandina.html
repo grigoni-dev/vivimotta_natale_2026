@@ -23,24 +23,24 @@
 .lo .fascia.su{top:0}
 .lo .fascia.giu{bottom:0}
 
-.lo .titolo{left:50%;top:54mm;transform:translateX(-50%);width:140mm;display:block}
-.lo .frase{left:var(--sx);width:var(--lg);top:141mm;text-align:center;font-size:8mm;color:var(--inchiostro)}
-.lo .quando{left:var(--sx);width:var(--lg);top:154mm;text-align:center;font-size:5mm;color:var(--rosso)}
+.lo .titolo{left:var(--sx);top:58mm;width:var(--lg);display:block}
+.lo .frase{left:var(--sx);width:var(--lg);top:104mm;text-align:center;font-size:8mm;color:var(--inchiostro)}
+.lo .quando{left:var(--sx);width:var(--lg);top:117mm;text-align:center;font-size:5mm;color:var(--rosso)}
 
-.lo .intesta{left:var(--sx);width:var(--lg);top:170mm;display:flex;align-items:baseline;gap:4mm;border-bottom:.8mm solid var(--verde-loggia);padding-bottom:2.5mm}
+.lo .intesta{left:var(--sx);width:var(--lg);top:133mm;display:flex;align-items:baseline;gap:4mm;border-bottom:.8mm solid var(--verde-loggia);padding-bottom:2.5mm}
 .lo .intesta h2{font-family:var(--font-numeri);font-weight:800;font-size:12mm;line-height:1;letter-spacing:-.01em}
 .lo .intesta .frase{position:static;font-size:8mm;color:var(--inchiostro);text-align:left;width:auto}
 
-/* Il programma: due colonne in ordine di data, caselle da 30 mm accostate come nel carosello. */
-.lo .eventi{left:var(--sx);width:var(--lg);top:192mm;display:grid;grid-template-columns:1fr 1fr;column-gap:9mm;align-items:start}
+/* Il programma: due colonne in ordine di data, caselle da 35 mm accostate come nel carosello. */
+.lo .eventi{left:var(--sx);width:var(--lg);top:155mm;display:grid;grid-template-columns:1fr 1fr;column-gap:9mm;align-items:start}
 .lo .eventi ol{list-style:none}
-.lo .eventi li{display:grid;grid-template-columns:30mm 1fr;height:30mm}
-.lo .eventi .casella{width:30mm;height:30mm;flex-direction:column}
-.lo .eventi .casella .m{position:static;font-size:3.4mm;margin-bottom:1.2mm}
-.lo .eventi .casella .n{font-size:17mm;line-height:.8;letter-spacing:-.03em}
+.lo .eventi li{display:grid;grid-template-columns:35mm 1fr;height:35mm}
+.lo .eventi .casella{width:35mm;height:35mm;flex-direction:column}
+.lo .eventi .casella .m{position:static;font-size:3.8mm;margin-bottom:1.2mm}
+.lo .eventi .casella .n{font-size:20mm;line-height:.8;letter-spacing:-.03em}
 .lo .eventi .testo{padding-left:4.5mm;display:flex;flex-direction:column;justify-content:center}
-.lo .eventi h3{font-family:var(--font-numeri);font-weight:800;font-size:5.6mm;line-height:1.05;letter-spacing:-.005em}
-.lo .eventi .nota{font-size:3.7mm;line-height:1.25;margin-top:1.2mm;color:var(--inchiostro)}
+.lo .eventi h3{font-family:var(--font-numeri);font-weight:800;font-size:6.2mm;line-height:1.05;letter-spacing:-.005em}
+.lo .eventi .nota{font-size:4mm;line-height:1.25;margin-top:1.2mm;color:var(--inchiostro)}
 .lo .eventi .attesa{color:var(--rosso);font-weight:800}
 .lo .eventi li.mese{height:10mm;display:flex;align-items:center;font-family:var(--font-numeri);font-style:italic;font-weight:500;font-size:7mm;color:var(--inchiostro)}
 
@@ -75,8 +75,8 @@
     <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
   </div>
 
-  <h1><img class="abs titolo" src="../design-system/marchio/marchio-verde-rosso.svg" alt="Motta a Natale"></h1>
-  <p class="abs frase">Eventi e intrattenimento per tutta la famiglia.</p>
+  <h1><img class="abs titolo" src="../design-system/marchio/marchio-riga-verde-rosso.svg" alt="Motta Natalè"></h1>
+  <p class="abs frase">Musica, spettacoli, mercatini e intrattenimento per tutta la famiglia.</p>
   <p class="abs quando info">Dal 5 dicembre al 6 gennaio · centro storico di Motta di Livenza</p>
 
   <div class="abs intesta"><h2>Il programma</h2><p class="frase">dicembre e gennaio</p></div>
@@ -121,7 +121,7 @@
 // [mese, giorno, numero, fondo, inchiostro, titolo, dettagli, da confermare]
 const C={rosso:"panna",ocra:"verde-loggia","verde-loggia":"panna","verde-cupola":"inchiostro",azzurro:"inchiostro"};
 const giorni=[
- ["dic","sab",5,"rosso","Push Day: si accendono le luci","[ora] · Musica, intrattenimento, pattinaggio gratuito, Babbo Natale e presepe in piazza"],
+ ["dic","sab",5,"rosso","Push Day: si accendono le luci","Dalle 15.00 in Piazza Luzzatti · Alle 17.00 si accendono l'albero e le luminarie; pattinaggio gratis tutta la sera"],
  ["dic","dom",6,"ocra","San Nicolò con la parrocchia","[ora] · [luogo]"],
  ["dic","mar",8,"verde-cupola","Mercatino dell'antiquariato e albero della Madonna","[ora] · Con il mercatino dei bambini, a cura della Pro Loco",true],
  ["dic","sab",12,"verde-loggia","Concerto dell'Orchestra dei Fiati della Livenza","[ora] · Sotto la Loggia, con Babbo Natale"],
@@ -130,7 +130,7 @@ const giorni=[
  ["dic","dom",20,"verde-cupola","Mercatino dell'hobbistica e mercato natalizio","[ora] · Della Pro Loco, con giochi in legno e il concerto di Evoluzione Musica"],
  ["dic","mer",23,"ocra","Letture danzanti","Ore 18.00 in piazza · Percorso tra parole e movimento nel centro. <span class=\"attesa\">Prenotazione obbligatoria</span>"],
  ["dic","gio",24,"rosso","Il pomeriggio della Pro Loco","[ora] · [luogo]"],
- ["dic","sab",26,"verde-loggia","Smalti Panettone, la corsa podistica","[ora] · A cura di Podistica Mottense"],
+ ["dic","sab",26,"verde-loggia","Smaltiamo il panettone","Ore 9.30, parcheggio CIMIC · Corsa e camminata con Atletica Mottense"],
  ["gen","mar",5,"azzurro","Pan e Vin","[ora] · A cura del CAI Motta"],
  ["gen","mer",6,"ocra","Elfifania","[ora] · Con il rinfresco della Pro Loco"]
 ];

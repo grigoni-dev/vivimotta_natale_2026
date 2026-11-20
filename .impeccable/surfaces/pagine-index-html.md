@@ -5,7 +5,7 @@ primary_target: "pagine/index.html"
 related_targets: ["pagine"]
 ---
 
-# Campagna social Vivi Motta a Natale 2026
+# Campagna social Motta Natalè 2026
 
 Scope: tutti i formati Instagram della campagna (post 1080×1350, caroselli, storie 1080×1920) e gli esempi in `pagine/`. Mode: Persuade.
 

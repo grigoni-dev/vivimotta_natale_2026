@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="1000" height="1000"><title>Pattino da ghiaccio</title>
+<!-- Pattino di profilo, punta a destra: stivaletto rosso con il bordo panna, lacci panna, lama verde con la punta arricciata. -->
+<path d="M58 26 H112 V104 C122 112 140 116 156 119 C172 122 180 130 180 142 V150 H58 Z" fill="#BD3128"/>
+<rect x="58" y="26" width="54" height="16" fill="#F4ECDC"/>
+<g fill="#F4ECDC">
+  <rect x="86" y="54" width="20" height="6" rx="3"/>
+  <rect x="86" y="70" width="20" height="6" rx="3"/>
+  <rect x="86" y="86" width="20" height="6" rx="3"/>
+  <rect x="96" y="102" width="20" height="6" rx="3"/>
+</g>
+<rect x="58" y="150" width="122" height="10" fill="#1A5548"/>
+<rect x="72" y="160" width="10" height="16" fill="#1A5548"/>
+<rect x="150" y="160" width="10" height="16" fill="#1A5548"/>
+<path d="M44 176 H176 C186 176 190 170 190 164 H198 C198 176 190 184 176 184 H44 Z" fill="#1A5548"/>
+</svg>

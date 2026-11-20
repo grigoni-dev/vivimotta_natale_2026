@@ -196,3 +196,139 @@ Dati dell'evento: domenica 13 dicembre, partenza libera 9.30–10.30 dal Centro 
 - **Locandina A3** (`pagine/Locandina-GravelRide-chiara.html`, PDF in `stampa/Locandina-GravelRide-A3-chiara.pdf`, 303×426 mm con 3 mm di abbondanza): logo La Motha con sotto "Christmas Edition" in Archivo corsivo; il 13 rosso con contorno e ombra neri; due bici col regalo (`design-system/illustrazioni/bici-chiara.svg` e `bici-chiara-verde.svg`) sopra una fascia gialla inclinata come le righe del logo, con la frase dell'evento, i km e il ristoro. Sotto, due colonne: la partenza (orario e luogo) e il Pasta Party con "Non corri? Vieni lo stesso!". "Piazza Luzzati" sta in piccolo nella fascia, perché a caratteri grandi faceva pensare al luogo di partenza. Blocco "Iscriviti!" con il QR del modulo (`assets/gravel/qr-iscrizione.png`) e il telefono di Maurizio, bollino rosso della quota, loghi di organizzatori e collaboratori in fondo.
 - **Versioni social e WhatsApp**, dallo stesso file: aggiungendo `#post`, `#story` o `#whatsapp` all'indirizzo la pagina diventa 1080×1350, 1080×1920 o 1080×1350, senza loghi dei partner e senza QR. Le iscrizioni rimandano al "link in bio" (post, story) o al link nel testo del messaggio (WhatsApp). La story ha una seconda fascia di tessere in basso e il contenuto dentro la zona libera dall'interfaccia di Instagram. PNG in `post/2026-12-13-gravel-locandina-chiara-{post,story,whatsapp}.png`. Per riesportarli: Chrome headless con `--screenshot --window-size=1080,1350` (o `1080,1920`) sull'indirizzo con il suffisso.
 - **Targhetta da bici 15×10 cm** (`pagine/Targhetta-GravelRide.html`, PDF in `stampa/Targhetta-GravelRide-15x10.pdf`, 156×106 mm con 3 mm di abbondanza): logo La Motha con "Christmas Edition" e "Domenica 13 dicembre", le due bici ai lati, la riga dei sei loghi (Comune, Vivi Motta, Zero5, Pro Loco, Villanova, Viotto) e la fascia di tessere in basso. Gli angoli in alto sono liberi per i fori delle fascette.
+
+---
+
+# Settima revisione — il nome: Motta Natalè
+
+Il 19 novembre il nome dei festeggiamenti diventa **Motta Natalè** (prima "Motta a Natale"). L'hashtag `#mottanatale` resta uguale.
+
+- **Marchio:** "Motta" sopra, "✦ Natalè" sotto in corsivo. Non c'è più la "a" da sostituire, quindi la stella resta davanti a "Natalè" e l'accento della "è" prende il colore della stella: nella versione `verde` è rosso e richiama la stella.
+  - Lettere dai file Bodoni Moda 11pt del progetto, più robusti sul telefono.
+  - Provate anche la stella al posto dell'accento (sul telefono si leggeva "Natale" con una stellina) e l'accento nel colore della parola.
+- **Rigenerare il marchio:** ora c'è uno script, `design-system/marchio/genera.py`, che riscrive le quattro versioni da capo. Serve `pip install fonttools uharfbuzz`. Nuova immagine del profilo: `profilo-motta-natale.png`.
+- **Misure:** il marchio nuovo è più largo e meno alto. Le larghezze sono state ricalcolate per tenere la stessa altezza:
+
+  | Dove | Prima | Ora |
+  |---|---|---|
+  | post e caroselli | 190px | 230px |
+  | storie | 260px | 270px, a x 405 |
+  | caccia a Zenzerino | 170px | 205px |
+  | locandina A3+ | 140mm | 155mm |
+- **Annuncio rifinito**, sulla linea della locandina gravel (informazioni grandi, niente vuoti):
+  - il marchio va da margine a margine (945px);
+  - le date diventano un titolo in Bodoni su due righe, "dal 5 dicembre / al 6 gennaio", con "dal" e "al" in corsivo rosso;
+  - testo e hashtag da 30 a 32px;
+  - l'arco con l'albero sale a 2 × 2,5 caselle;
+  - il blocco riempie lo spazio fino alla fascia in basso.
+- **Annuncio pronto da pubblicare:** PNG in `post/annuncio-motta-natale.png`. Si riesporta aprendo `pagine/PostAnnuncio.html#png` (nuova regola `.foglio:target` in `campagna.css`).
+- **Programma:** la riga con ora e luogo passa da 26 a 28px, perché si legga meglio sul telefono.
+- **Storia:** "oggi è il" scende di 4px per staccarsi dal marchio.
+- **File aggiornati:**
+  - nome e descrizione del marchio in `PRODUCT.md`, `DESIGN.md`, `design-system.md`, schede, token, `figma/` (plugin rigenerato) e pagine;
+  - PDF `stampa/Locandina-A3plus.pdf` riesportato.
+  - Le pagine `Proposte*.html` restano com'erano, come archivio delle scelte.
+
+---
+
+# Ottava revisione — ritocchi del 20 novembre
+
+Primo blocco delle richieste in `LAVORI.md`.
+
+- **Annuncio:**
+  - tolti la frase "Eventi e intrattenimento per tutta la famiglia." e il testo "Nel centro storico: …";
+  - al loro posto, accanto alle date, "Musica, spettacoli, mercatini e intrattenimento per tutta la famiglia." in corsivo;
+  - l'albero è più grande: arco da 3 × 3,5 caselle, appoggiato sulla fascia in basso;
+  - nella fascia, `candela` e `pois` si scambiano di posto, così sotto l'arco rosa non c'è una tessera rosa;
+  - riesportato `post/annuncio-motta-natale.png`.
+- **Marchio più in basso:** in tutti i post sta a y 54 invece di 20, così è più lontano dal bordo.
+  - I titoli scendono: programma e sponsor a y 205; botteghe a y 210 (copertina) e 198 (scheda).
+  - Nella scheda bottega l'arco con la foto scende a y 432 e si accorcia a 648px, così non tocca il titolo.
+- **Offerto da:** niente arco. Ora ha la stessa impaginazione dell'articolo in evidenza delle botteghe:
+  - foto quadrata a tutta pagina, senza marchio;
+  - fascia verde con il nome dell'installazione e "Offerta da …";
+  - logo dello sponsor su una casella bianca da 270px nell'angolo.
+- **Locandina A3+:**
+  - marchio nella nuova versione su una riga ("Motta ✦ Natalè", file `marchio-riga-*.svg`, generati da `genera.py`), largo quanto la colonna di testo;
+  - nuova frase;
+  - con lo spazio guadagnato le caselle del programma passano da 30 a 35 mm e i testi crescono;
+  - PDF riesportato.
+- **Dati corretti** in locandina, carosello del programma e plugin Figma:
+  - 5 dicembre: "Dalle 15.00 in Piazza Luzzatti · Alle 17.00 si accendono l'albero e le luminarie";
+  - 26 dicembre: "Smaltiamo il panettone", ore 9.30 al parcheggio CIMIC, con Atletica Mottense (prima "Smalti Panettone" con Podistica Mottense).
+- **Plugin Figma:** aggiornati annuncio, posizioni del marchio e dei titoli, offerto da, scheda bottega; la casella del logo accetta una misura.
+
+---
+
+# Carosello Push Day — 5 dicembre
+
+Nuovo carosello di sei pagine (`pagine/CaroselloPushDay.html`, regole in `design-system/componente-CaroselloPushDay.md`).
+
+- **Il filo di lampadine:**
+  - attraversa tutte le pagine, come un unico disegno tagliato a pezzi: scorrendo il carosello, il filo continua;
+  - le lampadine sono gocce piatte nei colori della campagna, con portalampada e riflesso `panna`;
+  - è il nuovo elemento "luci" richiesto dal cliente, nello stile delle tessere.
+- **Copertina:** il 5 nell'arco rosso come nei post dei giorni, il filo sopra, "Push Day · si accendono le luci di Motta", la riga con giorno, luogo e ora, e "Scorri per scoprire il programma →".
+- **Cinque pagine interne:**
+  - dalle 15.00, bambini con Treseizero;
+  - ore 17.00, accensione con il detonatore;
+  - ore 17.15, canti dell'asilo;
+  - ore 17.30, Unbrassed Band;
+  - per tutta la sera, pattinaggio gratis.
+
+  Ogni pagina ha l'ora in grande, il titolo e la casella del giorno in alto a destra, così si riconosce anche presa da sola.
+- **Dati:** dal programma del cliente del 20 novembre. La grafia "Unbrassed Band" è confermata.
+- **PNG pronti da pubblicare:** `post/2026-12-05-pushday-1.png` … `-5.png` (dopo le correzioni).
+- **Non ancora fatto:** il template Figma del carosello.
+
+---
+
+# Carosello del giorno e correzioni al Push Day
+
+- **Push Day**, su indicazione del cliente:
+  - tolto "con l'agenzia Treseizero";
+  - l'accensione dice "I bambini accendono insieme l'albero di Natale e tutte le luminarie di Motta" (niente detonatore);
+  - i canti dell'asilo sono nella pagina delle 17.00, non hanno più una pagina propria;
+  - ora le pagine sono cinque in tutto; PNG riesportati.
+- **Carosello del giorno** (`pagine/CaroselloGiorno.html`, regole in `componente-CaroselloGiorno.md`): prende il posto del post evento.
+  - Si pubblica qualche giorno prima. Ha la stessa struttura del Push Day: copertina con il numero nell'arco, poi una pagina per attività.
+  - In alto c'è una fascia di tessere spostata di mezza casella, che continua da una pagina all'altra come il filo di lampadine.
+  - Esempio sul 12 dicembre con gli orari tra parentesi quadre. Il 12 è `verde-loggia`, quindi il fondo è `rosso`.
+  - I numeri a due cifre stanno nell'arco a 520px.
+- **Codice in comune:** i due caroselli sono generati da `pagine/carosello-giorno.js`, con gli stili in `campagna.css` (classe `.cg`). Per fare il carosello di un altro giorno si copia `CaroselloGiorno.html` e si cambiano i dati.
+- **Eliminati:** `pagine/PostEvento.html` e `componente-PostEvento.md`. La storia del giorno resta.
+- **Non ancora fatto:** i template Figma dei due caroselli. Il template Figma del vecchio post evento è ancora nel plugin.
+
+---
+
+# Post pista di pattinaggio
+
+- **Nuovo post** `pagine/PostPista.html`, regole in `componente-PostPista.md`, PNG in `post/pista-pattinaggio.png`:
+  - l'arco `azzurro` è il ghiaccio, con le scie dei pattini e un pattino rosso;
+  - sotto, il titolo "La pista di pattinaggio", il periodo, e dove, orari e ingresso in tre colonne;
+  - in fondo, la serata gratuita del 5 dicembre.
+- **Nuova illustrazione:** `design-system/illustrazioni/pattino.svg`, disegnata come le tessere: forme piene, colori della campagna.
+- **Segnaposto:** luogo, orari e prezzo. Il periodo (5 dicembre – 6 gennaio) è da confermare.
+
+---
+
+# Smaltiamo il panettone — 26 dicembre
+
+- **Una pagina, tre uscite:** locandina A3, post (`#post`) e storia (`#story`), come la gravel ma senza WhatsApp. Regole in `componente-LocandinaPanettone.md`.
+- **Nello stile della campagna**, non in quello della locandina originale:
+  - il titolo è composto come il marchio: "Smaltiamo" e sotto "✦ il panettone" in corsivo;
+  - il 26 sta nel suo arco verde;
+  - in alto la fascia di tessere.
+- **Al posto delle bici**, due corridori con il cappello di Babbo Natale che scappano da un panettone. Sono tre illustrazioni nuove in `design-system/illustrazioni/`: `corridore-verde.svg`, `corridore-rosso.svg`, `panettone.svg`.
+- **Testi** dalla locandina e dalla descrizione di Atletica Mottense:
+  - partenza alle 9.30 al Parcheggio CIMIC;
+  - 5 km sul Giro del Paeseo, ripetibili, oppure 7 o 10 km;
+  - rinfresco finale;
+  - gratis e senza iscrizione;
+  - nota di prudenza sul tratto aperto al traffico.
+- **Loghi** (Atletica Mottense, Vivi Motta, marchio Motta Natalè) solo nella stampa; niente QR.
+- **File:**
+  - `stampa/Locandina-Panettone-A3.pdf`;
+  - `post/2026-12-26-panettone-post.png`;
+  - `post/2026-12-26-panettone-story.png`.
+- **Correzione:** il testo sulla fascia ocra è in `inchiostro`. In `verde-loggia` il contrasto era basso.

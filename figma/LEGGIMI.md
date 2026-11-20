@@ -1,4 +1,4 @@
-# Template Figma di Motta a Natale
+# Template Figma di Motta Natalè
 
 Il plugin in `plugin/` costruisce dentro un file Figma tutto il necessario per produrre i post della campagna. Funziona con il piano gratuito di Figma.
 
@@ -6,12 +6,12 @@ Il plugin in `plugin/` costruisce dentro un file Figma tutto il necessario per p
 
 - **Stili di colore** `Motta/verde-loggia`, `Motta/rosso`, … : i dieci colori del sistema.
 - **Stili di testo** `Motta/titolo-l`, `Motta/frase`, `Motta/info`, … : Bodoni Moda e Archivo con le misure giuste.
-- **Pagina "Motta a Natale · Componenti":**
+- **Pagina "Motta Natalè · Componenti":**
   - le 18 tessere;
   - le quattro versioni del marchio;
   - l'albero;
   - la stella.
-- **Pagina "Motta a Natale · Template":** 13 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
+- **Pagina "Motta Natalè · Template":** 13 post a misura reale, con testi modificabili e livelli con il nome di cosa contengono:
   - Annuncio;
   - Programma (4 pagine);
   - Evento;
@@ -26,9 +26,9 @@ Il plugin in `plugin/` costruisce dentro un file Figma tutto il necessario per p
 I plugin "in sviluppo" funzionano solo nell'**app desktop di Figma**, non dal browser.
 
 1. Scarica l'app desktop da figma.com/downloads e accedi.
-2. Crea un nuovo file di design, per esempio "Motta a Natale 2026".
+2. Crea un nuovo file di design, per esempio "Motta Natalè 2026".
 3. Dal menu: **Plugins → Development → Import plugin from manifest…** e scegli il file `figma/plugin/manifest.json` di questo progetto.
-4. Avvia il plugin: **Plugins → Development → Motta a Natale – template**.
+4. Avvia il plugin: **Plugins → Development → Motta Natalè – template**.
 
 In qualche secondo compaiono le due pagine. Se manca un font, in basso compare un avviso e il plugin usa un sostituto. Bodoni Moda e Archivo sono su Google Fonts e Figma li ha già.
 

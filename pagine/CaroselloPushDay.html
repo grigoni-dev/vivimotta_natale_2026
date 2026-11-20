@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CaroselloPushDay</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<script src="carosello-giorno.js"></script>
+</head>
+<body>
+<div class="foglio" id="pagine"></div>
+<script>
+// Push Day, 5 dicembre: si accendono l'albero e le luminarie. L'elemento in alto è il filo di lampadine.
+caroselloGiorno({
+  numero: 5, sigla: "sab", colore: "--rosso", inchiostro: "--panna", fondo: "--verde-loggia",
+  lampadine: true,
+  titolo: "Push Day", frase: "si accendono le luci di Motta",
+  info: "Sabato 5 dicembre · Piazza Luzzatti · dalle 15.00",
+  invito: "Scorri per scoprire il programma →", luogo: "Piazza Luzzatti",
+  attivita: [
+    { pre: "dalle", ora: "15.00", titolo: "Il pomeriggio dei bambini", elenco: [
+      "Laboratorio creativo \"La borsetta di Natale\" con l'elfo",
+      "Palloncini sagomati",
+      "Arriva Pan di Zenzero con le caramelle",
+      "Foto ricordo e letterine per Babbo Natale",
+      "Baby dance natalizia con l'elfo"] },
+    { pre: "ore", ora: "17.00", titolo: "Si accendono le luci", corpo: "I bambini accendono insieme l'albero di Natale e tutte le luminarie di Motta. Poi cantano i bambini dell'asilo." },
+    { pre: "ore", ora: "17.30", titolo: "Unbrassed Band", frase: "@unbrassedband", corpo: "Musica dal vivo in piazza per chiudere il pomeriggio." },
+    { pre: "per", ora: "tutta la sera", parole: true, titolo: "Si pattina gratis", frase: "speciale inaugurazione", corpo: "La pista di pattinaggio è aperta e gratuita per tutta la serata." },
+  ],
+  didascalia: "Carosello Push Day 1080×1350, cinque pagine · la copertina con il 5 nell'arco rosso e un filo di lampadine che continua da una pagina all'altra; poi un momento del pomeriggio per pagina, con l'ora in grande e la casella del giorno in alto a destra.",
+});
+</script>
+</body>
+</html>

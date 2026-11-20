@@ -7,19 +7,19 @@
 <link rel="stylesheet" href="../design-system/tokens.css">
 <link rel="stylesheet" href="campagna.css">
 <style>
-/* Le pagine condividono le posizioni: marchio in alto a sinistra, titolo da (67.5, 175), fascia in basso di 2 caselle. Sulle foto niente marchio. */
+/* Le pagine condividono le posizioni: marchio in alto a sinistra, titolo da (67.5, 198–210), fascia in basso di 2 caselle. Sulle foto niente marchio. */
 .cop{background:var(--verde-loggia);color:var(--panna)}
-.cop .titolo-l{left:var(--mezza);top:180px;font-size:160px;line-height:.9;letter-spacing:-.02em}
-.cop .frase{left:var(--mezza);top:540px;width:800px}
-.cop .nota{left:var(--mezza);top:700px}
+.cop .titolo-l{left:var(--mezza);top:210px;font-size:160px;line-height:.9;letter-spacing:-.02em}
+.cop .frase{left:var(--mezza);top:560px;width:800px}
+.cop .nota{left:var(--mezza);top:720px}
 .cop .griglia{left:0;bottom:0}
 
 .sch{background:var(--azzurro);color:var(--inchiostro)}
-.sch .titolo-l{left:var(--mezza);top:175px;color:var(--verde-loggia);width:810px}
-.sch .finestra{left:var(--casella);top:405px;width:540px;height:675px;background:var(--panna);align-items:center}
-.sch .num{left:675px;top:405px;width:270px;height:270px;background:var(--rosso);color:var(--panna)}
+.sch .titolo-l{left:var(--mezza);top:198px;color:var(--verde-loggia);width:810px}
+.sch .finestra{left:var(--casella);top:432px;width:540px;height:648px;background:var(--panna);align-items:center}
+.sch .num{left:675px;top:432px;width:270px;height:270px;background:var(--rosso);color:var(--panna)}
 .sch .num .n{font-size:190px;letter-spacing:-.03em}
-.sch .indirizzo{left:705px;top:710px;width:340px}
+.sch .indirizzo{left:705px;top:737px;width:340px}
 .fascia{left:0;right:0;bottom:0;height:270px;background:var(--verde-loggia);color:var(--panna);padding:44px var(--mezza) 0}
 .fascia .corpo{margin-top:14px;max-width:900px}
 
@@ -41,7 +41,7 @@
 const tessere=["regalo","righe","portici","stellina","onda","pallina","abete","cupola","caramella","campanile","candela","corona","stella","portici","pois","fiocco"];
 const copertina=`
 <div class="cornice"><div class="post cop">
-  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta Natalè">
   <h1 class="abs titolo-l">Le botteghe<br>di Motta</h1>
   <p class="abs frase">Chi c'è dietro le vetrine del centro, una bottega alla volta.</p>
   <p class="abs nota">Scorri per conoscerle →</p>
@@ -49,7 +49,7 @@ const copertina=`
 </div></div>`;
 const bottega=num=>`
 <div class="cornice"><div class="post sch">
-  <img class="abs marchio" src="../design-system/marchio/marchio-verde.svg" alt="Motta a Natale">
+  <img class="abs marchio" src="../design-system/marchio/marchio-verde.svg" alt="Motta Natalè">
   <h2 class="abs titolo-l">Nome del negozio</h2>
   <div class="abs arco finestra"><p class="segnaposto">Foto della vetrina<br>verticale, luce naturale</p></div>
   <div class="abs casella num"><span class="n">${num}</span></div>

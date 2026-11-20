@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostPista</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<style>
+/* Pista di pattinaggio: l'arco azzurro è la pista vista di lato, con le scie del ghiaccio e il pattino; sotto, i fatti in tre colonne. */
+.pi{background:var(--verde-loggia);color:var(--panna)}
+.pi .finestra{left:var(--casella);top:230px;width:810px;height:470px;background:var(--azzurro);align-items:flex-end}
+.pi .scie{position:absolute;left:0;top:0;width:810px;height:470px}
+.pi .pattino{width:430px;display:block;margin-bottom:6px;position:relative}
+.pi .testo{left:var(--mezza);top:740px;width:945px}
+.pi .frase{color:var(--ocra);margin-top:10px}
+.pi .fatti{left:var(--mezza);top:1040px;width:945px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;border-top:3px solid var(--panna);padding-top:22px}
+.pi .fatti .etichetta{color:var(--ocra)}
+.pi .fatti p:last-child{margin-top:10px;font:800 40px/1.05 var(--font-numeri)}
+.pi .nota{left:var(--mezza);bottom:56px;width:945px;font-size:28px}
+.pi .nota b{color:var(--ocra)}
+</style>
+</head>
+<body>
+<div class="foglio" id="png">
+<div class="cornice"><div class="post pi">
+  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta Natalè">
+  <div class="abs arco finestra">
+    <!-- le scie lasciate dai pattini sul ghiaccio -->
+    <svg class="scie" viewBox="0 0 810 470" aria-hidden="true" fill="none" stroke="#F4ECDC" stroke-width="5" stroke-linecap="round" opacity=".6">
+      <path d="M90 380 C180 300 330 300 400 360 C470 420 620 420 720 330"/>
+      <path d="M120 430 C240 360 360 380 430 420 C520 470 640 440 740 400"/>
+      <path d="M260 250 C320 210 420 210 470 250 C520 290 600 290 650 250"/>
+    </svg>
+    <img class="pattino" src="../design-system/illustrazioni/pattino.svg" alt="Pattino da ghiaccio">
+  </div>
+  <div class="abs testo">
+    <h1 class="titolo-l">La pista di pattinaggio</h1>
+    <p class="frase">dal 5 dicembre al 6 gennaio, in centro</p>
+  </div>
+  <div class="abs fatti">
+    <div><p class="etichetta">Dove</p><p>[luogo]</p></div>
+    <div><p class="etichetta">Orari</p><p>[orari]</p></div>
+    <div><p class="etichetta">Ingresso</p><p>[prezzo]</p></div>
+  </div>
+  <p class="abs nota"><b>Sabato 5 dicembre</b> si pattina gratis per tutta la sera.</p>
+</div></div>
+<p class="didascalia">Post pista di pattinaggio 1080×1350 · l'arco azzurro con il pattino e le scie sul ghiaccio; sotto, il titolo, il periodo e i fatti in tre colonne (dove, orari, ingresso). Luogo, orari e prezzo sono segnaposto. PNG: <code>post/pista-pattinaggio.png</code>, si riesporta con <code>#png</code>.</p>
+</div>
+</body>
+</html>

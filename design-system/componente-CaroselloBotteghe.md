@@ -1,6 +1,6 @@
 # CaroselloBotteghe
 
-La rubrica "Le botteghe di Motta". Tutte le pagine hanno le stesse posizioni: marchio in alto a sinistra, titolo da (67,5; 175), fascia in basso di 2 caselle.
+La rubrica "Le botteghe di Motta". Tutte le pagine hanno le stesse posizioni: marchio in alto a sinistra, titolo da (67,5; 198–210), fascia in basso di 2 caselle.
 
 Sequenza: **copertina**, poi per ogni bottega **scheda** + **articolo in evidenza**, e si ricomincia con la bottega successiva. Fino a 9 botteghe per carosello (1 + 9×2 = 19 pagine; Instagram ne ammette 20).
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -16 130 186" width="520" height="744"><title>Corridore con la maglia verde</title>
+<!-- Corridore di profilo verso destra, nello stesso tratto delle bici: arti a linee piene, maglia colorata, cappello di Babbo Natale. -->
+<g fill="none" stroke="#2B2019" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M60 88 L40 118 L16 114" stroke-width="10"/>
+  <path d="M66 50 L48 66 L38 84" stroke-width="8"/>
+  <path d="M62 88 L88 110 L82 144 L96 148" stroke-width="10"/>
+  <path d="M72 50 L90 66 L104 54" stroke-width="8"/>
+</g>
+<path d="M60 84 L74 48" stroke="#2E9C8E" stroke-width="24" stroke-linecap="round"/>
+<path d="M50 86 Q60 98 74 88 L66 78 Z" fill="#2B2019"/>
+<circle cx="86" cy="20" r="11" fill="#2B2019"/>
+<path d="M74 14 L98 12 L60 -6 Z" fill="#BD3128"/>
+<circle cx="59" cy="-6" r="6" fill="#F4ECDC" stroke="#2B2019" stroke-width="2.5"/>
+<path d="M72 12 L99 10 L100 17 L73 19 Z" fill="#F4ECDC" stroke="#2B2019" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

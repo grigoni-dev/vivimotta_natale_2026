@@ -7,25 +7,24 @@
 <link rel="stylesheet" href="../design-system/tokens.css">
 <link rel="stylesheet" href="campagna.css">
 <style>
-/* Annuncio: il marchio a tutta larghezza tra due fasce di tessere, l'albero nell'arco accanto alle informazioni. */
+/* Annuncio: il marchio a tutta larghezza tra due fasce di tessere; sotto, l'albero grande in un arco appoggiato alla fascia e accanto le date, cosa succede e l'hashtag. */
 .an{background:var(--panna);color:var(--verde-loggia)}
 .an .fascia{left:0;width:1080px}
 .an .fascia.su{top:0}
 .an .fascia.giu{top:1215px}
-.an .titolo{left:50%;top:176px;transform:translateX(-50%);width:900px;display:block}
-.an .frase{left:0;width:1080px;top:722px;text-align:center;color:var(--inchiostro)}
-.an .blocco{left:var(--mezza);top:850px;width:945px;height:270px;display:grid;grid-template-columns:270px 1fr;align-items:center}
-.an .finestra{width:270px;height:270px;background:var(--rosa);align-items:flex-end}
-.an .finestra img{width:226px;display:block;margin-bottom:-2px}
-.an .dati{padding-left:40px}
-.an .dati .info{font-size:30px}
-.an .dati .corpo{margin-top:10px;font-size:30px;line-height:1.3;color:var(--inchiostro)}
-.an .dati hr{border:0;border-top:3px solid var(--verde-loggia);margin:20px 0}
-.an .dati .tag{color:var(--rosso);text-transform:none;letter-spacing:.02em}
+.an .titolo{left:var(--mezza);top:178px;width:945px;display:block}
+/* Arco di 3 × 3,5 caselle che poggia sulla fascia in basso. */
+.an .finestra{left:var(--mezza);top:742.5px;width:405px;height:472.5px;background:var(--rosa);align-items:flex-end}
+.an .finestra img{width:350px;display:block;margin-bottom:-2px}
+.an .dati{left:516.5px;top:742.5px;width:496px;height:472.5px;padding-bottom:40px;display:flex;flex-direction:column;justify-content:space-between}
+.an .date{font-family:var(--font-numeri);font-weight:800;font-size:62px;line-height:1.02;letter-spacing:-.01em;color:var(--verde-loggia)}
+.an .date em{font-weight:500;color:var(--rosso)}
+.an .cosa{font-family:var(--font-numeri);font-style:italic;font-weight:500;font-size:40px;line-height:1.18;color:var(--inchiostro)}
+.an .tag{font:800 32px/1 var(--font-sans);color:var(--rosso);letter-spacing:.02em;border-top:3px solid var(--verde-loggia);padding-top:18px}
 </style>
 </head>
 <body>
-<div class="foglio">
+<div class="foglio" id="png">
 <div class="cornice"><div class="post an">
   <div class="abs griglia fascia su">
     <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
@@ -37,29 +36,25 @@
     <div class="casella"><img src="../design-system/tessere/stellina.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/onda.svg" alt=""></div>
   </div>
-  <h1><img class="abs titolo" src="../design-system/marchio/marchio-verde-rosso.svg" alt="Motta a Natale"></h1>
-  <p class="abs frase">Eventi e intrattenimento per tutta la famiglia.</p>
-  <div class="abs blocco">
-    <div class="arco finestra"><img src="../design-system/illustrazioni/albero.svg" alt="Albero di Natale"></div>
-    <div class="dati">
-      <p class="info">Dal 5 dicembre al 6 gennaio</p>
-      <p class="corpo">Nel centro storico: luci, pista di pattinaggio, concerti, mercatini, attività e Zenzerino nascosto nelle vetrine.</p>
-      <hr>
-      <p class="info tag">#mottanatale</p>
-    </div>
+  <h1><img class="abs titolo" src="../design-system/marchio/marchio-verde-rosso.svg" alt="Motta Natalè"></h1>
+  <div class="abs arco finestra"><img src="../design-system/illustrazioni/albero.svg" alt="Albero di Natale"></div>
+  <div class="abs dati">
+    <p class="date"><em>dal</em> 5 dicembre<br><em>al</em> 6 gennaio</p>
+    <p class="cosa">Musica, spettacoli, mercatini e intrattenimento per tutta la famiglia.</p>
+    <p class="tag">#mottanatale</p>
   </div>
   <div class="abs griglia fascia giu">
     <div class="casella"><img src="../design-system/tessere/campana.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/fiocco.svg" alt=""></div>
-    <div class="casella"><img src="../design-system/tessere/candela.svg" alt=""></div>
-    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/pois.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/cupola.svg" alt=""></div>
+    <div class="casella"><img src="../design-system/tessere/candela.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/bastoncino.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/regalo.svg" alt=""></div>
     <div class="casella"><img src="../design-system/tessere/stella.svg" alt=""></div>
   </div>
 </div></div>
-<p class="didascalia">Annuncio 1080×1350 · il marchio a tutta larghezza tra due fasce di tessere, la frase, l'albero in un arco rosa da 2×2 caselle accanto alle date, a cosa succede e all'hashtag.</p>
+<p class="didascalia">Annuncio 1080×1350 · il marchio a tutta larghezza tra due fasce di tessere; sotto, l'albero grande in un arco rosa appoggiato alla fascia, accanto le date (in Bodoni, come un titolo), cosa succede e l'hashtag. PNG: <code>post/annuncio-motta-natale.png</code> (si riesporta aprendo la pagina con <code>#png</code>).</p>
 </div>
 </body>
 </html>

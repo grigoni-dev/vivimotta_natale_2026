@@ -27,8 +27,8 @@ body{margin:0;padding:32px 24px 48px;font-family:var(--font-sans);color:var(--in
 .casella .m{position:absolute;left:14px;top:14px;font:800 22px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
 .abs.casella{position:absolute}
 
-/* Marchio della campagna: in alto a sinistra, largo 190px, sempre su un fondo pieno. */
-.marchio{left:var(--mezza);top:20px;width:190px;height:auto}
+/* Marchio della campagna: in alto a sinistra, largo 230px, sempre su un fondo pieno. */
+.marchio{left:var(--mezza);top:54px;width:230px;height:auto}
 
 
 /* Finestra ad arco: raggio = metà della larghezza. */
@@ -36,3 +36,41 @@ body{margin:0;padding:32px 24px 48px;font-family:var(--font-sans);color:var(--in
 
 /* Timbro: l'unica tessera del post, nell'angolo in basso a destra. */
 .timbro{right:0;bottom:0;width:var(--casella);height:var(--casella)}
+
+/* Esportazione: con #png nell'indirizzo il post appare a misura reale, senza cornice né didascalia (Chrome headless --screenshot). */
+body:has(.foglio:target){padding:0;background:none}
+.foglio:target{display:block}
+.foglio:target .cornice{width:1080px;height:1350px;box-shadow:none}
+.foglio:target .cornice.storia{height:1920px}
+.foglio:target .post{transform:none}
+.foglio:target .didascalia{display:none}
+
+/* Carosello del giorno (CaroselloPushDay, CaroselloGiorno): pagine generate da carosello-giorno.js. */
+.cg{color:var(--panna)}
+.cg .filo{left:0;top:0;width:1080px;height:420px;display:block}
+.cg .fascia-continua{left:0;top:200px;width:1080px;height:135px;overflow:hidden}
+.cg .fascia-continua > div{position:absolute;top:0;height:135px}
+.cg .fascia-continua .casella{position:absolute;top:0;width:135px;height:135px}
+/* Copertina: il numero nell'arco nel colore fisso del giorno. */
+.cg .finestra{left:var(--casella);top:360px;width:810px;height:560px;align-items:flex-end}
+.cg .finestra .numero-xl{font-size:640px;margin-bottom:-22px}
+.cg .cop{left:var(--mezza);top:952px;width:945px}
+.cg .cop .titolo-l{font-size:112px}
+.cg .cop .frase{color:var(--ocra);margin-top:6px}
+.cg .cop .info{font-size:30px;margin-top:26px}
+/* Pagine interne: casella del giorno in alto a destra, ora e testo in un blocco centrato tra l'elemento in alto e il piede. */
+.cg .giorno{right:var(--mezza);top:54px;width:135px;height:135px;flex-direction:column}
+.cg .giorno .m{position:static;margin-bottom:6px}
+.cg .blocco{left:var(--mezza);top:380px;bottom:140px;width:945px;display:flex;flex-direction:column;justify-content:center;gap:44px}
+.cg .ora{display:flex;align-items:baseline;gap:22px}
+.cg .ora em{font-family:var(--font-numeri);font-style:italic;font-weight:500;font-size:60px;color:var(--ocra)}
+.cg .ora b{font-family:var(--font-numeri);font-weight:900;font-size:230px;line-height:.8;letter-spacing:-.03em}
+.cg .ora.parole b{font-style:italic;font-weight:800;font-size:150px;letter-spacing:-.01em}
+.cg .testo .frase{color:var(--ocra);margin-top:10px}
+.cg .testo .corpo{margin-top:24px;max-width:880px;font-size:40px}
+.cg .elenco{margin-top:22px;list-style:none;display:grid;gap:12px}
+.cg .elenco li{display:grid;grid-template-columns:34px 1fr;align-items:baseline;font:500 34px/1.25 var(--font-sans)}
+.cg .elenco svg{width:22px;height:22px;transform:translateY(2px)}
+.cg .piede{left:var(--mezza);right:var(--mezza);bottom:60px;display:flex;justify-content:space-between;align-items:baseline}
+.cg .piede .info{font-size:30px;color:var(--ocra)}
+.cg .piede .nota{font-size:28px;color:var(--panna)}

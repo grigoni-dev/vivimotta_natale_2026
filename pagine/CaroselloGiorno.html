@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CaroselloGiorno</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link rel="stylesheet" href="campagna.css">
+<script src="carosello-giorno.js"></script>
+</head>
+<body>
+<div class="foglio" id="pagine"></div>
+<script>
+// Carosello del giorno, esempio sul 12 dicembre (colore fisso verde-loggia, quindi fondo rosso).
+// Si pubblica qualche giorno prima. Orari tra parentesi quadre: segnaposto da sostituire con il programma.
+caroselloGiorno({
+  numero: 12, sigla: "sab", colore: "--verde-loggia", inchiostro: "--panna", fondo: "--rosso",
+  // fascia continua: mai una tessera a fondo rosso (il fondo del post), mai due fondi uguali vicini
+  tessere: ["stella", "portici", "abete", "onda", "regalo", "cupola", "fiocco", "candela", "campanile", "corona", "bastoncino", "stellina"],
+  titolo: "Sabato 12 dicembre", corpoTitolo: 96, frase: "cosa succede in centro",
+  info: "Sotto la Loggia · dalle [ora]",
+  invito: "Scorri per vedere cosa c'è →", luogo: "Sotto la Loggia",
+  attivita: [
+    { pre: "ore", ora: "[ora]", titolo: "Concerto dell'Orchestra dei Fiati della Livenza", corpo: "[Una riga sul concerto: cosa suonano, quanto dura.]" },
+    { pre: "ore", ora: "[ora]", titolo: "Arriva Babbo Natale", corpo: "[Una riga su cosa succede: foto, letterine, caramelle.]" },
+  ],
+  didascalia: "Carosello del giorno 1080×1350 · si pubblica qualche giorno prima. Copertina con il numero nell'arco del colore fisso del giorno, poi una pagina per attività. In alto una fascia di tessere spostata di mezza casella: ogni pagina taglia una tessera che la pagina dopo completa. Il fondo non è mai il colore del giorno. Esempio sul 12 dicembre con segnaposto.",
+});
+</script>
+</body>
+</html>

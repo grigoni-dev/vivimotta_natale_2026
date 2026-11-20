@@ -110,6 +110,30 @@
         ],
         "createdAt": "2026-11-10T15:03:53.214Z",
         "reason": "model decision: print plate with full-bleed tile band by design (same pattern as the poster and post pages)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "libre bodoni",
+        "createdAt": "2026-11-19T23:49:09.243Z",
+        "reason": "pagine/ProposteCarattere.html è la pagina di confronto delle alternative a Bodoni Moda, documentata in MODIFICHE.md: font fuori sistema per scelta"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "gloock",
+        "createdAt": "2026-11-19T23:49:09.271Z",
+        "reason": "pagine/ProposteCarattere.html è la pagina di confronto delle alternative a Bodoni Moda, documentata in MODIFICHE.md: font fuori sistema per scelta"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "chonburi",
+        "createdAt": "2026-11-19T23:49:09.296Z",
+        "reason": "pagine/ProposteCarattere.html è la pagina di confronto delle alternative a Bodoni Moda, documentata in MODIFICHE.md: font fuori sistema per scelta"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "young serif",
+        "createdAt": "2026-11-19T23:49:09.322Z",
+        "reason": "pagine/ProposteCarattere.html è la pagina di confronto delle alternative a Bodoni Moda, documentata in MODIFICHE.md: font fuori sistema per scelta"
       }
     ]
   }

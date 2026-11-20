@@ -1,5 +1,5 @@
 ---
-name: Motta a Natale 2026
+name: Motta Natalè 2026
 description: Campagna Instagram in cui il giorno con un'attività è il protagonista, in una casella dal colore fisso che si apre ad arco
 colors:
   verde-loggia: "#1a5548"
@@ -113,7 +113,7 @@ typography:
     lineHeight: 1.35
   nota-programma:
     fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "26px"
+    fontSize: "28px"
     fontWeight: 600
     lineHeight: 1.3
   nota:
@@ -184,13 +184,13 @@ components:
     rounded: "{rounded.retto}"
     size: "{spacing.casella}"
   marchio:
-    width: "190px"
+    width: "230px"
   marchio-storia:
-    width: "260px"
+    width: "270px"
   marchio-annuncio:
-    width: "500px"
+    width: "945px"
   marchio-caccia:
-    width: "170px"
+    width: "205px"
   casella-logo:
     backgroundColor: "{colors.bianco}"
     rounded: "{rounded.retto}"
@@ -211,7 +211,7 @@ components:
     typography: "{typography.nome-sponsor}"
 ---
 
-# Design System: Motta a Natale 2026
+# Design System: Motta Natalè 2026
 
 ## Overview
 
@@ -232,7 +232,7 @@ La densità è bassa: un arco o una fila di caselle, un titolo concreto, una rig
 - La stella a quattro punte è il simbolo di tutte le grafiche di Natale; Zenzerino è la mascotte delle vetrine.
 - Bodoni Moda per numeri, titoli e frase; Archivo maiuscolo per le informazioni pratiche.
 - Nessuna ombra, sfumatura o texture: solo superfici piatte accostate.
-- Il marchio "Motta a Natale", con la stella al posto della "a", firma le grafiche della campagna al posto del logo istituzionale, sempre su un fondo pieno.
+- Il marchio "Motta Natalè", con la stella davanti a "Natalè", firma le grafiche della campagna al posto del logo istituzionale, sempre su un fondo pieno.
 
 ## Colors
 
@@ -288,7 +288,7 @@ Una tavolozza da lunario di paese, presa dal logo e dai materiali del centro: ve
 - **Frase** (500 corsivo, 44px, 1.15): payoff dell'annuncio, nome del mese nel programma, sottotitolo della copertina, "offerta da" in ocra nella firma dello sponsor.
 - **Info** (800, 40px, 0.06em, maiuscolo): la riga di data e luogo sotto il titolo, per esteso; le date in fondo all'annuncio; "L'idea regalo di [negozio]" in ocra nella fascia dell'articolo.
 - **Corpo** (500, 36px, 1.35): descrizioni di massimo due righe.
-- **Nota programma** (600, 26px, 1.3): ora e luogo sotto il nome dell'evento nel programma.
+- **Nota programma** (600, 28px, 1.3): ora e luogo sotto il nome dell'evento nel programma.
 - **Nota** (600, 24px, 1.3): hashtag, indirizzi, invito a scorrere.
 - **Etichetta** (800, 22px, 0.1em, maiuscolo): giorno della settimana dentro la casella del giorno.
 
@@ -303,7 +303,7 @@ Tutto si misura sulla casella. Il post 1080×1350 è una griglia di 8×10 casell
 
 Ogni formato ha una sola struttura: l'arco in alto (6×5 caselle da x 135 a 945, y 135 a 810) con titolo, corpo e info sotto (annuncio, evento) o con il nome dell'installazione e la firma dello sponsor (offerto da); l'arco 7×6 da 120px (x 120–960, y 480–1200) con "oggi è il" sopra (storia); tre righe da 270px con la casella a filo del bordo sinistro e il nome dell'evento accanto a 44px (programma, da y 405); titolo e corpo in alto e, nella metà bassa, la scacchiera di 5×3 caselle da 216px a tutta larghezza e a filo del fondo (post sponsor); la griglia 8×8 di tessere (caccia).
 
-Il marchio sta in alto a sinistra nei post e nei caroselli, a (67,5; 20) e largo 190px; nelle storie in alto al centro, largo 260px, a 240px dal bordo; nell'annuncio è il titolo stesso, largo 500px; nella caccia a Zenzerino in basso a destra, largo 170px. Le pagine con la foto a tutta pagina non hanno il marchio. Nelle storie i primi 240px e la parte bassa restano liberi per l'interfaccia di Instagram e lo sticker. Nei caroselli ogni pagina ripete passo e posizioni: marchio in alto a sinistra, titolo da 67,5px a sinistra e 175px dall'alto (180px il titolo della copertina botteghe), fascia bassa di 270px.
+Il marchio sta in alto a sinistra nei post e nei caroselli, a (67,5; 54) e largo 230px; nelle storie in alto al centro, largo 270px, a 240px dal bordo; nell'annuncio è il titolo stesso, largo 945px; nella caccia a Zenzerino in basso a destra, largo 205px. Le pagine con la foto a tutta pagina non hanno il marchio. Nelle storie i primi 240px e la parte bassa restano liberi per l'interfaccia di Instagram e lo sticker. Nei caroselli ogni pagina ripete passo e posizioni: marchio in alto a sinistra, titolo da 67,5px a sinistra e 175px dall'alto (180px il titolo della copertina botteghe), fascia bassa di 270px.
 
 **The Passo Unico Rule.** Se un blocco, un arco o una casella non inizia e non finisce su un multiplo di casella o di mezza casella, è fuori sistema. L'unica eccezione è la casella logo da 216px degli sponsor.
 
@@ -365,11 +365,11 @@ L'unica tessera del post: 135px nell'angolo in basso a destra, a filo dei bordi.
 - **Zenzerino:** la mascotte delle vetrine. Protagonista solo nella caccia, dove è nascosto tra le tessere; altrove una tessera tra le altre.
 
 ### Marchio
-La firma della campagna, su due righe: "Motta" in Bodoni Moda 800, sotto la stella a quattro punte seguita da "Natale" in 500 corsivo. La stella prende il posto della "a": si legge "Motta a Natale". Testo già in tracciati (`marchio/`), si carica così come è; l'immagine del profilo Instagram è `marchio/profilo-motta-a-natale.png`.
+La firma della campagna, su due righe: "Motta" in Bodoni Moda 800, sotto la stella a quattro punte seguita da "Natalè" in 500 corsivo; l'accento della "è" ha il colore della stella. Testo già in tracciati (`marchio/`), si carica così come è; l'immagine del profilo Instagram è `marchio/profilo-motta-natale.png`.
 - **Versioni:** quattro, una per fondo. `panna-ocra` sul verde-loggia ("Motta" panna, stella e "Natale" ocra); `panna` sul rosso (tutto panna); `verde` sul rosa e sull'azzurro ("Motta" e "Natale" verde-loggia, stella rosso); `verde-rosso` sulla panna ("Motta" verde-loggia, stella e "Natale" rosso).
-- **Posizione:** in alto a sinistra a (67,5; 20), largo 190px, nei post e nei caroselli; in alto al centro, largo 260px, a 240px dal bordo nelle storie; nell'annuncio è il titolo, largo 500px; nella caccia a Zenzerino in basso a destra, largo 170px. Nessun marchio sulle pagine con la foto a tutta pagina.
+- **Posizione:** in alto a sinistra a (67,5; 54), largo 230px, nei post e nei caroselli; in alto al centro, largo 270px, a 240px dal bordo nelle storie; nell'annuncio è il titolo, largo 945px; nella caccia a Zenzerino in basso a destra, largo 205px. Nessun marchio sulle pagine con la foto a tutta pagina.
 - **Limiti:** sempre su un fondo pieno, mai sopra una foto; almeno 150px di larghezza su un post da 1080; non si ricompone, non si deforma, non si ricolora fuori dalle quattro versioni.
-- **Il nome in parole:** dove il nome è scritto per esteso si scrive sempre "Motta a Natale", con la "a"; la stella al posto della "a" esiste solo nel marchio.
+- **Il nome in parole:** dove il nome è scritto per esteso si scrive sempre "Motta Natalè", con l'accento; la stella esiste solo nel marchio.
 
 **The Marchio su Pieno Rule.** Il marchio vive solo su un fondo pieno e nella versione di quel fondo; dove c'è una foto, il marchio non c'è.
 
@@ -380,7 +380,7 @@ La firma della campagna, su due righe: "Motta" in Bodoni Moda 800, sotto la stel
 - **Do** misurare tutto sulla casella: 135px nei post, 120px nelle storie, 270px per la casella doppia, testi a 67,5px dal bordo; 216px solo per le caselle logo degli sponsor.
 - **Do** usare al massimo una tessera per post, come timbro da 135px in basso a destra; griglie di tessere solo nella caccia a Zenzerino, nelle due righe della copertina botteghe e nella scacchiera del post sponsor.
 - **Do** scrivere nella riga info il luogo preciso dal programma, per esteso e in maiuscolo.
-- **Do** firmare ogni grafica con il marchio nella versione del suo fondo, nella stessa posizione per formato: in alto a sinistra largo 190px nei post, in alto al centro largo 260px nelle storie; fanno eccezione l'annuncio (il marchio è il titolo), la caccia (in basso a destra, 170px) e le pagine con la foto a tutta pagina (nessun marchio).
+- **Do** firmare ogni grafica con il marchio nella versione del suo fondo, nella stessa posizione per formato: in alto a sinistra largo 230px nei post, in alto al centro largo 270px nelle storie; fanno eccezione l'annuncio (il marchio è il titolo), la caccia (in basso a destra, 170px) e le pagine con la foto a tutta pagina (nessun marchio).
 
 ### Don't:
 - **Don't** disegnare il calendario completo né caselle per i giorni senza attività.
@@ -389,6 +389,6 @@ La firma della campagna, su due righe: "Motta" in Bodoni Moda 800, sotto la stel
 - **Don't** usare ombre portate, sfumature, texture o illustrazioni realistiche.
 - **Don't** mettere scritte sopra al titolo: occhielli, rubriche o il nome della campagna in testo composto.
 - **Don't** mettere il marchio sopra una foto, sotto i 150px di larghezza su un post da 1080 o in colori fuori dalle quattro versioni; non ricomporlo e non deformarlo.
-- **Don't** sostituire la "a" con la stella fuori dal marchio: nei testi composti il nome è "Motta a Natale".
+- **Don't** mettere la stella nel nome fuori dal marchio, né togliere l'accento: nei testi composti il nome è "Motta Natalè".
 - **Don't** accostare due tessere uguali o con lo stesso fondo.
 - **Don't** usare Zenzerino in più di un post su tre o più di una volta per post, fuori dalla caccia.

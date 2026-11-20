@@ -1,4 +1,4 @@
-// Plugin Figma "Motta a Natale – template".
+// Plugin Figma "Motta Natalè – template".
 // Costruisce nel file aperto: stili di colore e di testo, i componenti (tessere, marchio, albero, stella)
 // e un template modificabile per ogni formato della campagna.
 // Generato da figma/sorgente/genera.py: non modificare code.js a mano, modifica questo file e rigenera.
@@ -189,31 +189,37 @@ async function creaComponenti(pagina) {
 
 // ---------- Template ----------
 const POST = [1080, 1350], STORIA = [1080, 1920];
-const marchioPost = (f, variante) => istanza(f, C[`marchio-${variante}`], MEZZA, 20, 190, "Marchio");
+const marchioPost = (f, variante) => istanza(f, C[`marchio-${variante}`], MEZZA, 54, 230, "Marchio");
 const tessera = (f, nome, x, y, lato = CASELLA) => istanza(f, C[`tessera-${nome}`], x, y, lato, `Tessera ${nome}`);
 
 async function annuncio() {
   const [w, h] = POST; const f = cornice("Annuncio · 1080×1350", w, h); await colora(f, "panna");
   // Fasce di tessere sopra e sotto: mai due fondi uguali accanto, mai tessere a fondo panna.
   ["stella", "portici", "pallina", "cupola", "regalo", "campanile", "stellina", "onda"].forEach((n, i) => tessera(f, n, i * CASELLA, 0));
-  ["campana", "fiocco", "candela", "cupola", "pois", "bastoncino", "regalo", "stella"].forEach((n, i) => tessera(f, n, i * CASELLA, h - CASELLA));
-  istanza(f, C["marchio-verde-rosso"], (w - 900) / 2, 176, 900, "Marchio (titolo)");
-  await testo(f, "Frase", "Eventi e intrattenimento per tutta la famiglia.", "frase", "inchiostro", 0, 722, w, { align: "CENTER" });
-  // Blocco delle informazioni: l'albero in un arco rosa da 2×2 caselle, poi date, cosa succede, linea, hashtag.
-  const a = await arco(f, "Arco", MEZZA, 850, 2 * CASELLA, 2 * CASELLA, "rosa");
-  const alb = istanza(a, C.albero, 0, 0, 226, "Albero"); alb.x = (a.width - alb.width) / 2; alb.y = a.height - alb.height + 2;
-  const x = MEZZA + 2 * CASELLA + 40, lw = 945 - 2 * CASELLA - 40;
-  const d1 = await testo(f, "Date", "Dal 5 dicembre al 6 gennaio", "info", "verde-loggia", x, 0, lw, { size: 30 });
-  const d2 = await testo(f, "Cosa succede", "Nel centro storico: luci, pista di pattinaggio, concerti, mercatini, attività e Zenzerino nascosto nelle vetrine.", "corpo", "inchiostro", x, 0, lw, { size: 30, lh: 130 });
-  const d3 = await riquadro(f, "Linea", x, 0, lw, 3, "verde-loggia");
-  const d4 = await testo(f, "Hashtag", "#mottanatale", "info", "rosso", x, 0, lw, { size: 30, ls: 2 }); d4.textCase = "ORIGINAL";
-  const alto = d1.height + 10 + d2.height + 20 + 3 + 20 + d4.height;
-  impila([d1, d2, d3, d4], 850 + (270 - alto) / 2, [10, 20, 20]);
+  ["campana", "fiocco", "pois", "cupola", "candela", "bastoncino", "regalo", "stella"].forEach((n, i) => tessera(f, n, i * CASELLA, h - CASELLA));
+  istanza(f, C["marchio-verde-rosso"], MEZZA, 178, 945, "Marchio (titolo)");
+  // L'albero grande in un arco rosa di 3 × 3,5 caselle appoggiato alla fascia in basso; accanto date, cosa succede, linea, hashtag.
+  const yB = h - CASELLA - 3.5 * CASELLA, hB = 3.5 * CASELLA;
+  const a = await arco(f, "Arco", MEZZA, yB, 3 * CASELLA, hB, "rosa");
+  const alb = istanza(a, C.albero, 0, 0, 350, "Albero"); alb.x = (a.width - alb.width) / 2; alb.y = a.height - alb.height + 2;
+  const x = MEZZA + 3 * CASELLA + 44, lw = 945 - 3 * CASELLA - 44;
+  const d1 = await testo(f, "Date", "dal 5 dicembre\nal 6 gennaio", "titolo-m", "verde-loggia", x, yB, lw, { size: 62, lh: 102 });
+  // "dal" e "al" in corsivo rosso, come la frase.
+  for (const [i, j] of [[0, 3], [15, 17]]) {
+    await d1.setRangeTextStyleIdAsync(i, j, STILI_TESTO["frase"].id);
+    d1.setRangeFontSize(i, j, 62); d1.setRangeLineHeight(i, j, { unit: "PERCENT", value: 102 });
+    await d1.setRangeFillStyleIdAsync(i, j, STILI_COLORE["rosso"].id);
+  }
+  const d2 = await testo(f, "Cosa succede", "Musica, spettacoli, mercatini e intrattenimento per tutta la famiglia.", "frase", "inchiostro", x, 0, lw, { size: 40, lh: 118 });
+  const d4 = await testo(f, "Hashtag", "#mottanatale", "info", "rosso", x, 0, lw, { size: 32, ls: 2 }); d4.textCase = "ORIGINAL";
+  d4.y = yB + hB - 40 - d4.height;
+  const d3 = await riquadro(f, "Linea", x, d4.y - 18 - 3, lw, 3, "verde-loggia");
+  d2.y = d1.y + d1.height + (d3.y - d1.y - d1.height - d2.height) / 2;
   return f;
 }
 
 const EVENTI = [
-  [[5, "sab", "rosso", "panna", "Push Day: si accendono le luci", "[ora] · Musica, pattinaggio gratuito, Babbo Natale e presepe in piazza"],
+  [[5, "sab", "rosso", "panna", "Push Day: si accendono le luci", "Dalle 15.00 in Piazza Luzzatti · Alle 17.00 si accendono l'albero e le luminarie"],
    [6, "dom", "ocra", "verde-loggia", "San Nicolò con la parrocchia", "[ora] · [luogo]"],
    [8, "mar", "verde-cupola", "inchiostro", "Mercatino dell'antiquariato e albero della Madonna", "[ora] · Con il mercatino dei bambini, a cura della Pro Loco"]],
   [[12, "sab", "verde-loggia", "panna", "Concerto dell'Orchestra dei Fiati della Livenza", "[ora] · Sotto la Loggia, con Babbo Natale"],
@@ -222,15 +228,15 @@ const EVENTI = [
   [[20, "dom", "verde-cupola", "inchiostro", "Mercatino dell'hobbistica e mercato natalizio", "[ora] · Della Pro Loco, giochi in legno, concerto di Evoluzione Musica"],
    [23, "mer", "ocra", "verde-loggia", "Letture danzanti", "Ore 18.00 in piazza · Prenotazione obbligatoria"],
    [24, "gio", "rosso", "panna", "Il pomeriggio della Pro Loco", "[ora] · [luogo]"]],
-  [[26, "sab", "verde-loggia", "panna", "Smalti Panettone, la corsa podistica", "[ora] · A cura di Podistica Mottense"],
+  [[26, "sab", "verde-loggia", "panna", "Smaltiamo il panettone", "Ore 9.30, parcheggio CIMIC · Corsa e camminata con Atletica Mottense"],
    [5, "mar", "azzurro", "inchiostro", "Pan e Vin", "[ora] · A cura del CAI Motta"],
    [6, "mer", "ocra", "verde-loggia", "Elfifania", "[ora] · Con il rinfresco della Pro Loco"]]
 ];
 async function programma(pagina, eventi, piede, mese = "dicembre") {
   const [w, h] = POST; const f = cornice(`Programma ${pagina} · 1080×1350`, w, h); await colora(f, "rosa");
   marchioPost(f, "verde");
-  await testo(f, "Titolo", "Il programma", "titolo-l", "verde-loggia", MEZZA, 175, null);
-  await testo(f, "Mese", mese, "frase", "inchiostro", MEZZA, 290, null);
+  await testo(f, "Titolo", "Il programma", "titolo-l", "verde-loggia", MEZZA, 205, null);
+  await testo(f, "Mese", mese, "frase", "inchiostro", MEZZA, 315, null);
   for (let i = 0; i < eventi.length; i++) {
     const [n, g, fondo, inchiostro, titolo, nota] = eventi[i]; const y = 405 + i * 270;
     const riga = figma.createFrame(); riga.name = `Giorno ${n}`; riga.resize(w, 270); riga.x = 0; riga.y = y; riga.fills = []; f.appendChild(riga);
@@ -238,7 +244,7 @@ async function programma(pagina, eventi, piede, mese = "dicembre") {
     await testo(cas, "Giorno della settimana", g, "etichetta", inchiostro, 0, 41, 270, { align: "CENTER" });
     await testo(cas, "Numero", String(n), "numero-programma", inchiostro, 0, 85, 270, { align: "CENTER" });
     const t = await testo(riga, "Attività", titolo, "nome-evento", "verde-loggia", 314, 0, 698);
-    const no = await testo(riga, "Ora e luogo", nota, "nota", "inchiostro", 314, 0, 698, { size: 26 });
+    const no = await testo(riga, "Ora e luogo", nota, "nota", "inchiostro", 314, 0, 698, { size: 28 });
     const alto = t.height + 14 + no.height; impila([t, no], (270 - alto) / 2, [14]);
   }
   await testo(f, "Piede", piede, "nota", "verde-loggia", MEZZA, h - 52 - 31, null);
@@ -261,8 +267,8 @@ async function evento() {
 
 async function storia() {
   const [w, h] = STORIA; const f = cornice("Storia · 1080×1920", w, h); await colora(f, "verde-loggia");
-  istanza(f, C["marchio-panna-ocra"], 410, 240, 260, "Marchio");
-  await testo(f, "Oggi", "oggi è il", "frase", "panna", 0, 402, w, { align: "CENTER", size: 60 });
+  istanza(f, C["marchio-panna-ocra"], 405, 240, 270, "Marchio");
+  await testo(f, "Oggi", "oggi è il", "frase", "panna", 0, 406, w, { align: "CENTER", size: 60 });
   const a = await arco(f, "Arco del giorno (colore fisso del giorno)", 120, 480, 840, 720, "rosso");
   const num = await testo(a, "Numero del giorno", "5", "numero-arco", "panna", 0, 0, 840, { align: "CENTER", size: 780 });
   num.y = 720 - num.height + 28;
@@ -277,9 +283,9 @@ async function botteghe() {
   const [w, h] = POST; const out = [];
   const c = cornice("Botteghe – copertina · 1080×1350", w, h); await colora(c, "verde-loggia");
   marchioPost(c, "panna-ocra");
-  await testo(c, "Titolo", "Le botteghe\ndi Motta", "titolo-l", "panna", MEZZA, 180, null, { size: 160, lh: 90, ls: -2 });
-  await testo(c, "Frase", "Chi c'è dietro le vetrine del centro, una bottega alla volta.", "frase", "panna", MEZZA, 540, 800);
-  await testo(c, "Invito", "Scorri per conoscerle →", "nota", "panna", MEZZA, 700, null);
+  await testo(c, "Titolo", "Le botteghe\ndi Motta", "titolo-l", "panna", MEZZA, 210, null, { size: 160, lh: 90, ls: -2 });
+  await testo(c, "Frase", "Chi c'è dietro le vetrine del centro, una bottega alla volta.", "frase", "panna", MEZZA, 560, 800);
+  await testo(c, "Invito", "Scorri per conoscerle →", "nota", "panna", MEZZA, 720, null);
   const righe = [["regalo", "righe", "portici", "stellina", "onda", "pallina", "abete", "cupola"],
                  ["caramella", "campanile", "candela", "corona", "stella", "portici", "pois", "fiocco"]];
   righe.forEach((r, ri) => r.forEach((n, ci) => tessera(c, n, ci * CASELLA, 1080 + ri * CASELLA)));
@@ -287,12 +293,12 @@ async function botteghe() {
 
   const s = cornice("Botteghe – scheda 01 · 1080×1350", w, h); await colora(s, "azzurro");
   marchioPost(s, "verde");
-  await testo(s, "Nome del negozio", "Nome del negozio", "titolo-l", "verde-loggia", MEZZA, 175, 810);
-  const foto = await arco(s, "Foto della vetrina (Fill → Image)", CASELLA, 405, 540, 675, "panna");
+  await testo(s, "Nome del negozio", "Nome del negozio", "titolo-l", "verde-loggia", MEZZA, 198, 810);
+  const foto = await arco(s, "Foto della vetrina (Fill → Image)", CASELLA, 432, 540, 648, "panna");
   await segnaposto(foto, "Foto della vetrina\nverticale, luce naturale", 420);
-  const n1 = figma.createFrame(); n1.name = "Numero della bottega"; n1.resize(270, 270); n1.x = 675; n1.y = 405; await colora(n1, "rosso"); s.appendChild(n1);
+  const n1 = figma.createFrame(); n1.name = "Numero della bottega"; n1.resize(270, 270); n1.x = 675; n1.y = 432; await colora(n1, "rosso"); s.appendChild(n1);
   const nt = await testo(n1, "Numero", "01", "numero-bottega", "panna", 0, 0, 270, { align: "CENTER" }); nt.y = (270 - nt.height) / 2;
-  await testo(s, "Indirizzo e profilo", "Via Esempio 1\n@profiloinstagram", "nota", "inchiostro", 705, 710, 340);
+  await testo(s, "Indirizzo e profilo", "Via Esempio 1\n@profiloinstagram", "nota", "inchiostro", 705, 737, 340);
   await riquadro(s, "Fascia", 0, 1080, w, 270, "verde-loggia");
   await testo(s, "Cosa si trova", "Una riga sul negozio, scritta da chi ci lavora: cosa si trova, da quanto c'è, chi lo porta avanti.", "corpo", "panna", MEZZA, 1124, 900);
   out.push(s);
@@ -310,23 +316,24 @@ async function botteghe() {
   return out;
 }
 
-async function casellaLogo(padre, x, y, nome) {
-  const cl = figma.createFrame(); cl.name = nome ? "Nome al posto del logo" : "Logo sponsor (sostituisci)"; cl.resize(216, 216); cl.x = x; cl.y = y;
+async function casellaLogo(padre, x, y, nome, lato = 216) {
+  const area70 = Math.round(lato * 0.7);
+  const cl = figma.createFrame(); cl.name = nome ? "Nome al posto del logo" : "Logo sponsor (sostituisci)"; cl.resize(lato, lato); cl.x = x; cl.y = y;
   await colora(cl, "bianco"); padre.appendChild(cl);
   if (nome) {
-    const t = await testo(cl, "Nome", nome, "nome-casella", "verde-loggia", 18, 0, 180, { align: "CENTER" }); t.y = (216 - t.height) / 2;
+    const t = await testo(cl, "Nome", nome, "nome-casella", "verde-loggia", 18, 0, lato - 36, { align: "CENTER" }); t.y = (lato - t.height) / 2;
   } else {
-    const area = figma.createRectangle(); area.name = "Area logo, max 70% (151px): metti qui il logo"; area.resize(151, 151); area.x = 32.5; area.y = 32.5;
+    const area = figma.createRectangle(); area.name = `Area logo, max 70% (${area70}px): metti qui il logo`; area.resize(area70, area70); area.x = area.y = (lato - area70) / 2;
     area.fills = []; area.strokeWeight = 2; area.strokes = [{ type: "SOLID", color: rgb("#2B2019"), opacity: 0.3 }]; area.dashPattern = [6, 6]; cl.appendChild(area);
-    const t = await testo(cl, "Indicazione (da cancellare)", "logo", "etichetta", "inchiostro", 0, 0, 216, { align: "CENTER", size: 16 }); t.y = (216 - t.height) / 2;
+    const t = await testo(cl, "Indicazione (da cancellare)", "logo", "etichetta", "inchiostro", 0, 0, lato, { align: "CENTER", size: 16 }); t.y = (lato - t.height) / 2;
   }
   return cl;
 }
 async function sponsor() {
   const [w, h] = POST; const f = cornice("Sponsor · 1080×1350", w, h); await colora(f, "verde-loggia");
   marchioPost(f, "panna-ocra");
-  await testo(f, "Titolo", "Il Natale in centro\nlo firmano loro", "titolo-l", "panna", MEZZA, 175, null);
-  await testo(f, "Testo", "Queste attività sostengono il Natale nel centro di Motta. Grazie.", "corpo", "panna", MEZZA, 400, 880);
+  await testo(f, "Titolo", "Il Natale in centro\nlo firmano loro", "titolo-l", "panna", MEZZA, 205, null);
+  await testo(f, "Testo", "Queste attività sostengono il Natale nel centro di Motta. Grazie.", "corpo", "panna", MEZZA, 425, 880);
   const g = figma.createFrame(); g.name = "Scacchiera 5×3 (216px)"; g.resize(1080, 648); g.x = 0; g.y = h - 648; g.fills = []; f.appendChild(g);
   const tt = ["regalo", "pallina", "regalo", "bastoncino", "bastoncino", "pallina", "regalo", "pallina"]; let ti = 0, li = 0;
   for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) {
@@ -337,15 +344,15 @@ async function sponsor() {
 }
 
 async function offertoDa() {
-  const [w, h] = POST; const f = cornice("Offerto da · 1080×1350", w, h); await colora(f, "verde-loggia");
-  marchioPost(f, "panna-ocra");
-  const foto = await arco(f, "Foto dell'installazione (Fill → Image)", CASELLA, CASELLA, 810, 675, "panna");
-  await segnaposto(foto, "Foto dell'installazione\nverticale, luce naturale", 500);
-  await testo(f, "Nome dell'installazione", "Nome dell'installazione", "titolo-m", "panna", MEZZA, 846, 945);
-  await casellaLogo(f, MEZZA, h - 60 - 216, null);
-  const a = await testo(f, "Offerta da", "offerta da", "frase", "ocra", MEZZA + 216 + 36, 0, null);
-  const b = await testo(f, "Nome dello sponsor", "Nome dello sponsor", "nome-evento", "panna", MEZZA + 216 + 36, 0, 640);
-  impila([a, b], h - 60 - 216 + (216 - (a.height + 6 + b.height)) / 2, [6]);
+  // Come l'articolo in evidenza delle botteghe: foto quadrata, fascia verde, logo dello sponsor su bianco nell'angolo. Niente marchio sulla foto.
+  const [w, h] = POST; const f = cornice("Offerto da · 1080×1350", w, h); await colora(f, "panna");
+  const fo = figma.createFrame(); fo.name = "Foto dell'installazione (Fill → Image)"; fo.resize(1080, 1080); await colora(fo, "panna"); f.appendChild(fo);
+  await segnaposto(fo, "Foto dell'installazione\nquadrata, a tutta pagina", 600);
+  await riquadro(f, "Fascia", 0, 1080, w, 270, "verde-loggia");
+  const t = await testo(f, "Nome dell'installazione", "Nome dell'installazione", "titolo-m", "panna", MEZZA, 0, 702, { size: 64 });
+  const o = await testo(f, "Offerta da", "Offerta da Nome dello sponsor", "info", "ocra", MEZZA, 0, 702, { size: 32 });
+  impila([t, o], 1080 + (270 - t.height - 14 - o.height) / 2, [14]);
+  await casellaLogo(f, 810, 1080, null, 270);
   return f;
 }
 
@@ -364,7 +371,7 @@ async function caccia() {
   celle.forEach((n, i) => tessera(g, n, (i % 8) * CASELLA, Math.floor(i / 8) * CASELLA));
   const t1 = await testo(f, "Titolo", "Dov'è Zenzerino?", "titolo-l", "panna", MEZZA, 1110, null, { size: 96 });
   await testo(f, "Testo", "Trovalo qui sopra, poi cercalo nelle vetrine delle botteghe di Motta.", "corpo", "panna", MEZZA, t1.y + t1.height + 12, 740);
-  const m = istanza(f, C["marchio-panna-ocra"], 0, 0, 170, "Marchio"); m.x = w - MEZZA - 170; m.y = h - 40 - m.height;
+  const m = istanza(f, C["marchio-panna-ocra"], 0, 0, 205, "Marchio"); m.x = w - MEZZA - 205; m.y = h - 40 - m.height;
   return f;
 }
 
@@ -374,11 +381,11 @@ async function main() {
   await creaStiliColore();
   await creaStiliTesto();
 
-  const pComp = figma.createPage(); pComp.name = "Motta a Natale · Componenti";
+  const pComp = figma.createPage(); pComp.name = "Motta Natalè · Componenti";
   await figma.setCurrentPageAsync(pComp);
   await creaComponenti(pComp);
 
-  const pTpl = figma.createPage(); pTpl.name = "Motta a Natale · Template";
+  const pTpl = figma.createPage(); pTpl.name = "Motta Natalè · Template";
   await figma.setCurrentPageAsync(pTpl);
   const cornici = [];
   cornici.push(await annuncio());
@@ -397,7 +404,7 @@ async function main() {
   for (const c of cornici) { pTpl.appendChild(c); c.x = x; c.y = 0; x += c.width + 120; }
   figma.viewport.scrollAndZoomIntoView(cornici);
   if (STILE_SENZA_OPSZ) avvisi.push("Dimensione ottica 11 applicata a ogni testo Bodoni (gli stili di testo di questa versione di Figma non la salvano)");
-  figma.notify(`Motta a Natale: ${cornici.length} template creati` + (avvisi.length ? ` · ${avvisi.length} avvisi sui font` : ""), { timeout: 6000 });
+  figma.notify(`Motta Natalè: ${cornici.length} template creati` + (avvisi.length ? ` · ${avvisi.length} avvisi sui font` : ""), { timeout: 6000 });
   if (avvisi.length) console.warn(avvisi.join("\n"));
 }
 

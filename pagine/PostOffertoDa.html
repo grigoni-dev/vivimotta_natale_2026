@@ -7,30 +7,28 @@
 <link rel="stylesheet" href="../design-system/tokens.css">
 <link rel="stylesheet" href="campagna.css">
 <style>
-.od{background:var(--verde-loggia);color:var(--panna)}
-/* Arco di 6×5 caselle con la foto dell'installazione. */
-.od .finestra{left:var(--casella);top:var(--casella);width:810px;height:675px;background:var(--panna);align-items:center}
-.od .segnaposto{font:800 22px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia);text-align:center;margin-top:120px}
-/* Firma dello sponsor: casella bianca da 216px col logo, accanto "offerta da" e il nome. */
-.od .firma{left:var(--mezza);bottom:60px;display:flex;align-items:center;gap:36px}
-.od .firma .logo-sponsor{width:216px;height:216px;background:var(--bianco);display:flex;align-items:center;justify-content:center}
-.od .firma .logo-sponsor span{width:151px;height:151px;border:2px dashed rgba(43,32,25,.3);display:flex;align-items:center;justify-content:center;font:600 16px/1.3 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro)}
-.od .firma .frase{color:var(--ocra)}
-.od .firma .nome{font-family:var(--font-numeri);font-weight:800;font-size:58px;line-height:1.02;margin-top:6px}
+/* Come l'articolo in evidenza delle botteghe: foto quadrata a tutta pagina, fascia verde di 2 caselle in basso, la casella bianca con il logo dello sponsor nell'angolo. Sulla foto niente marchio. */
+.od{background:var(--panna)}
+.od .foto{left:0;top:0;width:1080px;height:1080px;display:flex;align-items:center;justify-content:center}
+.od .segnaposto{font:800 22px/1.3 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--verde-loggia);text-align:center}
+.od .fascia{left:0;right:0;bottom:0;height:270px;background:var(--verde-loggia);color:var(--panna);padding:0 310px 0 var(--mezza);display:flex;flex-direction:column;justify-content:center}
+.od .fascia .titolo-m{margin-top:0;font-size:64px}
+.od .fascia .info{margin-top:14px;color:var(--ocra);font-size:32px}
+.od .logo-sponsor{right:0;bottom:0;width:270px;height:270px;background:var(--bianco);display:flex;align-items:center;justify-content:center}
+.od .logo-sponsor span{width:189px;height:189px;border:2px dashed rgba(43,32,25,.3);display:flex;align-items:center;justify-content:center;font:600 16px/1.3 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--inchiostro)}
 </style>
 </head>
 <body>
 <div class="foglio">
 <div class="cornice"><div class="post od">
-  <img class="abs marchio" src="../design-system/marchio/marchio-panna-ocra.svg" alt="Motta a Natale">
-  <div class="abs arco finestra"><p class="segnaposto">Foto dell'installazione<br>verticale, luce naturale</p></div>
-  <h1 class="abs titolo-m" style="left:var(--mezza);top:846px;width:945px">Nome dell'installazione</h1>
-  <div class="abs firma">
-    <div class="logo-sponsor"><span>logo</span></div>
-    <div><p class="frase">offerta da</p><p class="nome">Nome dello sponsor</p></div>
+  <div class="abs foto"><p class="segnaposto">Foto dell'installazione<br>quadrata, a tutta pagina</p></div>
+  <div class="abs fascia">
+    <h1 class="titolo-m">Nome dell'installazione</h1>
+    <p class="info">Offerta da Nome dello sponsor</p>
   </div>
+  <div class="abs logo-sponsor"><span>logo</span></div>
 </div></div>
-<p class="didascalia">Post "Offerto da" 1080×1350 · uno per ogni installazione o attività offerta da un singolo sponsor (luci, albero, pista…). La foto nell'arco, il nome di ciò che è stato offerto come titolo, sotto la firma dello sponsor col logo su bianco. Se il logo non è leggibile, basta il nome.</p>
+<p class="didascalia">Post "Offerto da" 1080×1350 · uno per ogni installazione o attività offerta da un singolo sponsor (luci, albero, pista…). Stessa impaginazione dell'articolo in evidenza delle botteghe: la foto quadrata a tutta pagina, nella fascia il nome di ciò che è stato offerto e lo sponsor, il logo su bianco nell'angolo. Se il logo non è leggibile, la casella bianca diventa rossa con il nome in Bodoni.</p>
 </div>
 </body>
 </html>

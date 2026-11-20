@@ -1,6 +1,6 @@
 {
-  "name": "Motta a Natale – template",
-  "id": "motta-a-natale-template",
+  "name": "Motta Natalè – template",
+  "id": "motta-natale-template",
   "api": "1.0.0",
   "main": "code.js",
   "editorType": ["figma"],

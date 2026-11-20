@@ -4,16 +4,16 @@ Il sistema grafico della campagna social di Natale 2026 dell'associazione Vivi M
 
 ## Il marchio
 
-- **Motta a Natale**: "Motta" in Bodoni Moda ExtraBold, sotto "✦ Natale" in corsivo. La stella a quattro punte prende il posto della "a" e si legge *Motta a Natale*. File vettoriali, con il testo già in tracciati, in `marchio/`.
+- **Motta Natalè**: "Motta" in Bodoni Moda ExtraBold, sotto "✦ Natalè" in corsivo. La stella a quattro punte apre la seconda riga; l'accento della "è" ha il colore della stella. File vettoriali, con il testo già in tracciati, in `marchio/`.
 - Firma tutti i contenuti della campagna al posto del logo istituzionale di Vivi Motta, che resta per l'uso di tutto l'anno; nelle didascalie Vivi Motta compare come promotore.
 - Quattro versioni, una per fondo:
   - `marchio-panna-ocra.svg` sul `verde-loggia`;
   - `marchio-panna.svg` sul `rosso`;
   - `marchio-verde.svg` sul `rosa` e sull'`azzurro`;
   - `marchio-verde-rosso.svg` sul `panna`.
-- Misure: 190px di larghezza in alto a sinistra nei post e nei caroselli, 260px in alto al centro nelle storie, 500px nell'annuncio dove fa da titolo, 170px nella caccia a Zenzerino. Minimo 150px su un post da 1080.
+- Misure: 230px di larghezza in alto a sinistra nei post e nei caroselli, 270px in alto al centro nelle storie, 945px nell'annuncio dove fa da titolo, 205px nella caccia a Zenzerino. Minimo 150px su un post da 1080.
 - Sempre su un fondo pieno, mai sopra una foto. Non si ricompone, non si deforma, non si cambiano i colori fuori da queste quattro versioni.
-- Dove il nome è scritto per esteso (hashtag, didascalie, testi), si scrive sempre "Motta a Natale" con la "a": la stella è solo nel marchio.
+- Dove il nome è scritto per esteso (hashtag, didascalie, testi), si scrive sempre "Motta Natalè", con l'accento: la stella è solo nel marchio.
 
 ## I due simboli
 
@@ -22,7 +22,7 @@ Il sistema grafico della campagna social di Natale 2026 dell'associazione Vivi M
 
 ## Il nome e il tono
 
-- Nome della campagna: **Motta a Natale**, promossa da Vivi Motta. Frase di accompagnamento: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: `#mottanatale` (principale), `#NataleMottense` (secondario).
+- Nome della campagna: **Motta Natalè**, promossa da Vivi Motta. Frase di accompagnamento: *Eventi e intrattenimento per tutta la famiglia.* Hashtag: `#mottanatale` (principale), `#NataleMottense` (secondario).
 - Scrivi come si parla in paese, al "tu", con cose concrete: cosa succede, dove, quando. Il titolo dice i fatti dell'evento ("Luci accese, pista aperta"), non uno slogan sul Natale ("Si accende la magia", "Un Natale da vivere").
 - Da evitare: "magia", "atmosfera", "emozioni", "non perdere", "ti aspettiamo numerosi", punti esclamativi in serie, conteggi come "33 giorni". Se una frase andrebbe bene per qualunque paese, riscrivila con un nome di Motta: una via, la piazza, un'associazione, una bottega.
 - Niente emoji dentro le grafiche. Le emoji restano nelle didascalie del post, con misura.
@@ -89,8 +89,8 @@ Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 
 - Formati: post e caroselli 1080×1350 (4:5), storie 1080×1920 (9:16).
 - Tutto si misura sulla casella: 135px nei post (8 in larghezza, 10 in altezza), 120px nelle storie (9 × 16). Margini dei testi a mezza casella (67,5px). Unica eccezione: le caselle da 216px (5 in larghezza) per i loghi degli sponsor.
-- Marchio: in alto a sinistra a (67,5; 20), largo 190px, nei post e nei caroselli; nelle storie in alto al centro, largo 260px, a 240px dal bordo. Nell'annuncio è il titolo, largo 500px.
-- Caroselli: tutte le pagine hanno marchio e titolo nelle stesse posizioni (titolo da y 175), così scorrendo la pagina non salta. Sulle pagine con la foto a tutta pagina il marchio non c'è.
+- Marchio: in alto a sinistra a (67,5; 54), largo 230px, nei post e nei caroselli; nelle storie in alto al centro, largo 270px, a 240px dal bordo. Nell'annuncio è il titolo, largo 945px.
+- Caroselli: tutte le pagine hanno marchio e titolo nelle stesse posizioni (titolo da y 205), così scorrendo la pagina non salta. Sulle pagine con la foto a tutta pagina il marchio non c'è.
 - Il luogo nella riga `info` è sempre il nome preciso dal programma (piazza, via, chiesa), mai il generico "in centro".
 - Niente ombre, sfumature, texture o illustrazioni realistiche.
 
@@ -99,7 +99,7 @@ Due famiglie, entrambe su Google Fonts e quindi già disponibili in Figma.
 - **Annuncio** (`PostAnnuncio`): il primo post, come una locandina: fasce di tessere sopra e sotto, il marchio a tutta larghezza, la frase, l'albero in un arco `rosa` da 2×2 caselle accanto alle date scritte per esteso, a cosa succede e dove e all'hashtag.
 - **Locandina** (`Locandina`): stampa A3+ (329×483 mm) con tutte le informazioni: tutti i giorni con un'attività, le attività di tutto il periodo, i promotori e i contatti.
 - **Programma** (`PostProgramma`): carosello, tre giorni con attività per pagina, in ordine di data. Si scorre per le date successive.
-- **Evento** (`PostEvento`): un post per evento con il giorno aperto ad arco, il titolo, la descrizione, giorno e luogo.
+- **Il giorno** (`CaroselloGiorno`): si pubblica qualche giorno prima. Copertina con il numero nell'arco del colore fisso del giorno, poi una pagina per attività con l'ora in grande. In alto una fascia di tessere continua da una pagina all'altra (nel Push Day è un filo di lampadine, `CaroselloPushDay`). La storia del giorno resta il promemoria della mattina.
 - **Storia del giorno** (`Storia`): il promemoria pubblicato la mattina dell'evento ("oggi è il 5"); resta 24 ore e ha lo spazio per lo sticker con il link o la posizione.
 - **Le botteghe di Motta** (`CaroselloBotteghe`): copertina, poi per ogni bottega la scheda e la foto dell'articolo in evidenza, e si ricomincia. Fino a 9 botteghe per carosello.
 - **Sponsor** (`PostSponsor`): post singoli, non un carosello. 15 caselle da 216px a scacchiera: 7 loghi su bianco alternati a 8 tessere (regalo, pallina, bastoncino). Un post ogni 7 sponsor; se un logo non è leggibile, il nome in Bodoni.
